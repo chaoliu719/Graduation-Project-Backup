@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE testcase SYSTEM "testcase.dtd">
+<testcase name="Pointer Types">
+  <plugin id="plugin-pointer-types" source="plugin-pointer-types.c" />
+  <run name="Pointer parameter captures" target="pointer-types-target.c" hooks="pointer-types-hooks.c">
+    <using plugin="plugin-pointer-types" />
+    <output>
+      In int * advice (intp): 1337
+      In void * advice (intp): &amp;n
+      int *: 1337
+      In int ** advice (intpp): 1337
+      In void * advice (intpp): &amp;p1
+      In void ** advice (intpp): &amp;n
+      int **: 1337
+      In int *** advice (intppp): 1337
+      In void * advice (intppp): &amp;p2
+      In void ** advice (intppp): &amp;p1
+      int ***: 1337
+      In str advice (c_str): h4x0r
+      In void * advice (c_str): other pointer
+      str: h4x0r
+    </output>
+    <prototypes>
+      void _advice_any_ptr(signed char *, ALL_POINTER_T);
+      void _advice_any_ptr_ptr(signed char *, ALL_POINTER_T *);
+      void _advice_c_str(signed char *, signed char *);
+      void _advice_p(signed char *, int32_t *);
+      void _advice_pp(signed char *, int32_t **);
+      void _advice_ppp(signed char *, int32_t ***);
+    </prototypes>
+  </run>
+</testcase>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE testcase SYSTEM "testcase.dtd">
+<testcase name="Tracecut">
+  <plugin id="plugin-tracecut" source="plugin-tracecut.c" />
+  <run name="Tracecut hooks" target="tracecut-target.c" hooks="tracecut-hooks.c">
+    <using plugin="plugin-tracecut" />
+    <output>
+      Init -- n: 3
+      New tracecut -- tc: 0, params: 2, symbols: 1
+      Name symbol -- tc: 0, symbol: 0, name: transfer
+      Name param -- tc: 0, param: 1, name: bar
+      Name param -- tc: 0, param: 0, name: foo
+      Compile -- tc: 0, 0, transfer transfer
+      New tracecut -- tc: 1, params: 1, symbols: 3
+      Name symbol -- tc: 1, symbol: 2, name: half
+      Name symbol -- tc: 1, symbol: 1, name: double
+      Name symbol -- tc: 1, symbol: 0, name: get
+      Name param -- tc: 1, param: 0, name: bar
+      Compile -- tc: 1, 0, get double* half
+      New tracecut -- tc: 2, params: 1, symbols: 3
+      Name symbol -- tc: 2, symbol: 2, name: dec
+      Name symbol -- tc: 2, symbol: 1, name: inc
+      Name symbol -- tc: 2, symbol: 0, name: get
+      Name param -- tc: 2, param: 0, name: foo
+      Compile -- tc: 2, 0, get inc* dec
+      Beginning event -- tc: 2
+      Param -- tc: 2, symbol: 0, param: 0, value: 0x8
+      Transition event -- tc: 2, symbol: 0
+      Beginning event -- tc: 1
+      Param -- tc: 1, symbol: 0, param: 0, value: 0x16
+      Transition event -- tc: 1, symbol: 0
+      Beginning event -- tc: 2
+      Param -- tc: 2, symbol: 1, param: 0, value: 0x8
+      Transition event -- tc: 2, symbol: 1
+      Beginning event -- tc: 1
+      Param -- tc: 1, symbol: 1, param: 0, value: 0x16
+      Transition event -- tc: 1, symbol: 1
+      Beginning event -- tc: 2
+      Param -- tc: 2, symbol: 2, param: 0, value: 0x8
+      Transition event -- tc: 2, symbol: 2
+      Beginning event -- tc: 1
+      Param -- tc: 1, symbol: 2, param: 0, value: 0x16
+      Transition event -- tc: 1, symbol: 2
+      Beginning event -- tc: 0
+      Param -- tc: 0, symbol: 0, param: 0, value: 0x8
+      Param -- tc: 0, symbol: 0, param: 1, value: 0x16
+      Transition event -- tc: 0, symbol: 0
+    </output>
+  </run>
+  <plugin id="plugin-declare" source="plugin-declare.c" />
+  <run name="Tracecut declare" target="tracecut-target.c" hooks="tracecut-hooks.c">
+    <using plugin="plugin-declare" />
+    <output>
+      Init -- n: 6
+      New tracecut -- tc: 0, params: 1, symbols: 2
+      Name symbol -- tc: 0, symbol: 1, name: dec_fp
+      Name symbol -- tc: 0, symbol: 0, name: inc_fp
+      Name param -- tc: 0, param: 0, name: fp_val
+      Compile -- tc: 0, 0, inc_fp* dec_fp
+      New tracecut -- tc: 1, params: 1, symbols: 2
+      Name symbol -- tc: 1, symbol: 1, name: dec_uint
+      Name symbol -- tc: 1, symbol: 0, name: inc_uint
+      Name param -- tc: 1, param: 0, name: uint_val
+      Compile -- tc: 1, 0, inc_uint* dec_uint
+      New tracecut -- tc: 2, params: 1, symbols: 2
+      Name symbol -- tc: 2, symbol: 1, name: dec_int
+      Name symbol -- tc: 2, symbol: 0, name: inc_int
+      Name param -- tc: 2, param: 0, name: int_val
+      Compile -- tc: 2, 0, inc_int* dec_int
+      New tracecut -- tc: 3, params: 2, symbols: 1
+      Name symbol -- tc: 3, symbol: 0, name: transfer
+      Name param -- tc: 3, param: 1, name: bar
+      Name param -- tc: 3, param: 0, name: foo
+      Compile -- tc: 3, 0, transfer transfer
+      New tracecut -- tc: 4, params: 1, symbols: 3
+      Name symbol -- tc: 4, symbol: 2, name: half
+      Name symbol -- tc: 4, symbol: 1, name: double
+      Name symbol -- tc: 4, symbol: 0, name: get
+      Name param -- tc: 4, param: 0, name: bar
+      Compile -- tc: 4, 0, get double* half
+      New tracecut -- tc: 5, params: 1, symbols: 3
+      Name symbol -- tc: 5, symbol: 2, name: dec
+      Name symbol -- tc: 5, symbol: 1, name: inc
+      Name symbol -- tc: 5, symbol: 0, name: get
+      Name param -- tc: 5, param: 0, name: foo
+      Compile -- tc: 5, 0, inc* dec
+      Beginning event -- tc: 5
+      Param -- tc: 5, symbol: 0, param: 0, value: 0x8
+      Transition event -- tc: 5, symbol: 0
+      Beginning event -- tc: 5
+      Param -- tc: 5, symbol: 1, param: 0, value: 0x8
+      Transition event -- tc: 5, symbol: 1
+      Beginning event -- tc: 4
+      Param -- tc: 4, symbol: 1, param: 0, value: 0x16
+      Transition event -- tc: 4, symbol: 1
+      Beginning event -- tc: 5
+      Param -- tc: 5, symbol: 2, param: 0, value: 0x8
+      Transition event -- tc: 5, symbol: 2
+      Beginning event -- tc: 4
+      Param -- tc: 4, symbol: 2, param: 0, value: 0x16
+      Transition event -- tc: 4, symbol: 2
+      Beginning event -- tc: 3
+      Param -- tc: 3, symbol: 0, param: 0, value: 0x8
+      Param -- tc: 3, symbol: 0, param: 1, value: 0x16
+      Transition event -- tc: 3, symbol: 0
+      Beginning event -- tc: 2
+      Param -- tc: 2, symbol: 0, param: 0, value: 10
+      Transition event -- tc: 2, symbol: 0
+      Beginning event -- tc: 2
+      Param -- tc: 2, symbol: 1, param: 0, value: 10
+      Transition event -- tc: 2, symbol: 1
+      Beginning event -- tc: 1
+      Param -- tc: 1, symbol: 0, param: 0, value: 10
+      Transition event -- tc: 1, symbol: 0
+      Beginning event -- tc: 1
+      Param -- tc: 1, symbol: 1, param: 0, value: 10
+      Transition event -- tc: 1, symbol: 1
+      Beginning event -- tc: 0
+      Param -- tc: 0, symbol: 0, param: 0, value: 10.000000
+      Transition event -- tc: 0, symbol: 0
+    </output>
+  </run>
+</testcase>

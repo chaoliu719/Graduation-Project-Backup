@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE testcase SYSTEM "testcase.dtd">
+<testcase name="Float Types">
+  <plugin id="plugin-float-types" source="plugin-float-types.c" />
+  <run name="Float parameter captures" target="float-types-target.c" hooks="float-types-hooks.c">
+    <using plugin="plugin-float-types" />
+    <output>
+      ALL advice in binary32 (0.33333334326744079590, 0.33333334326744079590)
+      32 advice in binary32 (0.33333334326744079590, 0.33333334326744079590)
+      single:	0.33333334326744079590
+      ALL advice in binary64 (0.33333333333333331483, 0.33333333333333331483)
+      64 advice in binary64 (0.33333333333333331483, 0.33333333333333331483)
+      double:	0.33333333333333331483
+      128 advice in binary128 (0.33333333333333333334, 0.33333333333333333334)
+      quad:	0.33333333333333333334
+    </output>
+    <prototypes>
+      void _advice_128(signed char *, long double, long double);
+      void _advice_32(signed char *, float, float);
+      void _advice_64(signed char *, double, double);
+      void _advice_all(signed char *, ALL_FP_T, ALL_FP_T);
+    </prototypes>
+  </run>
+</testcase>

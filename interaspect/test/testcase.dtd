@@ -1,0 +1,22 @@
+<!ELEMENT testcase (plugin+, run+)>
+<!ELEMENT plugin EMPTY>
+<!ELEMENT run (using*, output, prototypes?)>
+<!ELEMENT using EMPTY>
+<!ELEMENT output (#PCDATA)>
+<!ELEMENT prototypes (#PCDATA)>
+
+<!ATTLIST testcase
+  name   CDATA #REQUIRED
+>
+<!ATTLIST plugin
+  id     CDATA #REQUIRED
+  source CDATA #REQUIRED
+>
+<!ATTLIST run
+  name   CDATA #REQUIRED
+  target CDATA #REQUIRED
+  hooks  CDATA #REQUIRED
+>
+<!ATTLIST using
+  plugin CDATA #REQUIRED
+>

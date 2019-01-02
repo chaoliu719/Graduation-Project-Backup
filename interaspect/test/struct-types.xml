@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE testcase SYSTEM "testcase.dtd">
+<testcase name="Struct, Union, and Enum Types">
+  <plugin id="plugin-struct-types" source="plugin-struct-types.c" />
+  <run name="Struct/union/enum parameter captures" target="struct-types-target.c" hooks="struct-types-hooks.c">
+    <using plugin="plugin-struct-types" />
+    <output>
+      struct advice (struct_func): 808, 8.080000 -- 808, 8.080000
+      struct: 808, 8.080000
+      union advice (union_func): -1717986918, 1.100000 -- -1717986918, 1.100000
+      union: -1717986918, 1.100000
+      enum advice (enum_func): 2, 2
+      enum: 2
+      struct * advice (struct_func_ptr): 808, 8.080000 -- 808, 8.080000
+      struct *: 808, 8.080000
+      union * advice (union_func_ptr): -1717986918, 1.100000 -- -1717986918, 1.100000
+      union: -1717986918, 1.100000
+    </output>
+    <prototypes>
+      void _advice_enum(signed char *, enum baz, enum baz);
+      void _advice_struct(signed char *, struct foo, struct foo);
+      void _advice_struct_ptr(signed char *, struct foo *, struct foo *);
+      void _advice_union(signed char *, union bar, union bar);
+      void _advice_union_ptr(signed char *, union bar *, union bar *);
+    </prototypes>
+  </run>
+</testcase>

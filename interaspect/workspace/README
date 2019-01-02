@@ -1,0 +1,10 @@
+This workspace directory is intended as a convenient way to get
+started writing InterAspect plug-ins.  Just write your plug-in as a C
+file in this directory and compile it using the included Makefile.
+The Makefile has pattern rules that let it compile any *.c into a
+lib*.so plug-in file.
+
+There is already a Hello World plug-in named hello.c.  You can compile
+it with the make command:
+
+make libhello.so

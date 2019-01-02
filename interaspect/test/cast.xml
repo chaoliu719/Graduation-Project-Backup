@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE testcase SYSTEM "testcase.dtd">
+<testcase name="Dynval Casting">
+  <plugin id="plugin-cast" source="plugin-cast.c" />
+  <run name="Integer parameter captures" target="cast-target.c" hooks="cast-hooks.c">
+    <using plugin="plugin-cast" />
+    <output>
+      In advice function: l33t
+      foo: 1337
+      In advice function: h4x0r
+      bar: 1.337000
+      In signed advice function: 10 10
+      int_val: 10 10
+      In float advice function: 0.000000 1.000000e+06
+      float_val: 10.500000 1.000000e+06  
+    </output>
+    <prototypes>
+      void _advice(ALL_POINTER_T);
+      void _advice_float(ALL_FP_T, ALL_FP_T);
+      void _advice_int(ALL_SIGNED_T, ALL_UNSIGNED_T);
+    </prototypes>
+  </run>
+</testcase>

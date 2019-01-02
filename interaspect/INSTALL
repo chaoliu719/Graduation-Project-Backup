@@ -1,0 +1,196 @@
+--------
+1. Getting GCC with plug-in support
+---
+
+In order to use plug-ins, you will need GCC 4.5, which is still too
+recent to be included in mainstream Linux distributions.
+
+InterAspect is tested with the GCC 4.5.0 release, which can be
+downloaded from http://gcc.gnu.org or checked out from:
+
+svn://gcc.gnu.org/svn/gcc/tags/gcc_4_5_0_release
+
+--------
+2. Setting up GCC
+---
+
+To get started with plug-ins, we recommend building GCC from source
+and installing it to a user directory.  InterAspect does not require
+any GCC build artifacts, but plug-ins from other sources may, so it is
+useful to keep your build directory around.  When working with these
+plug-ins, it is our convention to set up the following directory
+structure:
+
+$PLUGIN_BASE/gcc-plugin      # The GCC sources themselves
+$PLUGIN_BASE/build-plugin    # A separate directory for building GCC
+$PLUGIN_BASE/install-plugin  # A directory for the installed GCC binaries
+
+Note that for cleanliness, we keep a separate directory for building
+GCC instead of building directly in the GCC source directory.  (GCC
+might not build properly if you try to build within the source
+directory.)
+
+---
+(2a. GCC Dependencies)
+-
+
+The GCC build process includes a convenient way to deal with certain
+uncommon dependencies.  These dependencies are often not installed
+(and may even be unavailable in some package repositories).
+
+You can download the source files for the three packages listed here
+and place them directly into the GCC source directory
+($PLUGIN_BASE/gcc-plugin).
+
+1: gmp: Download the lastest version (5.0.1 as of writing) from:
+     http://gmplib.org
+   Move the untarred directory to
+     $PLUGIN_BASE/gcc-plugin/gmp
+
+2: mpfr: Download version 2.4.2 from:
+     http://www.mpfr.org/mpfr-2.4.2/
+   Move the untarred directory to
+     $PLUGIN_BASE/gcc-plugin/mpfr
+   NB: The latest version (3.0.0 as of writing) does not work
+   correctly with GCC's build process.  Make sure to go directly to
+   the 2.4.2 download link.
+
+3: mpc: Download the latest version (0.8.2 as of writing) from:
+     http://www.multiprecision.org
+   Move the untarred directory to
+     $PLUGIN_BASE/gcc-plugin/mpc
+
+Once you've placed these source directories in your GCC source
+directory, you can compile normally.  GCC will automatically roll
+these packages into compilation.  You do not need to specify any extra
+options!
+
+(If you would prefer to manually compile and install these packages or
+install them using your package manager, you can skip the instructions
+in this section.)
+
+---
+(2b. Compiling and Installing GCC)
+-
+
+Once you've set up your directory structure and dealt with
+dependencies, you can compile GCC with the usual Autoconf build
+process.  The steps are:
+
+# Perform the build from the seperate build directory
+cd $PLUGIN_BASE/build-plugin
+
+# Note that the --enable-languages flag is entirely optional.  Omit
+# the flag to compile all languages, or specify only the languages you
+# want for a faster build.
+../gcc-plugin/configure --prefix=$PLUGIN_BASE/install-plugin  \
+                        --enable-languages=c,c++
+
+# Also optional is the STAGE_CFLAGS specification, which will compile
+# GCC with debugging on.  Debugging is invaluable for diagnosing
+# plug-in problems that extend into the compiler itself.  You can omit
+# these STAGE_CFLAGS for a significantly faster compiler.
+#
+# This process will take several hours on most machines.  You can use
+# Make's -j option to parallelize your build.
+make STAGE_CFLAGS='-g -O0'
+make install
+
+--------
+3. Building InterAspect
+---
+
+InterAspect also uses Autoconf and Automake, so the build process is
+similar.  You can build it directly from the main project directory or
+from a separate build directory (as we did with GCC).
+
+[NB: If you obtained these sources from our git repository, Autotools
+is not yet set up.  Run the bootstrap.sh script before trying to
+configure and compile.  We recommend tarball source distributions for
+most users because they come with Autotools already set up.]
+
+Note that there are two GCCs involved in the InterAspect build
+process: the GCC that will compile the InterAspect source (the host
+compiler) and the GCC that will use InterAspect plug-ins (the target
+compiler).  Only the target compiler needs to be plug-in-capable; even
+older versions of GCC will work fine as the host compiler.
+
+If your host and target compilers are the same, you just need to
+specify which compiler you are using.  The configure script can get
+all the information it needs from the compiler.
+
+# Configure for host compiler = target compiler.
+./configure CC=$PLUGIN_BASE/install-plugin/bin/gcc
+
+For configurations with a separate host and target compiler, you are
+responsible for pointing the configure script to the location of the
+_target_ compiler's plug-in header files.
+
+# Alternatively: configure for host compiler = system default and
+# target compiler = plug-in-capable GCC.
+./configure --with-gcc-includes=`$PLUGIN_BASE/bin/gcc -print-file-name=plugin`/include
+
+It is probably possible (but untested) to cross compile plug-ins using
+the second kind of configuration.  The host compiler (specified with
+CC=) must be a cross compiler targeting the target compiler's host
+architecture.
+
+Once you've configured using one of the above options, compile
+normally:
+
+# Again, CFLAGS is optional.  If you intend to debug your InterAspect
+# plug-ins, we recommend compiling with these CFLAGS to turn on
+# debugging support for the InterAspect library.
+make CFLAGS='-g -O0'
+
+---
+(3a. Documentation)
+-
+
+InterAspect's public API functions are all documented with Doxygen
+comments.  You can generate HTML documentation from these comments
+with the command:
+
+make doxygen-doc
+
+If you haven't configured InterAspect, you can still generate the
+documentation by just running:
+
+doxygen
+
+Note that our Doxygen files are compatible with Doxygen 1.6 and may
+not compile correctly with newer Doxygen versions.
+
+The documentation for the most recent InterAspect release is available
+at the InterAspect web site:
+
+http://www.fsl.cs.sunysb.edu/interaspect/
+
+--------
+4. Building an InterAspect Plug-in
+---
+
+The easiest way to get started writing InterAspect plug-ins is to use
+the Makefile provided in the workspace/ directory.  Write your plug-in
+as a single C file and place it in the workspace/ directory.
+
+You can compile a plug-in named hello.c by typing:
+
+# Again, you only need the CFLAGS if you want debugging support.
+make libhello.so CFLAGS='-g -O0'
+
+This pattern will work for any *.c file.
+
+--------
+5. Using an InterAspect Plug-in
+---
+
+Once you have compiled your plug-in into a .so file, you can tell GCC
+to use it with the -fplugin option:
+
+$PLUGIN_BASE/install-plugin/bin/gcc -fplugin=path/to/libhello.so
+  -o instrumented-program file1.c file2.c
+
+All the other GCC options are the same as usual.  Also, you do not
+need to specify -fplugin for your linking step (if you have a separate
+linking step).

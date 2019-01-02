@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE testcase SYSTEM "testcase.dtd">
+
+<!-- In general, it should not be possible to instrument any statement
+  that is actually an InterAspect-inserted advice call.  There is one
+  exception: a second plug-in can instrument advice that a first
+  plug-in added. -->
+
+<testcase name="Instrumenting Advice">
+  <plugin id="plugin-reinst1" source="plugin-reinst1.c" />
+  <plugin id="plugin-reinst2" source="plugin-reinst2.c" />
+  <plugin id="plugin-reinst-dup" source="plugin-reinst-dup.c" />
+  <run name="Attempt to instrument advice" target="reinst-target.c" hooks="reinst-hooks.c">
+    <using plugin="plugin-reinst1" />
+    <output>
+      In foo advice: 1138
+      THX 1138
+    </output>
+  </run>
+  <run name="Instrument advice with second plug-in" target="reinst-target.c" hooks="reinst-hooks.c">
+    <using plugin="plugin-reinst1" />
+    <using plugin="plugin-reinst2" />
+    <output>
+      In good hook advice: 1138.
+      In foo advice: 1138
+      THX 1138
+    </output>
+  </run>
+  <run name="Attempt to instrument distributor assignment" target="reinst-dup-target.c" hooks="reinst-dup-hooks.c">
+    <using plugin="plugin-reinst-dup" />
+    <output>
+      In distributor.
+      2001: A Space Odyssey
+    </output>
+  </run>
+</testcase>

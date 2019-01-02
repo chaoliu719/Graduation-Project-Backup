@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE testcase SYSTEM "testcase.dtd">
+<testcase name="Return Values">
+  <plugin id="plugin-return" source="plugin-return.c" />
+  <run name="Capturing return value from exit join point" target="return-target.c" hooks="return-hooks.c">
+    <using plugin="plugin-return" />
+    <output>
+      In float advice: 1.200000
+      In string advice: bro
+      Don't tase me, bro.  1.200000
+    </output>
+  </run>
+</testcase>

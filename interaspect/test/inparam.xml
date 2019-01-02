@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE testcase SYSTEM "testcase.dtd">
+<testcase name="In params">
+  <plugin id="plugin-inparam" source="plugin-inparam.c" />
+  <plugin id="plugin-allpc-inparam" source="plugin-allpc-inparam.c" />
+  <run name="Entry parameter capture" target="inparam-target.c" hooks="inparam-hooks.c">
+    <using plugin="plugin-inparam" />
+    <output>
+      Foo entry advice: (12, 1.200000)
+      In foo: (12, 1.200000)
+      Foo entry advice: (34, 3.400000)
+      In foo: (34, 3.400000)
+    </output>
+    <prototypes>
+      void _advice_foo(ALL_SIGNED_T, ALL_FP_T);
+    </prototypes>
+  </run>
+  <run name="Entry parameter capture" target="allpc-inparam-target.c" hooks="allpc-inparam-hooks.c">
+    <using plugin="plugin-allpc-inparam" />
+    <output>
+      Assign advice: (12, 1.200000)
+      printf advice: (12, 1.200000)
+      In foo: (13, 1.200000)
+      Exit advice: (12, 1.200000)
+      In foo: (37, 3.000000)
+    </output>
+    <prototypes>
+      void _advice_assign(ALL_SIGNED_T, double);
+      void _advice_exit(ALL_SIGNED_T, double);
+      void _advice_printf(ALL_SIGNED_T, double);
+    </prototypes>
+  </run>
+</testcase>

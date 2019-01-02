@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE testcase SYSTEM "testcase.dtd">
+<testcase name="Constants">
+  <plugin id="plugin-constants" source="plugin-constants.c" />
+  <run name="Passing constants to advice" target="constants-target.c" hooks="constants-hooks.c">
+    <using plugin="plugin-constants" />
+    <output>
+      In advice: dead, 10, 2.500000, 0xdeadbeef, beef
+      In foo
+    </output>
+    <prototypes>
+      void _foo_advice(signed char *, int32_t, double, ALL_POINTER_T, signed char *);
+    </prototypes>
+  </run>
+</testcase>

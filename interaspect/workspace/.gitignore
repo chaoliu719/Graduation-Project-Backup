@@ -1,0 +1,9 @@
+*.c
+*.so
+
+# There are some C files included as examples that should be
+# distributed with InterAspect.
+!hello.c
+!advice_header.c
+!duplicate.c
+!fclose_tracecut.c

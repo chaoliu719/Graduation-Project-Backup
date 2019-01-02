@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE testcase SYSTEM "testcase.dtd">
+<testcase name="Duplication">
+  <plugin id="plugin-duplicate" source="plugin-duplicate.c" />
+  <run name="Duplicated function" target="duplicate-target.c" hooks="duplicate-hooks.c">
+    <using plugin="plugin-duplicate" />
+    <output>
+      In entry advice: Before distributor (line 12)
+      In distributor: 5
+      In entry advice: Zero (line 12)
+      In bar advice!
+      In bar: 10!
+      In exit advice: Zero
+      In entry advice: Before distributor (line 12)
+      In distributor: 6
+      In entry advice: One (line 12)
+      In assign advice!
+      In assign advice!
+      In bar: 10!
+      In exit advice: One
+    </output>
+    <prototypes>
+      int _distrib(ALL_SIGNED_T);
+      void _assign_advice();
+      void _bar_advice();
+      void _entry_advice(signed char *, int32_t);
+      void _exit_advice(signed char *);
+    </prototypes>
+  </run>
+</testcase>

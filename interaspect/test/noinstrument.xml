@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE testcase SYSTEM "testcase.dtd">
+<testcase name="Noinstrument">
+  <plugin id="plugin-noinstrument" source="plugin-noinstrument.c" />
+  <run name="Noinstrument attribute" target="noinstrument-target.c" hooks="noinstrument-hooks.c">
+    <using plugin="plugin-noinstrument" />
+    <output>
+      In foo() advice.
+      Call to foo().
+      Call to foo().
+    </output>
+  </run>
+</testcase>

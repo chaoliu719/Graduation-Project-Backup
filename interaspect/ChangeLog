@@ -1,0 +1,9 @@
+InterAspect 1.1
+	* tracecut.c: New Tracecut extenstion.
+	* fclose_tracecut.c: New example plug-in (using the Tracecut
+	extension).
+	* aop-type.c: Ability to "upcast" aop_type objects o "all" types.
+	* aop-weave.c: Ability to insert static inline advice functions.
+	* Integrated Doxygen into the build system.
+	* Running make install now installs all public headers to
+	$PREFIX/include

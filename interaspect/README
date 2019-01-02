@@ -1,0 +1,21 @@
+InterAspect is a program-instrumentation framework for GCC developed
+at Stony Brook University as part of the Survivable Software project.
+Using InterAspect, it is possible to write plug-ins for GCC that
+instrument compiled programs with calls to advice functions.
+
+Important files and directories:
+
+  - AUTHORS: The people to contact if you need help or if you have
+    feedback.
+  - doc/html/: Extensive documentation for the InterAspect API.  You
+    may need to run the command
+
+    doxygen
+
+    from the main InterAspect directory to generate documentation.
+  - INSTALL: Comprehensive instructions for compiling InterAspect
+    along with most of its dependencies.
+  - COPYING: Full text of InterAspect's license, the GNU General
+    Public License version 3 (GPLv3).
+  - COPYING.RUNTIME: GCC's "Runtime Exception" to the GPLv3, which
+    also applies to InterAspect.

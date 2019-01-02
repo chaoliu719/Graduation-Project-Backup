@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE testcase SYSTEM "testcase.dtd">
+<testcase name="Integer Types">
+  <plugin id="plugin-int-types" source="plugin-int-types.c" />
+  <run name="Integer parameter captures" target="int-types-target.c" hooks="int-types-hooks.c">
+    <using plugin="plugin-int-types" />
+    <output>
+      In SIGNED function s8 (114, 114)
+      In INT8 function s8 (114, 114)
+      int8: 114
+      In SIGNED function s16 (347, 347)
+      In INT16 function s16 (347, 347)
+      int16: 347
+      In SIGNED function s32 (1000000001, 1000000001)
+      In INT32 function s32 (1000000001, 1000000001)
+      int32: 1000000001
+      In SIGNED function s64 (123456789123456789, 123456789123456789)
+      In INT64 function s64 (123456789123456789, 123456789123456789)
+      int64: 123456789123456789
+      In INT128 function s128 (1, 1)
+      int128: 1
+      In UNSIGNED function u8 (114, 114)
+      In UINT8 function u8 (114, 114)
+      uint8: 114
+      In UNSIGNED function u16 (347, 347)
+      In UINT16 function u16 (347, 347)
+      uint16: 347
+      In UNSIGNED function u32 (1000000001, 1000000001)
+      In UINT32 function u32 (1000000001, 1000000001)
+      uint32: 1000000001
+      In UNSIGNED function u64 (9300000000000000000, 9300000000000000000)
+      In UINT64 function u64 (-9146744073709551616, -9146744073709551616)
+      uint64: 9300000000000000000
+      In UINT128 function u128 (1, 1)
+      uint128: 1
+    </output>
+    <prototypes>
+      void _advice_signed(signed char *, ALL_SIGNED_T, ALL_SIGNED_T);
+      void _advice_signed128(signed char *, int128_t, int128_t);
+      void _advice_signed16(signed char *, int16_t, int16_t);
+      void _advice_signed32(signed char *, int32_t, int32_t);
+      void _advice_signed64(signed char *, int64_t, int64_t);
+      void _advice_signed8(signed char *, signed char, signed char);
+      void _advice_unsigned(signed char *, ALL_UNSIGNED_T, ALL_UNSIGNED_T);
+      void _advice_unsigned128(signed char *, uint128_t, uint128_t);
+      void _advice_unsigned16(signed char *, uint16_t, uint16_t);
+      void _advice_unsigned32(signed char *, uint32_t, uint32_t);
+      void _advice_unsigned64(signed char *, uint64_t, uint64_t);
+      void _advice_unsigned8(signed char *, unsigned char, unsigned char);
+    </prototypes>
+  </run>
+</testcase>
