@@ -11,6 +11,7 @@
  */
 
 #include <aop.h>
+#include <string.h>
 
 AOP_I_AM_GPL_COMPATIBLE();
 
@@ -29,8 +30,16 @@ static void plugin_join_on_entry(struct aop_joinpoint *jp, void *data)
 
 static void plugin_join_on_exit(struct aop_joinpoint *jp, void *data)
 {
-  aop_insert_advice(jp, "_exit_advice", AOP_INSERT_BEFORE,
-		    AOP_STR_CST((const char *)data), AOP_TERM_ARG);
+  if (strcmp("Left", data) == 0)
+  {
+    aop_insert_advice(jp, "_0_advice", AOP_INSERT_BEFORE,
+                     AOP_STR_CST((const char *)data), AOP_TERM_ARG);
+  }
+  else
+  {
+    aop_insert_advice(jp, "_1_advice", AOP_INSERT_BEFORE,
+	             AOP_STR_CST((const char *)data), AOP_TERM_ARG);
+  }
 }
 
 static unsigned int plugin_duplicate()
@@ -44,8 +53,8 @@ static unsigned int plugin_duplicate()
 
   if (duplicated) {
     pc = aop_match_function_exit();
-    aop_join_on_copy(pc, 0, plugin_join_on_exit, "Left");
-    aop_join_on_copy(pc, 1, plugin_join_on_exit, "Right");
+    aop_join_on_copy(pc, 0, plugin_join_on_exit, "Exit on Left");
+    aop_join_on_copy(pc, 1, plugin_join_on_exit, "Exit on Right");
   }
 
   return 0;
