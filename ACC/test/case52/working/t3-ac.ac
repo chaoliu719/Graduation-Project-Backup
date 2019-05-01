@@ -1,0 +1,12 @@
+# 1 "t3ac-ac.c"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "t3ac-ac.c"
+struct MyStruct {
+ int x;
+};
+
+
+introduce(): intype(struct MyStruct) {
+        double f;
+}

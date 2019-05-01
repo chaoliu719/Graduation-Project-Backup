@@ -1,0 +1,9 @@
+# 1 "t1ac_ac.c"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "t1ac_ac.c"
+
+
+before() : call(void foo()) {
+ printf("aspect, before call foo \n");
+}

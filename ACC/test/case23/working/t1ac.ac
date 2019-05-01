@@ -1,0 +1,15 @@
+# 1 "t1ac_ac.c"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "t1ac_ac.c"
+typedef int INT;
+
+before (): infunc(main) && args (INT *)
+{
+ printf("match call using args (int *) \n");
+}
+
+before (): infunc(main) && args( INT )
+{
+ printf("match call using args (int ) \n");
+}

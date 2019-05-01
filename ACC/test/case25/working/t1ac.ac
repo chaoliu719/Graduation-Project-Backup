@@ -1,0 +1,9 @@
+# 1 "t1ac_ac.c"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "t1ac_ac.c"
+
+before (): infunc(main) && call (void foo(int , int , int ))
+{
+ printf("call foo in main \n");
+}

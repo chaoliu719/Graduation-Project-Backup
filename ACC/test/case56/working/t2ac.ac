@@ -1,0 +1,7 @@
+# 1 "t2ac_ac.c"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "t2ac_ac.c"
+introduce(): intype(struct X ) {
+ int c;
+}

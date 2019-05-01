@@ -1,0 +1,54 @@
+# 1 "t1ac_ac.c"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "t1ac_ac.c"
+
+struct pointcut {
+ int pointcut;
+};
+
+
+
+pointcut foo1exec() : execution(int foo1(int *, int, int));
+
+
+pointcut foo1call(int i): call(int foo1(int *, int,int)) && args(int*,i,int);
+
+
+pointcut foo2call() : call (void foo2()) ;
+
+pointcut foo2callInMain() : infunc(main) && foo2call();
+
+pointcut foo2callInfoo1() : infunc(foo1) && foo2call();
+
+
+pointcut foo3exec() : execution(void foo3());
+
+before() : foo1exec() {
+        printf("advice:before execution of foo1\n");
+}
+
+before(int j, int k): foo1call(j) && args(int *, int , k) {
+ printf("advice:before call foo1, second argu = %d, third argu = %d\n", j, k);
+}
+
+pointcut resultname(int k): result(k) ;
+
+after(int j, int m): foo1call(j) && resultname(m) {
+ printf("advice:after call foo1, second argum = %d, result = %d\n", j, m);
+
+}
+
+before() : foo2callInMain() {
+ printf("advice:before call foo2 in main\n");
+}
+
+before(): foo2callInfoo1() {
+ printf("advice:call foo2 in foo1\n");
+}
+
+void around(): foo3exec() {
+ int poincut;
+ printf("advice:around foo3 execution\n");
+ proceed();
+}

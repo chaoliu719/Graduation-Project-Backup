@@ -1,0 +1,27 @@
+# 1 "t1mc_mc.c"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "t1mc_mc.c"
+
+int main() {
+
+ int k;
+
+ __asm ( "ABC" );
+ __asm volatile ("ABC");
+ __asm ("DDD" : "ekekre" (kkekrek), "kkkere" (erew));
+ __asm ("DDD" : "ekekre" (kkekrek), "kkkere" (erew) : "ekekre" (kkekrek), "kkkere" (erew));
+ __asm ("DDD" : "ekekre" (kkekrek), "kkkere" (erew) : "ekekre" (kkekrek), "kkkere" (erew): "clob1", "clob2");
+
+
+ k = __alignof__(int);
+
+
+ k = 3 + 0x80000000;
+
+ k = 3E-2;
+ k = 3e+2;
+
+ return 0;
+}
+;

@@ -1,0 +1,14 @@
+# 1 "t1ac_ac.c"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "t1ac_ac.c"
+
+before (): infunc(main) && args (int *)
+{
+ printf("match call using args (int *) \n");
+}
+
+before (): infunc(main) && args( int )
+{
+ printf("match call using args (int ) \n");
+}

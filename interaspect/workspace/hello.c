@@ -44,6 +44,7 @@ static unsigned int hello_pass()
   struct aop_pointcut *pc;
 
   pc = aop_match_function_entry();
+  aop_filter_entry_by_name (pc, "compare");
   aop_join_on(pc, join_on_entry, NULL);
 
   return 0;

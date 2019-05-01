@@ -1,0 +1,14 @@
+make[1]: Entering directory `/aop/ACC/ACC/test/case98_fp'
+rm -rf working 
+mkdir working
+cp src/*.* working
+cd working ;  \
+        if [ x = "x" ] ; then  ACCTEST=../../../bin/acc && export ACCTEST && echo "ACCTEST is not set by user, set it to be default value ../../../bin/acc" ; fi; \
+	"$ACCTEST" t1mc.mc t1ac.acc ; \
+	cc -o myt1 t1mc.c t1ac.c -L../../../lib -lacc  ;  \
+        ./myt1  > t1.output
+ACCTEST is not set by user, set it to be default value ../../../bin/acc
+/bin/sh: 4: cc: not found
+/bin/sh: 5: ./myt1: not found
+make[1]: *** [all] Error 127
+make[1]: Leaving directory `/aop/ACC/ACC/test/case98_fp'

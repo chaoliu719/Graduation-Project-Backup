@@ -1,0 +1,18 @@
+make[1]: Entering directory `/aop/ACC/ACC/test/case01'
+rm -rf working 
+mkdir working
+cp src/*.k working
+cd working ;  \
+        cpp SelectionSort.k > SelectionSort.mc ; \
+        cpp TestAspect.k > TestAspect.ac ;  \
+        if [ x = "x" ] ; then  ACCTEST=../../../bin/acc && export ACCTEST && echo "ACCTEST is not set by user, set it to be default value ../../../bin/acc" ; fi; \
+	"$ACCTEST" -af=.ac SelectionSort.mc TestAspect.ac ; \
+	cc  -o mysort SelectionSort.c TestAspect.c  -L../../../lib -lacc  ;  \
+        ./mysort  > sort.output.real
+/bin/sh: 2: cpp: not found
+/bin/sh: 3: cpp: not found
+ACCTEST is not set by user, set it to be default value ../../../bin/acc
+/bin/sh: 6: cc: not found
+/bin/sh: 7: ./mysort: not found
+make[1]: *** [all] Error 127
+make[1]: Leaving directory `/aop/ACC/ACC/test/case01'
