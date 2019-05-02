@@ -1,4 +1,4 @@
-*.c
+*.o
 *.so
 
 # There are some C files included as examples that should be
