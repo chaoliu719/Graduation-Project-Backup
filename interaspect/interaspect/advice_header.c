@@ -30,7 +30,7 @@ static void join_on_printf(struct aop_joinpoint *jp, void *data)
   printf("aop: [%s] call [%s] [%d] %p\n", aop_get_function_name(), aop_capture_called_function_name(jp), AOP_DYNVAL(aop_capture_call_param_by_type(jp, pos, aop_t_all_unsigned())));
   printf("aop: [%s] call [%s] [%d] %p\n", aop_get_function_name(), aop_capture_called_function_name(jp), AOP_DYNVAL(aop_capture_call_param_by_type(jp, pos, aop_t_all_pointer())));
   */
-
+  
   if (int_arg == NULL) {
     /* Second argument is not a signed integer. */  
     aop_insert_advice(jp, "__printf_advice", AOP_INSERT_BEFORE, 
