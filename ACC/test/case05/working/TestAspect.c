@@ -31,6 +31,27 @@ extern void __utac__exception__cf_handler_free(void * exception);
 extern void __utac__exception__cf_handler_reset(void * exception) ; 
 extern void * __utac__error_stack_mgt(void * env , int mode, int count) ;
 
+# 1 "TestAspect.c" 
+# 1 "<built-in>" 
+# 1 "<command-line>" 
+# 2 "TestAspect.c" 
+ inline void __utac_acc__TestAspect__1(short x, int y) {
+
+
+
+#line 3 "TestAspect.c"
+printf("before execution of foo3, short = %d, int = %d\n", x, y); }
+
+ 
+#line 8 "TestAspect.c"
+ inline void __utac_acc__TestAspect__2(short x, int y) {
+
+
+
+#line 9 "TestAspect.c"
+printf("before call of foo3, short = %d, int = %d\n", x, y); }
+
+ 
 
 
 

@@ -1,6 +1,6 @@
 LIBACC=-L../../../lib -lacc
-CPP=cpp
-CC=cc
+CPP=gcc -E
+CC=gcc
 
 
 all:

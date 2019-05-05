@@ -31,6 +31,27 @@ extern void __utac__exception__cf_handler_free(void * exception);
 extern void __utac__exception__cf_handler_reset(void * exception) ; 
 extern void * __utac__error_stack_mgt(void * env , int mode, int count) ;
 
+# 1 "t1ac.c" 
+# 1 "<built-in>" 
+# 1 "<command-line>" 
+# 3 "t1ac.c" 
+ inline void __utac_acc__t1ac__1(void) { 
+
+
+
+#line 4 "t1ac.c"
+printf("match all foo3 in main of t1mc.c \n"); }
+
+ 
+#line 8 "t1ac.c"
+ inline void __utac_acc__t1ac__2(void) { 
+
+
+
+#line 9 "t1ac.c"
+printf("match call foo3 in t2mc.c\n"); }
+
+ 
 
 
 

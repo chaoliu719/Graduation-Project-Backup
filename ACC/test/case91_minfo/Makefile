@@ -8,7 +8,7 @@ all:
 	mkdir working
 	cp src/*.*c working
 	cd working ;  \
-        if [ ${ACCTEST}x = "x" ] ; then  ACCTEST=acc && export ACCTEST && echo "ACCTEST is not set by user, set it to be default value ../../../bin/acc" ; fi; \
+        if [ ${ACCTEST}x = "x" ] ; then  ACCTEST=../../../bin/acc && export ACCTEST && echo "ACCTEST is not set by user, set it to be default value ../../../bin/acc" ; fi; \
 	"$$ACCTEST" -m t1ac.acc t2ac.acc t1mc.mc > output_std_1 ; \
 	"$$ACCTEST" -m=outfile_1 t1ac.acc t2ac.acc t1mc.mc ; \
         "$$ACCTEST" --matchinfo t1ac.acc t2ac.acc t1mc.mc > output_std_2 ; \

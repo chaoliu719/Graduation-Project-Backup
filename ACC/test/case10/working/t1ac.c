@@ -33,4 +33,28 @@ extern void * __utac__error_stack_mgt(void * env , int mode, int count) ;
 
 
 
+# 1 "t1ac.c" 
+# 1 "<built-in>" 
+# 1 "<command-line>" 
+# 1 "t1ac.c" 
+ inline int __utac_acc__t1ac__1(   struct JoinPoint *  this  )  {
+ 
+
+
+#line 2 "t1ac.c"
+
+#line 2 "t1ac.c"
+int k;
+#line 3 "t1ac.c"
+
+#line 3 "t1ac.c"
+int temp = 3;
+#line 5 "t1ac.c"
+printf("in around aspect \n"); 
+#line 7 "t1ac.c"
+return temp + (** (int **)(this->fp(this)) ) ; }
+
+ 
+
+
 

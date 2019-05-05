@@ -31,6 +31,24 @@ extern void __utac__exception__cf_handler_free(void * exception);
 extern void __utac__exception__cf_handler_reset(void * exception) ; 
 extern void * __utac__error_stack_mgt(void * env , int mode, int count) ;
 
+# 1 "t2_ac.c" 
+# 1 "<built-in>" 
+# 1 "<command-line>" 
+# 1 "t2_ac.c" 
+int mp; 
+#line 3 "t2_ac.c"
+void foo(int a); 
+#line 5 "t2_ac.c"
+int foo2(); 
+#line 7 "t2_ac.c"
+char *foo3(double a); 
+#line 9 "t2_ac.c"
+static void foo4(); 
+#line 13 "t2_ac.c"
+struct A {int b; 
+}a; 
+#line 15 "t2_ac.c"
+static struct A ab; 
 
 
 

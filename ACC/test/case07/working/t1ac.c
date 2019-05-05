@@ -31,6 +31,27 @@ extern void __utac__exception__cf_handler_free(void * exception);
 extern void __utac__exception__cf_handler_reset(void * exception) ; 
 extern void * __utac__error_stack_mgt(void * env , int mode, int count) ;
 
+# 1 "t1ac.c" 
+# 1 "<built-in>" 
+# 1 "<command-line>" 
+# 1 "t1ac.c" 
+ inline void __utac_acc__t1ac__1(int x, int y) {
+
+
+
+#line 3 "t1ac.c"
+printf("after fct function execution, parameter = %d, result = %d \n", y, x); }
+
+ 
+#line 6 "t1ac.c"
+ inline void __utac_acc__t1ac__2(int x, int y) {
+
+
+
+#line 8 "t1ac.c"
+printf("after fct function call, parameter = %d, result = %d \n", y, x); }
+
+ 
 
 
 

@@ -1,7 +1,7 @@
-# 1 "/aop/ACC/ACC/src/.acc_dir/matchaa_ac.c"
+# 1 "/aop/Graduation-Project-Backup/ACC/src/.acc_dir/matchaa_ac.c"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/aop/ACC/ACC/src/.acc_dir/matchaa_ac.c"
+# 1 "/aop/Graduation-Project-Backup/ACC/src/.acc_dir/matchaa_ac.c"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 27 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -833,7 +833,7 @@ extern int ftrylockfile (FILE *__stream) __attribute__ ((__nothrow__ )) ;
 extern void funlockfile (FILE *__stream) __attribute__ ((__nothrow__ ));
 # 943 "/usr/include/stdio.h" 3 4
 
-# 2 "/aop/ACC/ACC/src/.acc_dir/matchaa_ac.c" 2
+# 2 "/aop/Graduation-Project-Backup/ACC/src/.acc_dir/matchaa_ac.c" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 32 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include/stddef.h" 1 3 4
@@ -1872,7 +1872,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
 # 956 "/usr/include/stdlib.h" 2 3 4
 # 968 "/usr/include/stdlib.h" 3 4
 
-# 3 "/aop/ACC/ACC/src/.acc_dir/matchaa_ac.c" 2
+# 3 "/aop/Graduation-Project-Backup/ACC/src/.acc_dir/matchaa_ac.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 27 "/usr/include/string.h" 3 4
 
@@ -2122,7 +2122,7 @@ extern char *stpncpy (char *__restrict __dest,
      __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1, 2)));
 # 644 "/usr/include/string.h" 3 4
 
-# 4 "/aop/ACC/ACC/src/.acc_dir/matchaa_ac.c" 2
+# 4 "/aop/Graduation-Project-Backup/ACC/src/.acc_dir/matchaa_ac.c" 2
 # 1 "./pointcut.h" 1
 # 29 "./pointcut.h"
 # 1 "./symboltable.h" 1
@@ -2516,13 +2516,13 @@ void free_cflowTable(struct CFlowRecord *);
 void free_tryTable(struct TryRecord *);
 
 char * checkContextExposureInCflow(struct Record *pc, char * fName, int * index);
-# 5 "/aop/ACC/ACC/src/.acc_dir/matchaa_ac.c" 2
+# 5 "/aop/Graduation-Project-Backup/ACC/src/.acc_dir/matchaa_ac.c" 2
 # 1 "./gen.h" 1
 typedef struct {long attr[2];} yyATTRIBUTES;
 
 extern yyATTRIBUTES yylval;
-# 6 "/aop/ACC/ACC/src/.acc_dir/matchaa_ac.c" 2
-# 17 "/aop/ACC/ACC/src/.acc_dir/matchaa_ac.c"
+# 6 "/aop/Graduation-Project-Backup/ACC/src/.acc_dir/matchaa_ac.c" 2
+# 17 "/aop/Graduation-Project-Backup/ACC/src/.acc_dir/matchaa_ac.c"
 extern void outputLine(char *, char );
 
 extern char * mc_suffix;
@@ -2643,7 +2643,7 @@ void createTmpAdFile(char * tmpfile, char * srcfile) {
   if((strstr(oneLine, "/* UTAC__ADVICEFUNCDECL__BEGIN__ */") && !strstr(oneLine, "\"/* UTAC__ADVICEFUNCDECL__BEGIN__ */\""))) {
 
    p1 = strstr(oneLine, "inline");
-       ((p1) ? (void) (0) : __assert_fail ("p1", "/aop/ACC/ACC/src/.acc_dir/matchaa_ac.c", 137, __PRETTY_FUNCTION__));
+       ((p1) ? (void) (0) : __assert_fail ("p1", "/aop/Graduation-Project-Backup/ACC/src/.acc_dir/matchaa_ac.c", 137, __PRETTY_FUNCTION__));
      p1 += strlen("inline");
    modifyADFuncPrefix(p1);
    outputLine(p1, 1);
@@ -2678,7 +2678,7 @@ void createTmpSrcFile(char * tmpfile, char * srcfile) {
                 if((strstr(oneLine, "/* UTAC__ADVICEFUNCDECL__BEGIN__ */") && !strstr(oneLine, "\"/* UTAC__ADVICEFUNCDECL__BEGIN__ */\""))) {
 
                         p1 = strstr(oneLine, "*/");
-                        ((p1) ? (void) (0) : __assert_fail ("p1", "/aop/ACC/ACC/src/.acc_dir/matchaa_ac.c", 172, __PRETTY_FUNCTION__));
+                        ((p1) ? (void) (0) : __assert_fail ("p1", "/aop/Graduation-Project-Backup/ACC/src/.acc_dir/matchaa_ac.c", 172, __PRETTY_FUNCTION__));
                         p1 += 2;
                         outputLine(p1,1);
                 }else if((strstr(oneLine, "/* UTAC__ADVICEFUNCDECL__END__ */") && !strstr(oneLine, "\"/* UTAC__ADVICEFUNCDECL__END__ */\"")) ||
@@ -2759,7 +2759,7 @@ void modifyADFuncPrefix(char * s) {
         if(p) {
 
                 *p = (*p) + 1;
-                (((*p) < 'z' && (*p) > 'a') ? (void) (0) : __assert_fail ("(*p) < 'z' && (*p) > 'a'", "/aop/ACC/ACC/src/.acc_dir/matchaa_ac.c", 253, __PRETTY_FUNCTION__));
+                (((*p) < 'z' && (*p) > 'a') ? (void) (0) : __assert_fail ("(*p) < 'z' && (*p) > 'a'", "/aop/Graduation-Project-Backup/ACC/src/.acc_dir/matchaa_ac.c", 253, __PRETTY_FUNCTION__));
         }
 }
 

@@ -1,16 +1,16 @@
 LIBACC=-L../../../lib -lacc
-CPP=cpp
-CC=cc
+CPP=gcc -E
+CC=gcc
 
 
 all:
 	rm -rf working
 	mkdir working
-	cp src/*.k working
+	cp src/*.c working
 	cd working ; \
-	$(CPP) b-bug.k > b-bug.mc ; \
-	$(CPP) b+bug.k > b+bug.mc ; \
-	$(CPP) bAspect.k > bAspect.ac ;  \
+	$(CPP) b-bug.c > b-bug.mc ; \
+	$(CPP) b+bug.c > b+bug.mc ; \
+	$(CPP) bAspect.c > bAspect.ac ;  \
         if [ ${ACCTEST}x = "x" ] ; then  ACCTEST=../../../bin/acc && export ACCTEST && echo "ACCTEST is not set by user, set it to be default value ../../../bin/acc" ; fi; \
 	"$$ACCTEST" -af=.ac b-bug.mc bAspect.ac ; \
 	${CC}  -o myb b-bug.c bAspect.c  ${LIBACC}  ;  \

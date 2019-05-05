@@ -4357,7 +4357,7 @@ firstcolptr = bufptr; }
 
 CurLine--; 
 
-(((lastPreFilePosIndex <= (50 - 2))?((void )(0)):__assert_fail("lastPreFilePosIndex <= (50-2)", "/aop/ACC/ACC/src/lexer.c", 701, __PRETTY_FUNCTION__))); 
+(((lastPreFilePosIndex <= (50 - 2))?((void )(0)):__assert_fail("lastPreFilePosIndex <= (50-2)", "/aop/Graduation-Project-Backup/ACC/src/lexer.c", 701, __PRETTY_FUNCTION__))); 
 
 preFilePos[(++lastPreFilePosIndex)] = create_file_pos(CurFileNo, CurLine); } }else{
 { 
@@ -5440,7 +5440,7 @@ printf("fileno = %lu, lineno = %lu \n", fileno, lineno);
 
 printf("abc = %lu\n", abc); 
 
-(((0)?((void )(0)):__assert_fail("0", "/aop/ACC/ACC/src/lexer.c", 1179, __PRETTY_FUNCTION__))); } }
+(((0)?((void )(0)):__assert_fail("0", "/aop/Graduation-Project-Backup/ACC/src/lexer.c", 1179, __PRETTY_FUNCTION__))); } }
 
 
 retValue_acc = abc;
@@ -5485,7 +5485,7 @@ unsigned long fileno = filep;
 
 struct file_chain *oldFile = number_to_file(fileno);
 
-(((oldFile)?((void )(0)):__assert_fail("oldFile", "/aop/ACC/ACC/src/lexer.c", 1195, __PRETTY_FUNCTION__))); 
+(((oldFile)?((void )(0)):__assert_fail("oldFile", "/aop/Graduation-Project-Backup/ACC/src/lexer.c", 1195, __PRETTY_FUNCTION__))); 
 
 p = ((struct file_chain *)malloc(sizeof (struct file_chain ))); 
 
