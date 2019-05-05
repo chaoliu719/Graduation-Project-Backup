@@ -1,0 +1,43 @@
+#ifndef __qsort_ah__
+#define __qsort_ah__
+
+#include <stdio.h>
+#include <math.h>
+
+static int lines = 0;
+static int compare_cnt = 0;
+
+aspect qsort_aspect {
+
+  // Do not measure the Qsort's own methods
+  pointcut dontMeasure () = "% ...::%(...)" ||
+    "% qsort_aspect::...::%(...)";
+
+  // pointcut: to be specified in a derived aspect
+  pointcut compareFct () = "% ...::compare(...)";
+
+  advice execution(compareFct() && !dontMeasure()) : before() {
+    compare_cnt++;
+  };
+
+  advice call("void qsort(...)") : around() {
+    lines = *(int *)(tjp->arg(1));
+    tjp->proceed();
+    
+    double x = (double)compare_cnt;
+    double n = (double)lines;
+
+    if (n == 0)
+    {   
+        return;
+    }
+
+    double lgn = log2(n);
+    double r = 100.0 - (x - n * lgn) * 100 / (n * (n - lgn));
+
+    // 效率: nlgn = 100%, n^2 = 0%
+    fprintf(stderr, "效率[%.3f], 比较次数[%d], 总数[%d]\n", r, compare_cnt, lines);
+  };
+};
+
+#endif
