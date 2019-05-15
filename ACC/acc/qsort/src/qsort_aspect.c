@@ -1,22 +1,22 @@
 #include <stdio.h>
 #include <math.h>
 
-size_t lines = 0;
-size_t compare_cnt = 0;
+static size_t lines = 0;
+static size_t compare_cnt = 0;
 
-void __inc_compare_cnt()
-{
+
+before(): execution($ compare(...)){
     compare_cnt++;
 }
 
 
-void __cal_total_lines(size_t count)
-{
-    lines = count;
+before(size_t nitems): call(void qsort(...)) && args($, nitems, ...){
+    lines = nitems;
+
+ 
 }
 
-void __cal_rate()
-{
+after(): call(void qsort(...)){
     double x = (double)compare_cnt;
     double n = (double)lines;
 
