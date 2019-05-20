@@ -1,0 +1,37 @@
+
+-----------Call Stack-----------
+dijkstra()
+|-init_nodes()
+|-neighbor()
+|-print_path()
+  |-print_path()
+    |-print_path()
+      |-print_path()
+        |-print_path()
+dijkstra()
+|-init_nodes()
+|-neighbor()
+|-print_path()
+  |-print_path()
+    |-print_path()
+      |-print_path()
+        |-print_path()
+          |-print_path()
+            |-print_path()
+              |-print_path()
+                |-print_path()
+                  |-print_path()
+                    |-print_path()
+                      |-print_path()
+                        |-print_path()
+                          |-print_path()
+                            |-print_path()
+
+-----------Profiling-----------
+  dijkstra: call     2 times,    149.190ms total
+init_nodes: call     2 times,      0.011ms total
+  neighbor: call     2 times,    147.837ms total
+   enqueue: call  1634 times,      5.589ms total
+   dequeue: call  1634 times,      1.681ms total
+    qcount: call  1636 times,      1.285ms total
+print_path: call    20 times,      7.420ms total

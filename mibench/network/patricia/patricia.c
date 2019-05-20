@@ -327,9 +327,13 @@ pat_search(unsigned long key, struct ptree *head)
 		/*
 		 * Keep track of most complete match so far.
 		 */
-		if (t->p_key == (key & t->p_m->pm_mask)) {
-			p = t;
+		for (i = 0; i < t->p_mlen; i++)
+		{
+			if (t->p_key == (key & t->p_m[i].pm_mask)) {
+				p = t;
+			}
 		}
+
 		
 		i = t->p_b;
 		t = bit(t->p_b, key) ? t->p_right : t->p_left;
@@ -339,5 +343,11 @@ pat_search(unsigned long key, struct ptree *head)
 	 * Compare keys (and masks) to see if this
 	 * is really the node we want.
 	 */
-	return (t->p_key == (key & t->p_m->pm_mask)) ? t : p;
+	for (i = 0; i < t->p_mlen; i++)
+	{
+		if (t->p_key == (key & t->p_m[i].pm_mask)) {
+			return t;
+		}
+	}
+	return p;
 }

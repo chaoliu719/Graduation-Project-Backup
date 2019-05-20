@@ -82,7 +82,7 @@ static struct ptree * malloc_ptree()
 		perror("Allocating p-trie mask's node data");
 		exit(0);
 	}
-	bzero(pm->pm_data, sizeof(*pm->pm_data));
+	bzero(pm->pm_data, sizeof(*(struct ExtendNode *)(pm->pm_data)));
 	return p;
 }
 
@@ -104,12 +104,12 @@ static int match(struct ptree *pfind, struct in_addr addr, struct in_addr *min_m
 	return found;
 }
 
-static int more_than_all_mask(struct in_addr new, struct ptree *pfind)
+static int more_than_all_mask(struct in_addr new_addr, struct ptree *pfind)
 {
 	int i;
 	for (i = 0; i < pfind->p_mlen; i++)
 	{
-		if (new.s_addr <= pfind->p_m[i].pm_mask)
+		if (new_addr.s_addr <= pfind->p_m[i].pm_mask)
 			return 0;
 	}
 	return 1;

@@ -1,0 +1,37 @@
+#ifndef __patricia_ah__
+#define __patricia_ah__
+
+#include "patricia.h"
+#include "patricia_advice.h"
+
+#include <stdio.h>
+
+aspect patricia_aspect {
+
+  // Do not measure the patricia's own methods
+  pointcut dontMeasure () = "% patricia_aspect::...::%(...)";
+
+  // pointcut: to be specified in a derived aspect
+  pointcut insertFct () = "% ...::pat_insert(...)";
+  pointcut removeFct () = "% ...::pat_remove(...)";
+
+  advice call(insertFct() && !dontMeasure()) : around() {
+    struct ptree * phead = NULL;
+    phead = *(struct ptree **)(tjp->arg(1));
+
+    tjp->proceed();
+
+    __print_tree((struct ptree *)phead);
+  };
+
+  advice call(removeFct() && !dontMeasure()) : around() {
+    struct ptree * phead = NULL;
+    phead = *(struct ptree **)(tjp->arg(1));
+
+    tjp->proceed();
+
+    __print_tree((struct ptree *)phead);
+  };
+};
+
+#endif

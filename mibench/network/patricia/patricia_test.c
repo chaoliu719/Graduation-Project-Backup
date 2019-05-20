@@ -55,8 +55,7 @@ struct ExtendNode
 	double bar;
 };
 
-struct ptree *
-malloc_ptree()
+static struct ptree * malloc_ptree()
 {
 	struct ptree *p;
 	struct ptree_mask *pm;
@@ -87,6 +86,35 @@ malloc_ptree()
 	return p;
 }
 
+/* if addr match pfind ? return 1 and set min_mask : return 0 */
+static int match(struct ptree *pfind, struct in_addr addr, struct in_addr *min_mask)
+{
+	int i;
+	int found = 0;
+	min_mask->s_addr = 0xffffffff;
+
+	/* We want more precise network, so we shoule find min mask*/
+	for (i = 0; i < pfind->p_mlen; i++)
+	{
+		if (pfind->p_key == (addr.s_addr & pfind->p_m[i].pm_mask) && min_mask->s_addr >= pfind->p_m[i].pm_mask) {
+			min_mask->s_addr = pfind->p_m[i].pm_mask;
+			found = 1;
+		}
+	}
+	return found;
+}
+
+static int more_than_all_mask(struct in_addr new, struct ptree *pfind)
+{
+	int i;
+	for (i = 0; i < pfind->p_mlen; i++)
+	{
+		if (new.s_addr <= pfind->p_m[i].pm_mask)
+			return 0;
+	}
+	return 1;
+}
+
 int main(int argc, char **argv)
 {
 	struct ptree *phead;
@@ -98,6 +126,7 @@ int main(int argc, char **argv)
 	char mask_str[16];
 	struct in_addr addr;
 	struct in_addr mask;
+	struct in_addr network;
 	float time;
 
 	if (argc < 2)
@@ -147,6 +176,8 @@ int main(int argc, char **argv)
 		sscanf(line, "%f %s %s", &time, (char *)&addr_str, (char *)&mask_str);
 		inet_aton(addr_str, &addr);
 		inet_aton(mask_str, &mask);
+		addr.s_addr = htonl(addr.s_addr);
+		mask.s_addr = htonl(mask.s_addr);
 
 		/*
 		 * Create a Patricia trie node to insert.
@@ -158,12 +189,16 @@ int main(int argc, char **argv)
 		 * node.
 		 */
 		p->p_key = addr.s_addr; /* Network-byte order */
-		p->p_m->pm_mask = mask.s_addr;
+		p->p_m->pm_mask = mask.s_addr; /* Network-byte order */
+		p->p_mlen++;
 
 		pfind = pat_search(addr.s_addr, phead);
-		if (pfind != phead && pfind->p_key == (addr.s_addr & pfind->p_m->pm_mask))
+		if (pfind != phead && match(pfind, addr, &network) && !more_than_all_mask(mask, pfind))
 		{
-			printf("Found %s in %f.\n", inet_ntoa(addr), time);
+			addr.s_addr = ntohl(addr.s_addr);
+			network.s_addr = ntohl(network.s_addr);
+			printf("Found %s ", inet_ntoa(addr));
+			printf("%s in %f.\n", inet_ntoa(network), time);
 		}
 		else
 		{
@@ -172,6 +207,8 @@ int main(int argc, char **argv)
 		 	* Returns the node it inserted on success, 0 on failure.
 		 	*/
 		 	addr.s_addr &= mask.s_addr;
+			addr.s_addr = ntohl(addr.s_addr);
+			mask.s_addr = ntohl(mask.s_addr);
 			printf("Insert %s ", inet_ntoa(addr));
 			printf("%s.\n", inet_ntoa(mask));
 			p = pat_insert(p, phead);

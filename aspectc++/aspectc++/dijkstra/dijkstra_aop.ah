@@ -1,0 +1,41 @@
+#ifndef __dijkstra_ah__
+#define __dijkstra_ah__
+
+#include <stdio.h>
+#include <assert.h>
+#include <string.h>
+
+#include "dijkstra_advice.h"
+
+aspect dijkstra_aspect {
+
+  // Do not measure the dijkstra's own methods
+  pointcut dontMeasure () = "% dijkstra_aspect::...::%(...)";
+
+  // pointcut: to be specified in a derived aspect
+  pointcut mainFct () = "% ...::main(...)";
+
+  advice execution(mainFct()) : around() {
+     __init_head();
+    tjp->proceed();
+    __print_profiling();
+  };
+
+  advice cflow(execution(mainFct())) && call("% ...::%(...)"): before() {
+    if (strncmp("dijkstra.c", JoinPoint::filename(), strlen("dijkstra.c")) == 0)
+    {
+        const char *func_name = JoinPoint::signature();
+        __before_call(func_name);
+    }
+  };
+
+  advice cflow(execution(mainFct())) && call("% ...::%(...)"): after() {
+    if (strncmp("dijkstra.c", JoinPoint::filename(), strlen("dijkstra.c")) == 0)
+    {
+       const char *func_name = JoinPoint::signature();
+        __after_call(func_name);
+    }
+  };
+};
+
+#endif
