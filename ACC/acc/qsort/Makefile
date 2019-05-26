@@ -4,7 +4,7 @@ CPP=gcc -E
 CC=gcc
 
 LDFLAGS := -lm
-CXXFLAGS := -static -O3 
+CXXFLAGS := -static -O2 
 
 qsort_small:
 	rm -rf working 

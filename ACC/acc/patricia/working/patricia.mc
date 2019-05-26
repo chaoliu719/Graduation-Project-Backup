@@ -1,5 +1,4 @@
 # 1 "patricia.c"
-# 1 "/aop/Graduation-Project-Backup/ACC/acc/patricia/working//"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "patricia.c"
@@ -259,26 +258,26 @@ __extension__ typedef struct
 
 
 # 139 "/usr/include/stdlib.h" 3 4
-extern size_t __ctype_get_mb_cur_max (void) __attribute__ ((__nothrow__ )) ;
+extern size_t __ctype_get_mb_cur_max (void) __attribute__ ((__nothrow__ )) __attribute__ ((__warn_unused_result__));
 
 
 
 
 extern double atof (const char *__nptr)
-     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) __attribute__ ((__warn_unused_result__));
 
 extern int atoi (const char *__nptr)
-     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) __attribute__ ((__warn_unused_result__));
 
 extern long int atol (const char *__nptr)
-     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) __attribute__ ((__warn_unused_result__));
 
 
 
 
 
 __extension__ extern long long int atoll (const char *__nptr)
-     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) __attribute__ ((__warn_unused_result__));
 
 
 
@@ -338,12 +337,34 @@ extern unsigned long long int strtoull (const char *__restrict __nptr,
      char **__restrict __endptr, int __base)
      __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1)));
 
+# 276 "/usr/include/stdlib.h" 3 4
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+__attribute__ ((__nothrow__ )) atoi (const char *__nptr)
+{
+  return (int) strtol (__nptr, (char **) ((void *)0), 10);
+}
+extern __inline __attribute__ ((__gnu_inline__)) long int
+__attribute__ ((__nothrow__ )) atol (const char *__nptr)
+{
+  return strtol (__nptr, (char **) ((void *)0), 10);
+}
+
+
+
+
+__extension__ extern __inline __attribute__ ((__gnu_inline__)) long long int
+__attribute__ ((__nothrow__ )) atoll (const char *__nptr)
+{
+  return strtoll (__nptr, (char **) ((void *)0), 10);
+}
+
 # 305 "/usr/include/stdlib.h" 3 4
-extern char *l64a (long int __n) __attribute__ ((__nothrow__ )) ;
+extern char *l64a (long int __n) __attribute__ ((__nothrow__ )) __attribute__ ((__warn_unused_result__));
 
 
 extern long int a64l (const char *__s)
-     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) __attribute__ ((__warn_unused_result__));
 
 
 
@@ -559,7 +580,19 @@ extern int pselect (int __nfds, fd_set *__restrict __readfds,
       fd_set *__restrict __exceptfds,
       const struct timespec *__restrict __timeout,
       const __sigset_t *__restrict __sigmask);
-# 131 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/select2.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/select2.h" 3 4
+extern long int __fdelt_chk (long int __d);
+extern long int __fdelt_warn (long int __d)
+  __attribute__((__warning__ ("bit outside of fd_set selected")));
+# 129 "/usr/include/x86_64-linux-gnu/sys/select.h" 2 3 4
+
+
 
 # 220 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
 
@@ -578,7 +611,28 @@ __extension__
 extern unsigned long long int gnu_dev_makedev (unsigned int __major,
             unsigned int __minor)
      __attribute__ ((__nothrow__ )) __attribute__ ((__const__));
-# 58 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 3 4
+
+
+__extension__ extern __inline __attribute__ ((__gnu_inline__)) __attribute__ ((__const__)) unsigned int
+__attribute__ ((__nothrow__ )) gnu_dev_major (unsigned long long int __dev)
+{
+  return ((__dev >> 8) & 0xfff) | ((unsigned int) (__dev >> 32) & ~0xfff);
+}
+
+__extension__ extern __inline __attribute__ ((__gnu_inline__)) __attribute__ ((__const__)) unsigned int
+__attribute__ ((__nothrow__ )) gnu_dev_minor (unsigned long long int __dev)
+{
+  return (__dev & 0xff) | ((unsigned int) (__dev >> 12) & ~0xff);
+}
+
+__extension__ extern __inline __attribute__ ((__gnu_inline__)) __attribute__ ((__const__)) unsigned long long int
+__attribute__ ((__nothrow__ )) gnu_dev_makedev (unsigned int __major, unsigned int __minor)
+{
+  return ((__minor & 0xff) | ((__major & 0xfff) << 8)
+   | (((unsigned long long int) (__minor & ~0xff)) << 12)
+   | (((unsigned long long int) (__major & ~0xfff)) << 32));
+}
+
 
 # 223 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
 
@@ -903,10 +957,10 @@ extern int lcong48_r (unsigned short int __param[7],
 
 
 
-extern void *malloc (size_t __size) __attribute__ ((__nothrow__ )) __attribute__ ((__malloc__)) ;
+extern void *malloc (size_t __size) __attribute__ ((__nothrow__ )) __attribute__ ((__malloc__)) __attribute__ ((__warn_unused_result__));
 
 extern void *calloc (size_t __nmemb, size_t __size)
-     __attribute__ ((__nothrow__ )) __attribute__ ((__malloc__)) ;
+     __attribute__ ((__nothrow__ )) __attribute__ ((__malloc__)) __attribute__ ((__warn_unused_result__));
 
 
 
@@ -953,13 +1007,13 @@ extern void *alloca (size_t __size) __attribute__ ((__nothrow__ ));
 
 
 
-extern void *valloc (size_t __size) __attribute__ ((__nothrow__ )) __attribute__ ((__malloc__)) ;
+extern void *valloc (size_t __size) __attribute__ ((__nothrow__ )) __attribute__ ((__malloc__)) __attribute__ ((__warn_unused_result__));
 
 
 
 
 extern int posix_memalign (void **__memptr, size_t __alignment, size_t __size)
-     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1))) ;
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1))) __attribute__ ((__warn_unused_result__));
 # 513 "/usr/include/stdlib.h" 3 4
 
 
@@ -1003,7 +1057,7 @@ extern void _Exit (int __status) __attribute__ ((__nothrow__ )) __attribute__ ((
 
 
 
-extern char *getenv (const char *__name) __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1))) ;
+extern char *getenv (const char *__name) __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1))) __attribute__ ((__warn_unused_result__));
 
 # 578 "/usr/include/stdlib.h" 3 4
 extern int putenv (char *__string) __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1)));
@@ -1027,22 +1081,22 @@ extern int clearenv (void) __attribute__ ((__nothrow__ ));
 # 606 "/usr/include/stdlib.h" 3 4
 extern char *mktemp (char *__template) __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1)));
 # 620 "/usr/include/stdlib.h" 3 4
-extern int mkstemp (char *__template) __attribute__ ((__nonnull__ (1))) ;
+extern int mkstemp (char *__template) __attribute__ ((__nonnull__ (1))) __attribute__ ((__warn_unused_result__));
 # 642 "/usr/include/stdlib.h" 3 4
-extern int mkstemps (char *__template, int __suffixlen) __attribute__ ((__nonnull__ (1))) ;
+extern int mkstemps (char *__template, int __suffixlen) __attribute__ ((__nonnull__ (1))) __attribute__ ((__warn_unused_result__));
 # 663 "/usr/include/stdlib.h" 3 4
-extern char *mkdtemp (char *__template) __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1))) ;
+extern char *mkdtemp (char *__template) __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1))) __attribute__ ((__warn_unused_result__));
 # 712 "/usr/include/stdlib.h" 3 4
 
 
 
 
 
-extern int system (const char *__command) ;
+extern int system (const char *__command) __attribute__ ((__warn_unused_result__));
 
 # 734 "/usr/include/stdlib.h" 3 4
 extern char *realpath (const char *__restrict __name,
-         char *__restrict __resolved) __attribute__ ((__nothrow__ )) ;
+         char *__restrict __resolved) __attribute__ ((__nothrow__ )) __attribute__ ((__warn_unused_result__));
 
 
 
@@ -1056,10 +1110,37 @@ typedef int (*__compar_fn_t) (const void *, const void *);
 
 extern void *bsearch (const void *__key, const void *__base,
         size_t __nmemb, size_t __size, __compar_fn_t __compar)
-     __attribute__ ((__nonnull__ (1, 2, 5))) ;
+     __attribute__ ((__nonnull__ (1, 2, 5))) __attribute__ ((__warn_unused_result__));
 
 
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h" 1 3 4
+# 19 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h" 3 4
+extern __inline __attribute__ ((__gnu_inline__)) void *
+bsearch (const void *__key, const void *__base, size_t __nmemb, size_t __size,
+  __compar_fn_t __compar)
+{
+  size_t __l, __u, __idx;
+  const void *__p;
+  int __comparison;
 
+  __l = 0;
+  __u = __nmemb;
+  while (__l < __u)
+    {
+      __idx = (__l + __u) / 2;
+      __p = (void *) (((const char *) __base) + (__idx * __size));
+      __comparison = (*__compar) (__key, __p);
+      if (__comparison < 0)
+ __u = __idx;
+      else if (__comparison > 0)
+ __l = __idx + 1;
+      else
+ return (void *) __p;
+    }
+
+  return ((void *)0);
+}
+# 761 "/usr/include/stdlib.h" 2 3 4
 
 
 
@@ -1067,13 +1148,13 @@ extern void *bsearch (const void *__key, const void *__base,
 extern void qsort (void *__base, size_t __nmemb, size_t __size,
      __compar_fn_t __compar) __attribute__ ((__nonnull__ (1, 4)));
 # 775 "/usr/include/stdlib.h" 3 4
-extern int abs (int __x) __attribute__ ((__nothrow__ )) __attribute__ ((__const__)) ;
-extern long int labs (long int __x) __attribute__ ((__nothrow__ )) __attribute__ ((__const__)) ;
+extern int abs (int __x) __attribute__ ((__nothrow__ )) __attribute__ ((__const__)) __attribute__ ((__warn_unused_result__));
+extern long int labs (long int __x) __attribute__ ((__nothrow__ )) __attribute__ ((__const__)) __attribute__ ((__warn_unused_result__));
 
 
 
 __extension__ extern long long int llabs (long long int __x)
-     __attribute__ ((__nothrow__ )) __attribute__ ((__const__)) ;
+     __attribute__ ((__nothrow__ )) __attribute__ ((__const__)) __attribute__ ((__warn_unused_result__));
 
 
 
@@ -1082,44 +1163,44 @@ __extension__ extern long long int llabs (long long int __x)
 
 
 extern div_t div (int __numer, int __denom)
-     __attribute__ ((__nothrow__ )) __attribute__ ((__const__)) ;
+     __attribute__ ((__nothrow__ )) __attribute__ ((__const__)) __attribute__ ((__warn_unused_result__));
 extern ldiv_t ldiv (long int __numer, long int __denom)
-     __attribute__ ((__nothrow__ )) __attribute__ ((__const__)) ;
+     __attribute__ ((__nothrow__ )) __attribute__ ((__const__)) __attribute__ ((__warn_unused_result__));
 
 
 
 
 __extension__ extern lldiv_t lldiv (long long int __numer,
         long long int __denom)
-     __attribute__ ((__nothrow__ )) __attribute__ ((__const__)) ;
+     __attribute__ ((__nothrow__ )) __attribute__ ((__const__)) __attribute__ ((__warn_unused_result__));
 
 # 812 "/usr/include/stdlib.h" 3 4
 extern char *ecvt (double __value, int __ndigit, int *__restrict __decpt,
-     int *__restrict __sign) __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (3, 4))) ;
+     int *__restrict __sign) __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (3, 4))) __attribute__ ((__warn_unused_result__));
 
 
 
 
 extern char *fcvt (double __value, int __ndigit, int *__restrict __decpt,
-     int *__restrict __sign) __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (3, 4))) ;
+     int *__restrict __sign) __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (3, 4))) __attribute__ ((__warn_unused_result__));
 
 
 
 
 extern char *gcvt (double __value, int __ndigit, char *__buf)
-     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (3))) ;
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (3))) __attribute__ ((__warn_unused_result__));
 
 
 
 
 extern char *qecvt (long double __value, int __ndigit,
       int *__restrict __decpt, int *__restrict __sign)
-     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (3, 4))) ;
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (3, 4))) __attribute__ ((__warn_unused_result__));
 extern char *qfcvt (long double __value, int __ndigit,
       int *__restrict __decpt, int *__restrict __sign)
-     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (3, 4))) ;
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (3, 4))) __attribute__ ((__warn_unused_result__));
 extern char *qgcvt (long double __value, int __ndigit, char *__buf)
-     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (3))) ;
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (3))) __attribute__ ((__warn_unused_result__));
 
 
 
@@ -1170,19 +1251,166 @@ extern size_t wcstombs (char *__restrict __s,
 
 
 
-extern int rpmatch (const char *__response) __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1))) ;
+extern int rpmatch (const char *__response) __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1))) __attribute__ ((__warn_unused_result__));
 # 899 "/usr/include/stdlib.h" 3 4
 extern int getsubopt (char **__restrict __optionp,
         char *const *__restrict __tokens,
         char **__restrict __valuep)
-     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1, 2, 3))) ;
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1, 2, 3))) __attribute__ ((__warn_unused_result__));
 # 951 "/usr/include/stdlib.h" 3 4
 extern int getloadavg (double __loadavg[], int __nelem)
      __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1)));
 
 
 # 1 "/usr/include/x86_64-linux-gnu/bits/stdlib-float.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/stdlib-float.h" 3 4
+
+extern __inline __attribute__ ((__gnu_inline__)) double
+__attribute__ ((__nothrow__ )) atof (const char *__nptr)
+{
+  return strtod (__nptr, (char **) ((void *)0));
+}
+
 # 956 "/usr/include/stdlib.h" 2 3 4
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdlib.h" 1 3 4
+# 23 "/usr/include/x86_64-linux-gnu/bits/stdlib.h" 3 4
+extern char *__realpath_chk (const char *__restrict __name,
+        char *__restrict __resolved,
+        size_t __resolvedlen) __attribute__ ((__nothrow__ )) __attribute__ ((__warn_unused_result__));
+extern char *__realpath_alias (const char *__restrict __name, char *__restrict __resolved) __asm__ ("" "realpath") __attribute__ ((__nothrow__ )) __attribute__ ((__warn_unused_result__));
+
+
+extern char *__realpath_chk_warn (const char *__restrict __name, char *__restrict __resolved, size_t __resolvedlen) __asm__ ("" "__realpath_chk") __attribute__ ((__nothrow__ )) __attribute__ ((__warn_unused_result__))
+
+
+
+     __attribute__((__warning__ ("second argument of realpath must be either NULL or at " "least PATH_MAX bytes long buffer")));
+
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__)) __attribute__ ((__artificial__)) __attribute__ ((__warn_unused_result__)) char *
+__attribute__ ((__nothrow__ )) realpath (const char *__restrict __name, char *__restrict __resolved)
+{
+  if (__builtin_object_size (__resolved, 2 > 1) != (size_t) -1)
+    {
+
+
+
+
+      return __realpath_chk (__name, __resolved, __builtin_object_size (__resolved, 2 > 1));
+    }
+
+  return __realpath_alias (__name, __resolved);
+}
+
+
+extern int __ptsname_r_chk (int __fd, char *__buf, size_t __buflen,
+       size_t __nreal) __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (2)));
+extern int __ptsname_r_alias (int __fd, char *__buf, size_t __buflen) __asm__ ("" "ptsname_r") __attribute__ ((__nothrow__ ))
+
+     __attribute__ ((__nonnull__ (2)));
+extern int __ptsname_r_chk_warn (int __fd, char *__buf, size_t __buflen, size_t __nreal) __asm__ ("" "__ptsname_r_chk") __attribute__ ((__nothrow__ ))
+
+
+     __attribute__ ((__nonnull__ (2))) __attribute__((__warning__ ("ptsname_r called with buflen bigger than " "size of buf")));
+
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__)) __attribute__ ((__artificial__)) int
+__attribute__ ((__nothrow__ )) ptsname_r (int __fd, char *__buf, size_t __buflen)
+{
+  if (__builtin_object_size (__buf, 2 > 1) != (size_t) -1)
+    {
+      if (!__builtin_constant_p (__buflen))
+ return __ptsname_r_chk (__fd, __buf, __buflen, __builtin_object_size (__buf, 2 > 1));
+      if (__buflen > __builtin_object_size (__buf, 2 > 1))
+ return __ptsname_r_chk_warn (__fd, __buf, __buflen, __builtin_object_size (__buf, 2 > 1));
+    }
+  return __ptsname_r_alias (__fd, __buf, __buflen);
+}
+
+
+extern int __wctomb_chk (char *__s, wchar_t __wchar, size_t __buflen)
+  __attribute__ ((__nothrow__ )) __attribute__ ((__warn_unused_result__));
+extern int __wctomb_alias (char *__s, wchar_t __wchar) __asm__ ("" "wctomb") __attribute__ ((__nothrow__ )) __attribute__ ((__warn_unused_result__));
+
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__)) __attribute__ ((__artificial__)) __attribute__ ((__warn_unused_result__)) int
+__attribute__ ((__nothrow__ )) wctomb (char *__s, wchar_t __wchar)
+{
+
+
+
+
+
+
+
+  if (__builtin_object_size (__s, 2 > 1) != (size_t) -1 && 16 > __builtin_object_size (__s, 2 > 1))
+    return __wctomb_chk (__s, __wchar, __builtin_object_size (__s, 2 > 1));
+  return __wctomb_alias (__s, __wchar);
+}
+
+
+extern size_t __mbstowcs_chk (wchar_t *__restrict __dst,
+         const char *__restrict __src,
+         size_t __len, size_t __dstlen) __attribute__ ((__nothrow__ ));
+extern size_t __mbstowcs_alias (wchar_t *__restrict __dst, const char *__restrict __src, size_t __len) __asm__ ("" "mbstowcs") __attribute__ ((__nothrow__ ));
+
+
+
+extern size_t __mbstowcs_chk_warn (wchar_t *__restrict __dst, const char *__restrict __src, size_t __len, size_t __dstlen) __asm__ ("" "__mbstowcs_chk") __attribute__ ((__nothrow__ ))
+
+
+
+     __attribute__((__warning__ ("mbstowcs called with dst buffer smaller than len " "* sizeof (wchar_t)")));
+
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__)) __attribute__ ((__artificial__)) size_t
+__attribute__ ((__nothrow__ )) mbstowcs (wchar_t *__restrict __dst, const char *__restrict __src, size_t __len)
+
+{
+  if (__builtin_object_size (__dst, 2 > 1) != (size_t) -1)
+    {
+      if (!__builtin_constant_p (__len))
+ return __mbstowcs_chk (__dst, __src, __len,
+          __builtin_object_size (__dst, 2 > 1) / sizeof (wchar_t));
+
+      if (__len > __builtin_object_size (__dst, 2 > 1) / sizeof (wchar_t))
+ return __mbstowcs_chk_warn (__dst, __src, __len,
+         __builtin_object_size (__dst, 2 > 1) / sizeof (wchar_t));
+    }
+  return __mbstowcs_alias (__dst, __src, __len);
+}
+
+
+extern size_t __wcstombs_chk (char *__restrict __dst,
+         const wchar_t *__restrict __src,
+         size_t __len, size_t __dstlen) __attribute__ ((__nothrow__ ));
+extern size_t __wcstombs_alias (char *__restrict __dst, const wchar_t *__restrict __src, size_t __len) __asm__ ("" "wcstombs") __attribute__ ((__nothrow__ ));
+
+
+
+extern size_t __wcstombs_chk_warn (char *__restrict __dst, const wchar_t *__restrict __src, size_t __len, size_t __dstlen) __asm__ ("" "__wcstombs_chk") __attribute__ ((__nothrow__ ))
+
+
+
+     __attribute__((__warning__ ("wcstombs called with dst buffer smaller than len")));
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__)) __attribute__ ((__artificial__)) size_t
+__attribute__ ((__nothrow__ )) wcstombs (char *__restrict __dst, const wchar_t *__restrict __src, size_t __len)
+
+{
+  if (__builtin_object_size (__dst, 2 > 1) != (size_t) -1)
+    {
+      if (!__builtin_constant_p (__len))
+ return __wcstombs_chk (__dst, __src, __len, __builtin_object_size (__dst, 2 > 1));
+      if (__len > __builtin_object_size (__dst, 2 > 1))
+ return __wcstombs_chk_warn (__dst, __src, __len, __builtin_object_size (__dst, 2 > 1));
+    }
+  return __wcstombs_alias (__dst, __src, __len);
+}
+# 960 "/usr/include/stdlib.h" 2 3 4
 # 968 "/usr/include/stdlib.h" 3 4
 
 # 26 "patricia.c" 2
@@ -1433,7 +1661,298 @@ extern char *__stpncpy (char *__restrict __dest,
 extern char *stpncpy (char *__restrict __dest,
         const char *__restrict __src, size_t __n)
      __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1, 2)));
-# 644 "/usr/include/string.h" 3 4
+# 632 "/usr/include/string.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/string.h" 1 3 4
+# 633 "/usr/include/string.h" 2 3 4
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/string2.h" 1 3 4
+# 393 "/usr/include/x86_64-linux-gnu/bits/string2.h" 3 4
+extern void *__rawmemchr (const void *__s, int __c);
+# 945 "/usr/include/x86_64-linux-gnu/bits/string2.h" 3 4
+extern __inline __attribute__ ((__gnu_inline__)) size_t __strcspn_c1 (const char *__s, int __reject);
+extern __inline __attribute__ ((__gnu_inline__)) size_t
+__strcspn_c1 (const char *__s, int __reject)
+{
+  size_t __result = 0;
+  while (__s[__result] != '\0' && __s[__result] != __reject)
+    ++__result;
+  return __result;
+}
+
+extern __inline __attribute__ ((__gnu_inline__)) size_t __strcspn_c2 (const char *__s, int __reject1,
+         int __reject2);
+extern __inline __attribute__ ((__gnu_inline__)) size_t
+__strcspn_c2 (const char *__s, int __reject1, int __reject2)
+{
+  size_t __result = 0;
+  while (__s[__result] != '\0' && __s[__result] != __reject1
+  && __s[__result] != __reject2)
+    ++__result;
+  return __result;
+}
+
+extern __inline __attribute__ ((__gnu_inline__)) size_t __strcspn_c3 (const char *__s, int __reject1,
+         int __reject2, int __reject3);
+extern __inline __attribute__ ((__gnu_inline__)) size_t
+__strcspn_c3 (const char *__s, int __reject1, int __reject2,
+       int __reject3)
+{
+  size_t __result = 0;
+  while (__s[__result] != '\0' && __s[__result] != __reject1
+  && __s[__result] != __reject2 && __s[__result] != __reject3)
+    ++__result;
+  return __result;
+}
+# 1021 "/usr/include/x86_64-linux-gnu/bits/string2.h" 3 4
+extern __inline __attribute__ ((__gnu_inline__)) size_t __strspn_c1 (const char *__s, int __accept);
+extern __inline __attribute__ ((__gnu_inline__)) size_t
+__strspn_c1 (const char *__s, int __accept)
+{
+  size_t __result = 0;
+
+  while (__s[__result] == __accept)
+    ++__result;
+  return __result;
+}
+
+extern __inline __attribute__ ((__gnu_inline__)) size_t __strspn_c2 (const char *__s, int __accept1,
+        int __accept2);
+extern __inline __attribute__ ((__gnu_inline__)) size_t
+__strspn_c2 (const char *__s, int __accept1, int __accept2)
+{
+  size_t __result = 0;
+
+  while (__s[__result] == __accept1 || __s[__result] == __accept2)
+    ++__result;
+  return __result;
+}
+
+extern __inline __attribute__ ((__gnu_inline__)) size_t __strspn_c3 (const char *__s, int __accept1,
+        int __accept2, int __accept3);
+extern __inline __attribute__ ((__gnu_inline__)) size_t
+__strspn_c3 (const char *__s, int __accept1, int __accept2, int __accept3)
+{
+  size_t __result = 0;
+
+  while (__s[__result] == __accept1 || __s[__result] == __accept2
+  || __s[__result] == __accept3)
+    ++__result;
+  return __result;
+}
+# 1097 "/usr/include/x86_64-linux-gnu/bits/string2.h" 3 4
+extern __inline __attribute__ ((__gnu_inline__)) char *__strpbrk_c2 (const char *__s, int __accept1,
+        int __accept2);
+extern __inline __attribute__ ((__gnu_inline__)) char *
+__strpbrk_c2 (const char *__s, int __accept1, int __accept2)
+{
+
+  while (*__s != '\0' && *__s != __accept1 && *__s != __accept2)
+    ++__s;
+  return *__s == '\0' ? ((void *)0) : (char *) (size_t) __s;
+}
+
+extern __inline __attribute__ ((__gnu_inline__)) char *__strpbrk_c3 (const char *__s, int __accept1,
+        int __accept2, int __accept3);
+extern __inline __attribute__ ((__gnu_inline__)) char *
+__strpbrk_c3 (const char *__s, int __accept1, int __accept2, int __accept3)
+{
+
+  while (*__s != '\0' && *__s != __accept1 && *__s != __accept2
+  && *__s != __accept3)
+    ++__s;
+  return *__s == '\0' ? ((void *)0) : (char *) (size_t) __s;
+}
+# 1147 "/usr/include/x86_64-linux-gnu/bits/string2.h" 3 4
+extern __inline __attribute__ ((__gnu_inline__)) char *__strtok_r_1c (char *__s, char __sep, char **__nextp);
+extern __inline __attribute__ ((__gnu_inline__)) char *
+__strtok_r_1c (char *__s, char __sep, char **__nextp)
+{
+  char *__result;
+  if (__s == ((void *)0))
+    __s = *__nextp;
+  while (*__s == __sep)
+    ++__s;
+  __result = ((void *)0);
+  if (*__s != '\0')
+    {
+      __result = __s++;
+      while (*__s != '\0')
+ if (*__s++ == __sep)
+   {
+     __s[-1] = '\0';
+     break;
+   }
+    }
+  *__nextp = __s;
+  return __result;
+}
+# 1179 "/usr/include/x86_64-linux-gnu/bits/string2.h" 3 4
+extern char *__strsep_g (char **__stringp, const char *__delim);
+# 1197 "/usr/include/x86_64-linux-gnu/bits/string2.h" 3 4
+extern __inline __attribute__ ((__gnu_inline__)) char *__strsep_1c (char **__s, char __reject);
+extern __inline __attribute__ ((__gnu_inline__)) char *
+__strsep_1c (char **__s, char __reject)
+{
+  char *__retval = *__s;
+  if (__retval != ((void *)0) && (*__s = (__extension__ (__builtin_constant_p (__reject) && !__builtin_constant_p (__retval) && (__reject) == '\0' ? (char *) __rawmemchr (__retval, __reject) : __builtin_strchr (__retval, __reject)))) != ((void *)0))
+    *(*__s)++ = '\0';
+  return __retval;
+}
+
+extern __inline __attribute__ ((__gnu_inline__)) char *__strsep_2c (char **__s, char __reject1, char __reject2);
+extern __inline __attribute__ ((__gnu_inline__)) char *
+__strsep_2c (char **__s, char __reject1, char __reject2)
+{
+  char *__retval = *__s;
+  if (__retval != ((void *)0))
+    {
+      char *__cp = __retval;
+      while (1)
+ {
+   if (*__cp == '\0')
+     {
+       __cp = ((void *)0);
+   break;
+     }
+   if (*__cp == __reject1 || *__cp == __reject2)
+     {
+       *__cp++ = '\0';
+       break;
+     }
+   ++__cp;
+ }
+      *__s = __cp;
+    }
+  return __retval;
+}
+
+extern __inline __attribute__ ((__gnu_inline__)) char *__strsep_3c (char **__s, char __reject1, char __reject2,
+       char __reject3);
+extern __inline __attribute__ ((__gnu_inline__)) char *
+__strsep_3c (char **__s, char __reject1, char __reject2, char __reject3)
+{
+  char *__retval = *__s;
+  if (__retval != ((void *)0))
+    {
+      char *__cp = __retval;
+      while (1)
+ {
+   if (*__cp == '\0')
+     {
+       __cp = ((void *)0);
+   break;
+     }
+   if (*__cp == __reject1 || *__cp == __reject2 || *__cp == __reject3)
+     {
+       *__cp++ = '\0';
+       break;
+     }
+   ++__cp;
+ }
+      *__s = __cp;
+    }
+  return __retval;
+}
+# 1278 "/usr/include/x86_64-linux-gnu/bits/string2.h" 3 4
+extern char *__strdup (const char *__string) __attribute__ ((__nothrow__ )) __attribute__ ((__malloc__));
+# 1297 "/usr/include/x86_64-linux-gnu/bits/string2.h" 3 4
+extern char *__strndup (const char *__string, size_t __n)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__malloc__));
+# 636 "/usr/include/string.h" 2 3 4
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/string3.h" 1 3 4
+# 22 "/usr/include/x86_64-linux-gnu/bits/string3.h" 3 4
+extern void __warn_memset_zero_len (void) __attribute__((__warning__ ("memset used with constant zero length parameter; this could be due to transposed parameters")));
+# 47 "/usr/include/x86_64-linux-gnu/bits/string3.h" 3 4
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__)) __attribute__ ((__artificial__)) void *
+__attribute__ ((__nothrow__ )) memcpy (void *__restrict __dest, const void *__restrict __src, size_t __len)
+
+{
+  return __builtin___memcpy_chk (__dest, __src, __len, __builtin_object_size (__dest, 0));
+}
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__)) __attribute__ ((__artificial__)) void *
+__attribute__ ((__nothrow__ )) memmove (void *__dest, const void *__src, size_t __len)
+{
+  return __builtin___memmove_chk (__dest, __src, __len, __builtin_object_size (__dest, 0));
+}
+# 75 "/usr/include/x86_64-linux-gnu/bits/string3.h" 3 4
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__)) __attribute__ ((__artificial__)) void *
+__attribute__ ((__nothrow__ )) memset (void *__dest, int __ch, size_t __len)
+{
+  if (__builtin_constant_p (__len) && __len == 0
+      && (!__builtin_constant_p (__ch) || __ch != 0))
+    {
+      __warn_memset_zero_len ();
+      return __dest;
+    }
+  return __builtin___memset_chk (__dest, __ch, __len, __builtin_object_size (__dest, 0));
+}
+
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__)) __attribute__ ((__artificial__)) void
+__attribute__ ((__nothrow__ )) bcopy (const void *__src, void *__dest, size_t __len)
+{
+  (void) __builtin___memmove_chk (__dest, __src, __len, __builtin_object_size (__dest, 0));
+}
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__)) __attribute__ ((__artificial__)) void
+__attribute__ ((__nothrow__ )) bzero (void *__dest, size_t __len)
+{
+  (void) __builtin___memset_chk (__dest, '\0', __len, __builtin_object_size (__dest, 0));
+}
+
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__)) __attribute__ ((__artificial__)) char *
+__attribute__ ((__nothrow__ )) strcpy (char *__restrict __dest, const char *__restrict __src)
+{
+  return __builtin___strcpy_chk (__dest, __src, __builtin_object_size (__dest, 2 > 1));
+}
+# 116 "/usr/include/x86_64-linux-gnu/bits/string3.h" 3 4
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__)) __attribute__ ((__artificial__)) char *
+__attribute__ ((__nothrow__ )) strncpy (char *__restrict __dest, const char *__restrict __src, size_t __len)
+
+{
+  return __builtin___strncpy_chk (__dest, __src, __len, __builtin_object_size (__dest, 2 > 1));
+}
+
+
+extern char *__stpncpy_chk (char *__dest, const char *__src, size_t __n,
+       size_t __destlen) __attribute__ ((__nothrow__ ));
+extern char *__stpncpy_alias (char *__dest, const char *__src, size_t __n) __asm__ ("" "stpncpy") __attribute__ ((__nothrow__ ));
+
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__)) __attribute__ ((__artificial__)) char *
+__attribute__ ((__nothrow__ )) stpncpy (char *__dest, const char *__src, size_t __n)
+{
+  if (__builtin_object_size (__dest, 2 > 1) != (size_t) -1
+      && (!__builtin_constant_p (__n) || __n <= __builtin_object_size (__dest, 2 > 1)))
+    return __stpncpy_chk (__dest, __src, __n, __builtin_object_size (__dest, 2 > 1));
+  return __stpncpy_alias (__dest, __src, __n);
+}
+
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__)) __attribute__ ((__artificial__)) char *
+__attribute__ ((__nothrow__ )) strcat (char *__restrict __dest, const char *__restrict __src)
+{
+  return __builtin___strcat_chk (__dest, __src, __builtin_object_size (__dest, 2 > 1));
+}
+
+
+extern __inline __attribute__ ((__always_inline__)) __attribute__ ((__gnu_inline__)) __attribute__ ((__artificial__)) char *
+__attribute__ ((__nothrow__ )) strncat (char *__restrict __dest, const char *__restrict __src, size_t __len)
+
+{
+  return __builtin___strncat_chk (__dest, __src, __len, __builtin_object_size (__dest, 2 > 1));
+}
+# 641 "/usr/include/string.h" 2 3 4
+
+
+
 
 # 27 "patricia.c" 2
 # 1 "patricia.h" 1

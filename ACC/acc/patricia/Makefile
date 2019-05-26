@@ -4,7 +4,7 @@ CPP=gcc -E
 CC=gcc
 
 LDFLAGS := -lm
-CXXFLAGS := -static -O0 -g
+CXXFLAGS := -static -O3
 
 patricia:
 	rm -rf working 

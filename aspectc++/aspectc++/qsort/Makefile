@@ -11,7 +11,7 @@ HEADERS := $(wildcard *.h)
 ASPECTS := $(wildcard *.ah)
 INCLUDE_LIST := $(patsubst %.ah,-include %.ah,$(ASPECTS))
 LDFLAGS := -lm
-CXXFLAGS := -static -O3 
+CXXFLAGS := -static -O2 
 
 all: qsort_small qsort_large
 

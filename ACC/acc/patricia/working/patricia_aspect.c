@@ -32,7 +32,6 @@ extern void __utac__exception__cf_handler_reset(void * exception) ;
 extern void * __utac__error_stack_mgt(void * env , int mode, int count) ;
 
 # 1 "patricia_aspect.c" 
-# 1 "/aop/Graduation-Project-Backup/ACC/acc/patricia/working//" 
 # 1 "<built-in>" 
 # 1 "<command-line>" 
 # 1 "patricia_aspect.c" 
@@ -317,14 +316,14 @@ extern int rename(const char *__old, const char *__new) __attribute__  (( __noth
 #line 186 "/usr/include/stdio.h"
 extern int renameat(int __oldfd, const char *__old, int __newfd, const char *__new) __attribute__  (( __nothrow__ )) ; 
 #line 195 "/usr/include/stdio.h"
-extern  FILE *tmpfile(void ); 
+extern  FILE *tmpfile(void ) __attribute__  (( __warn_unused_result__ )) ; 
 #line 209 "/usr/include/stdio.h"
-extern char *tmpnam(char *__s) __attribute__  (( __nothrow__ )) ; 
+extern char *tmpnam(char *__s) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 215 "/usr/include/stdio.h"
-extern char *tmpnam_r(char *__s) __attribute__  (( __nothrow__ )) ; 
+extern char *tmpnam_r(char *__s) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 # 209 "/usr/include/stdio.h" 3 4
 # 228 "/usr/include/stdio.h" 3 4
-extern char *tempnam(const char *__dir, const char *__pfx) __attribute__  (( __nothrow__ ))  __attribute__  (( __malloc__ )) ; 
+extern char *tempnam(const char *__dir, const char *__pfx) __attribute__  (( __nothrow__ ))  __attribute__  (( __malloc__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 237 "/usr/include/stdio.h"
 extern int fclose( FILE *__stream); 
 #line 242 "/usr/include/stdio.h"
@@ -333,16 +332,16 @@ extern int fflush( FILE *__stream);
 extern int fflush_unlocked( FILE *__stream); 
 # 252 "/usr/include/stdio.h" 3 4
 # 273 "/usr/include/stdio.h" 3 4
-extern  FILE *fopen(const char *__restrict __filename, const char *__restrict __modes); 
+extern  FILE *fopen(const char *__restrict __filename, const char *__restrict __modes) __attribute__  (( __warn_unused_result__ )) ; 
 #line 280 "/usr/include/stdio.h"
-extern  FILE *freopen(const char *__restrict __filename, const char *__restrict __modes,  FILE *__restrict __stream); 
+extern  FILE *freopen(const char *__restrict __filename, const char *__restrict __modes,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 # 295 "/usr/include/stdio.h" 3 4
 # 306 "/usr/include/stdio.h" 3 4
-extern  FILE *fdopen(int __fd, const char *__modes) __attribute__  (( __nothrow__ )) ; 
+extern  FILE *fdopen(int __fd, const char *__modes) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 320 "/usr/include/stdio.h"
-extern  FILE *fmemopen(void *__s,  size_t __len, const char *__modes) __attribute__  (( __nothrow__ )) ; 
+extern  FILE *fmemopen(void *__s,  size_t __len, const char *__modes) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 325 "/usr/include/stdio.h"
-extern  FILE *open_memstream(char **__bufloc,  size_t *__sizeloc) __attribute__  (( __nothrow__ )) ; 
+extern  FILE *open_memstream(char **__bufloc,  size_t *__sizeloc) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 332 "/usr/include/stdio.h"
 extern void setbuf( FILE *__restrict __stream, char *__restrict __buf) __attribute__  (( __nothrow__ )) ; 
 #line 337 "/usr/include/stdio.h"
@@ -373,28 +372,28 @@ extern int vdprintf(int __fd, const char *__restrict __fmt,  __gnuc_va_list __ar
 #line 416 "/usr/include/stdio.h"
 extern int dprintf(int __fd, const char *__restrict __fmt, ...) __attribute__  (( __format__ ( __printf__, 2, 3 )  )) ; 
 #line 426 "/usr/include/stdio.h"
-extern int fscanf( FILE *__restrict __stream, const char *__restrict __format, ...); 
+extern int fscanf( FILE *__restrict __stream, const char *__restrict __format, ...) __attribute__  (( __warn_unused_result__ )) ; 
 #line 431 "/usr/include/stdio.h"
-extern int scanf(const char *__restrict __format, ...); 
+extern int scanf(const char *__restrict __format, ...) __attribute__  (( __warn_unused_result__ )) ; 
 #line 434 "/usr/include/stdio.h"
 extern int sscanf(const char *__restrict __s, const char *__restrict __format, ...) __attribute__  (( __nothrow__ )) ; 
 #line 443 "/usr/include/stdio.h"
-extern int fscanf( FILE *__restrict __stream, const char *__restrict __format, ...) __asm__ ("""__isoc99_fscanf"); 
+extern int fscanf( FILE *__restrict __stream, const char *__restrict __format, ...) __asm__ ("""__isoc99_fscanf") __attribute__  (( __warn_unused_result__ )) ; 
 #line 446 "/usr/include/stdio.h"
-extern int scanf(const char *__restrict __format, ...) __asm__ ("""__isoc99_scanf"); 
+extern int scanf(const char *__restrict __format, ...) __asm__ ("""__isoc99_scanf") __attribute__  (( __warn_unused_result__ )) ; 
 #line 448 "/usr/include/stdio.h"
 extern int sscanf(const char *__restrict __s, const char *__restrict __format, ...) __asm__ ("""__isoc99_sscanf") __attribute__  (( __nothrow__ )) ; 
 # 443 "/usr/include/stdio.h" 3 4
 # 473 "/usr/include/stdio.h" 3 4
-extern int vfscanf( FILE *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __attribute__  (( __format__ ( __scanf__, 2, 0 )  )) ; 
+extern int vfscanf( FILE *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __attribute__  (( __format__ ( __scanf__, 2, 0 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 480 "/usr/include/stdio.h"
-extern int vscanf(const char *__restrict __format,  __gnuc_va_list __arg) __attribute__  (( __format__ ( __scanf__, 1, 0 )  )) ; 
+extern int vscanf(const char *__restrict __format,  __gnuc_va_list __arg) __attribute__  (( __format__ ( __scanf__, 1, 0 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 485 "/usr/include/stdio.h"
 extern int vsscanf(const char *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __attribute__  (( __nothrow__ ))  __attribute__  (( __format__ ( __scanf__, 2, 0 )  )) ; 
 #line 498 "/usr/include/stdio.h"
-extern int vfscanf( FILE *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __asm__ ("""__isoc99_vfscanf") __attribute__  (( __format__ ( __scanf__, 2, 0 )  )) ; 
+extern int vfscanf( FILE *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __asm__ ("""__isoc99_vfscanf") __attribute__  (( __format__ ( __scanf__, 2, 0 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 501 "/usr/include/stdio.h"
-extern int vscanf(const char *__restrict __format,  __gnuc_va_list __arg) __asm__ ("""__isoc99_vscanf") __attribute__  (( __format__ ( __scanf__, 1, 0 )  )) ; 
+extern int vscanf(const char *__restrict __format,  __gnuc_va_list __arg) __asm__ ("""__isoc99_vscanf") __attribute__  (( __format__ ( __scanf__, 1, 0 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 506 "/usr/include/stdio.h"
 extern int vsscanf(const char *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __asm__ ("""__isoc99_vsscanf") __attribute__  (( __nothrow__ ))  __attribute__  (( __format__ ( __scanf__, 2, 0 )  )) ; 
 # 494 "/usr/include/stdio.h" 3 4
@@ -428,16 +427,16 @@ extern int getw( FILE *__stream);
 #line 613 "/usr/include/stdio.h"
 extern int putw(int __w,  FILE *__stream); 
 #line 623 "/usr/include/stdio.h"
-extern char *fgets(char *__restrict __s, int __n,  FILE *__restrict __stream); 
+extern char *fgets(char *__restrict __s, int __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 # 594 "/usr/include/stdio.h" 3 4
 # 638 "/usr/include/stdio.h" 3 4
-extern char *gets(char *__s) __attribute__  (( __deprecated__ )) ; 
+extern char *gets(char *__s) __attribute__  (( __warn_unused_result__ ))  __attribute__  (( __deprecated__ )) ; 
 #line 667 "/usr/include/stdio.h"
-extern  __ssize_t __getdelim(char **__restrict __lineptr,  size_t *__restrict __n, int __delimiter,  FILE *__restrict __stream); 
+extern  __ssize_t __getdelim(char **__restrict __lineptr,  size_t *__restrict __n, int __delimiter,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 #line 670 "/usr/include/stdio.h"
-extern  __ssize_t getdelim(char **__restrict __lineptr,  size_t *__restrict __n, int __delimiter,  FILE *__restrict __stream); 
+extern  __ssize_t getdelim(char **__restrict __lineptr,  size_t *__restrict __n, int __delimiter,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 #line 680 "/usr/include/stdio.h"
-extern  __ssize_t getline(char **__restrict __lineptr,  size_t *__restrict __n,  FILE *__restrict __stream); 
+extern  __ssize_t getline(char **__restrict __lineptr,  size_t *__restrict __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 #line 689 "/usr/include/stdio.h"
 extern int fputs(const char *__restrict __s,  FILE *__restrict __stream); 
 #line 695 "/usr/include/stdio.h"
@@ -445,24 +444,24 @@ extern int puts(const char *__s);
 #line 702 "/usr/include/stdio.h"
 extern int ungetc(int __c,  FILE *__stream); 
 #line 710 "/usr/include/stdio.h"
-extern  size_t fread(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream); 
+extern  size_t fread(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 #line 716 "/usr/include/stdio.h"
 extern  size_t fwrite(const void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __s); 
 # 665 "/usr/include/stdio.h" 3 4
 # 738 "/usr/include/stdio.h" 3 4
-extern  size_t fread_unlocked(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream); 
+extern  size_t fread_unlocked(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 #line 740 "/usr/include/stdio.h"
 extern  size_t fwrite_unlocked(const void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream); 
 #line 749 "/usr/include/stdio.h"
 extern int fseek( FILE *__stream, long int __off, int __whence); 
 #line 754 "/usr/include/stdio.h"
-extern long int ftell( FILE *__stream); 
+extern long int ftell( FILE *__stream) __attribute__  (( __warn_unused_result__ )) ; 
 #line 759 "/usr/include/stdio.h"
 extern void rewind( FILE *__stream); 
 #line 773 "/usr/include/stdio.h"
 extern int fseeko( FILE *__stream,  __off_t __off, int __whence); 
 #line 778 "/usr/include/stdio.h"
-extern  __off_t ftello( FILE *__stream); 
+extern  __off_t ftello( FILE *__stream) __attribute__  (( __warn_unused_result__ )) ; 
 # 773 "/usr/include/stdio.h" 3 4
 # 798 "/usr/include/stdio.h" 3 4
 extern int fgetpos( FILE *__restrict __stream,  fpos_t *__restrict __pos); 
@@ -472,15 +471,15 @@ extern int fsetpos( FILE *__stream, const  fpos_t *__pos);
 # 826 "/usr/include/stdio.h" 3 4
 extern void clearerr( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
 #line 828 "/usr/include/stdio.h"
-extern int feof( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int feof( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 830 "/usr/include/stdio.h"
-extern int ferror( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int ferror( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 835 "/usr/include/stdio.h"
 extern void clearerr_unlocked( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
 #line 836 "/usr/include/stdio.h"
-extern int feof_unlocked( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int feof_unlocked( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 837 "/usr/include/stdio.h"
-extern int ferror_unlocked( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int ferror_unlocked( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 846 "/usr/include/stdio.h"
 extern void perror(const char *__s); 
 # 1 "/usr/include/x86_64-linux-gnu/bits/sys_errlist.h" 1 3 4
@@ -489,12 +488,12 @@ extern int sys_nerr;
 #line 27 "/usr/include/x86_64-linux-gnu/bits/sys_errlist.h"
 extern const char *const sys_errlist[]; 
 #line 858 "/usr/include/stdio.h"
-extern int fileno( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int fileno( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 863 "/usr/include/stdio.h"
-extern int fileno_unlocked( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int fileno_unlocked( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 # 854 "/usr/include/stdio.h" 2 3 4
 # 873 "/usr/include/stdio.h" 3 4
-extern  FILE *popen(const char *__command, const char *__modes); 
+extern  FILE *popen(const char *__command, const char *__modes) __attribute__  (( __warn_unused_result__ )) ; 
 #line 879 "/usr/include/stdio.h"
 extern int pclose( FILE *__stream); 
 #line 885 "/usr/include/stdio.h"
@@ -502,11 +501,260 @@ extern char *ctermid(char *__s) __attribute__  (( __nothrow__ )) ;
 #line 913 "/usr/include/stdio.h"
 extern void flockfile( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
 #line 917 "/usr/include/stdio.h"
-extern int ftrylockfile( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int ftrylockfile( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 920 "/usr/include/stdio.h"
 extern void funlockfile( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
 # 913 "/usr/include/stdio.h" 3 4
-# 943 "/usr/include/stdio.h" 3 4
+# 934 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdio.h" 1 3 4
+# 45 "/usr/include/x86_64-linux-gnu/bits/stdio.h" 3 4
+extern __inline  __attribute__  (( __gnu_inline__ )) int getchar(void )  {
+
+#line 46 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+return _IO_getc(stdin); }
+ 
+#line 54 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int fgetc_unlocked( FILE *__fp)  {
+
+#line 55 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+return ((__builtin_expect((((__fp)->_IO_read_ptr) >= ((__fp)->_IO_read_end)), 0)?__uflow(__fp):(*((unsigned char *)((__fp)->_IO_read_ptr)++)))); }
+ 
+#line 64 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int getc_unlocked( FILE *__fp)  {
+
+#line 65 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+return ((__builtin_expect((((__fp)->_IO_read_ptr) >= ((__fp)->_IO_read_end)), 0)?__uflow(__fp):(*((unsigned char *)((__fp)->_IO_read_ptr)++)))); }
+ 
+#line 71 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int getchar_unlocked(void )  {
+
+#line 72 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+return ((__builtin_expect((((stdin)->_IO_read_ptr) >= ((stdin)->_IO_read_end)), 0)?__uflow(stdin):(*((unsigned char *)((stdin)->_IO_read_ptr)++)))); }
+ 
+#line 80 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int putchar(int __c)  {
+
+#line 81 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+return _IO_putc(__c, stdout); }
+ 
+#line 89 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int fputc_unlocked(int __c,  FILE *__stream)  {
+
+#line 90 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+return ((__builtin_expect((((__stream)->_IO_write_ptr) >= ((__stream)->_IO_write_end)), 0)?__overflow(__stream, ((unsigned char )(__c))):((unsigned char )((*((__stream)->_IO_write_ptr)++) = (__c))))); }
+ 
+#line 99 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int putc_unlocked(int __c,  FILE *__stream)  {
+
+#line 100 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+return ((__builtin_expect((((__stream)->_IO_write_ptr) >= ((__stream)->_IO_write_end)), 0)?__overflow(__stream, ((unsigned char )(__c))):((unsigned char )((*((__stream)->_IO_write_ptr)++) = (__c))))); }
+ 
+#line 106 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int putchar_unlocked(int __c)  {
+
+#line 107 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+return ((__builtin_expect((((stdout)->_IO_write_ptr) >= ((stdout)->_IO_write_end)), 0)?__overflow(stdout, ((unsigned char )(__c))):((unsigned char )((*((stdout)->_IO_write_ptr)++) = (__c))))); }
+ 
+#line 126 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int  __attribute__  (( __nothrow__ )) feof_unlocked( FILE *__stream)  {
+
+#line 127 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+return ((((__stream)->_flags) & 0x10) != 0); }
+ 
+#line 133 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int  __attribute__  (( __nothrow__ )) ferror_unlocked( FILE *__stream)  {
+
+#line 134 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+return ((((__stream)->_flags) & 0x20) != 0); }
+ 
+# 124 "/usr/include/x86_64-linux-gnu/bits/stdio.h" 3 4
+# 935 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdio2.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/stdio2.h" 3 4
+extern int __sprintf_chk(char *__restrict __s, int __flag,  size_t __slen, const char *__restrict __format, ...) __attribute__  (( __nothrow__ )) ; 
+#line 27 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __vsprintf_chk(char *__restrict __s, int __flag,  size_t __slen, const char *__restrict __format,  __gnuc_va_list __ap) __attribute__  (( __nothrow__ )) ; 
+#line 32 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int  __attribute__  (( __nothrow__ )) sprintf(char *__restrict __s, const char *__restrict __fmt, ...)  {
+
+#line 34 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+return __builtin___sprintf_chk(__s, 2 - 1, __builtin_object_size(__s, 2 > 1), __fmt, __builtin_va_arg_pack()); }
+ 
+#line 45 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int  __attribute__  (( __nothrow__ )) vsprintf(char *__restrict __s, const char *__restrict __fmt,  __gnuc_va_list __ap)  {
+
+#line 47 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+return __builtin___vsprintf_chk(__s, 2 - 1, __builtin_object_size(__s, 2 > 1), __fmt, __ap); }
+ 
+#line 54 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __snprintf_chk(char *__restrict __s,  size_t __n, int __flag,  size_t __slen, const char *__restrict __format, ...) __attribute__  (( __nothrow__ )) ; 
+#line 57 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __vsnprintf_chk(char *__restrict __s,  size_t __n, int __flag,  size_t __slen, const char *__restrict __format,  __gnuc_va_list __ap) __attribute__  (( __nothrow__ )) ; 
+#line 63 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int  __attribute__  (( __nothrow__ )) snprintf(char *__restrict __s,  size_t __n, const char *__restrict __fmt, ...)  {
+
+#line 65 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+return __builtin___snprintf_chk(__s, __n, 2 - 1, __builtin_object_size(__s, 2 > 1), __fmt, __builtin_va_arg_pack()); }
+ 
+#line 76 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int  __attribute__  (( __nothrow__ )) vsnprintf(char *__restrict __s,  size_t __n, const char *__restrict __fmt,  __gnuc_va_list __ap)  {
+
+#line 78 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+return __builtin___vsnprintf_chk(__s, __n, 2 - 1, __builtin_object_size(__s, 2 > 1), __fmt, __ap); }
+ 
+#line 86 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __fprintf_chk( FILE *__restrict __stream, int __flag, const char *__restrict __format, ...); 
+#line 87 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __printf_chk(int __flag, const char *__restrict __format, ...); 
+#line 89 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __vfprintf_chk( FILE *__restrict __stream, int __flag, const char *__restrict __format,  __gnuc_va_list __ap); 
+#line 91 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __vprintf_chk(int __flag, const char *__restrict __format,  __gnuc_va_list __ap); 
+#line 96 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int fprintf( FILE *__restrict __stream, const char *__restrict __fmt, ...)  {
+
+#line 98 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+return __fprintf_chk(__stream, 2 - 1, __fmt, __builtin_va_arg_pack()); }
+ 
+#line 103 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int printf(const char *__restrict __fmt, ...)  {
+
+#line 104 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+return __printf_chk(2 - 1, __fmt, __builtin_va_arg_pack()); }
+ 
+#line 115 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int vprintf(const char *__restrict __fmt,  __gnuc_va_list __ap)  {
+
+#line 117 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+return __vfprintf_chk(stdout, 2 - 1, __fmt, __ap); }
+ 
+#line 126 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int vfprintf( FILE *__restrict __stream, const char *__restrict __fmt,  __gnuc_va_list __ap)  {
+
+#line 127 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+return __vfprintf_chk(__stream, 2 - 1, __fmt, __ap); }
+ 
+#line 132 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __dprintf_chk(int __fd, int __flag, const char *__restrict __fmt, ...) __attribute__  (( __format__ ( __printf__, 3, 4 )  )) ; 
+#line 135 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __vdprintf_chk(int __fd, int __flag, const char *__restrict __fmt,  __gnuc_va_list __arg) __attribute__  (( __format__ ( __printf__, 3, 0 )  )) ; 
+#line 140 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int dprintf(int __fd, const char *__restrict __fmt, ...)  {
+
+#line 142 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+return __dprintf_chk(__fd, 2 - 1, __fmt, __builtin_va_arg_pack()); }
+ 
+#line 151 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int vdprintf(int __fd, const char *__restrict __fmt,  __gnuc_va_list __ap)  {
+
+#line 152 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+return __vdprintf_chk(__fd, 2 - 1, __fmt, __ap); }
+ 
+#line 227 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern char *__gets_chk(char *__str,  size_t ) __attribute__  (( __warn_unused_result__ )) ; 
+#line 229 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern char *__gets_warn(char *__str) __asm__ ("""gets") __attribute__  (( __warn_unused_result__ ))  __attribute__  (( __warning__ ( "please use fgets or getline instead, gets can't ""specify buffer size" )  )) ; 
+#line 234 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  __attribute__  (( __warn_unused_result__ )) char *gets(char *__str)  {
+
+#line 237 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__builtin_object_size(__str, 2 > 1) != (( size_t )(-1))){
+return __gets_chk(__str, __builtin_object_size(__str, 2 > 1)); }
+#line 237 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+return __gets_warn(__str); }
+ 
+#line 242 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern char *__fgets_chk(char *__restrict __s,  size_t __size, int __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
+#line 243 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern char *__fgets_alias(char *__restrict __s, int __n,  FILE *__restrict __stream) __asm__ ("""fgets") __attribute__  (( __warn_unused_result__ )) ; 
+#line 249 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern char *__fgets_chk_warn(char *__restrict __s,  size_t __size, int __n,  FILE *__restrict __stream) __asm__ ("""__fgets_chk") __attribute__  (( __warn_unused_result__ ))  __attribute__  (( __warning__ ( "fgets called with bigger size than length ""of destination buffer" )  )) ; 
+#line 254 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  __attribute__  (( __warn_unused_result__ )) char *fgets(char *__restrict __s, int __n,  FILE *__restrict __stream)  {
+
+#line 263 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__builtin_object_size(__s, 2 > 1) != (( size_t )(-1))){
+{ 
+#line 260 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if ((!__builtin_constant_p(__n)) || __n <= 0){
+return __fgets_chk(__s, __builtin_object_size(__s, 2 > 1), __n, __stream); }
+#line 260 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if ((( size_t )__n) > __builtin_object_size(__s, 2 > 1)){
+return __fgets_chk_warn(__s, __builtin_object_size(__s, 2 > 1), __n, __stream); }} }
+#line 263 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+return __fgets_alias(__s, __n, __stream); }
+ 
+#line 268 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern  size_t __fread_chk(void *__restrict __ptr,  size_t __ptrlen,  size_t __size,  size_t __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
+#line 269 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern  size_t __fread_alias(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream) __asm__ ("""fread") __attribute__  (( __warn_unused_result__ )) ; 
+#line 278 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern  size_t __fread_chk_warn(void *__restrict __ptr,  size_t __ptrlen,  size_t __size,  size_t __n,  FILE *__restrict __stream) __asm__ ("""__fread_chk") __attribute__  (( __warn_unused_result__ ))  __attribute__  (( __warning__ ( "fread called with bigger size * nmemb than length ""of destination buffer" )  )) ; 
+#line 283 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  __attribute__  (( __warn_unused_result__ ))  size_t fread(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream)  {
+
+#line 294 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__builtin_object_size(__ptr, 0) != (( size_t )(-1))){
+{ 
+#line 291 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if ((!__builtin_constant_p(__size)) || (!__builtin_constant_p(__n)) || (__size | __n) >= (((( size_t )1)) << (8 * sizeof ( size_t ) / 2))){
+return __fread_chk(__ptr, __builtin_object_size(__ptr, 0), __size, __n, __stream); }
+#line 291 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__size * __n > __builtin_object_size(__ptr, 0)){
+return __fread_chk_warn(__ptr, __builtin_object_size(__ptr, 0), __size, __n, __stream); }} }
+#line 294 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+return __fread_alias(__ptr, __size, __n, __stream); }
+ 
+# 227 "/usr/include/x86_64-linux-gnu/bits/stdio2.h" 3 4
+# 329 "/usr/include/x86_64-linux-gnu/bits/stdio2.h" 3 4
+extern  size_t __fread_unlocked_chk(void *__restrict __ptr,  size_t __ptrlen,  size_t __size,  size_t __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
+#line 330 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern  size_t __fread_unlocked_alias(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream) __asm__ ("""fread_unlocked") __attribute__  (( __warn_unused_result__ )) ; 
+#line 339 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern  size_t __fread_unlocked_chk_warn(void *__restrict __ptr,  size_t __ptrlen,  size_t __size,  size_t __n,  FILE *__restrict __stream) __asm__ ("""__fread_unlocked_chk") __attribute__  (( __warn_unused_result__ ))  __attribute__  (( __warning__ ( "fread_unlocked called with bigger size * nmemb than ""length of destination buffer" )  )) ; 
+#line 344 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  __attribute__  (( __warn_unused_result__ ))  size_t fread_unlocked(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream)  {
+
+#line 359 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__builtin_object_size(__ptr, 0) != (( size_t )(-1))){
+{ 
+#line 353 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if ((!__builtin_constant_p(__size)) || (!__builtin_constant_p(__n)) || (__size | __n) >= (((( size_t )1)) << (8 * sizeof ( size_t ) / 2))){
+return __fread_unlocked_chk(__ptr, __builtin_object_size(__ptr, 0), __size, __n, __stream); }
+#line 353 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__size * __n > __builtin_object_size(__ptr, 0)){
+return __fread_unlocked_chk_warn(__ptr, __builtin_object_size(__ptr, 0), __size, __n, __stream); }} }
+#line 359 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__builtin_constant_p(__size) && __builtin_constant_p(__n) && (__size | __n) < (((( size_t )1)) << (8 * sizeof ( size_t ) / 2)) && __size * __n <= 8){
+{ 
+#line 364 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+#line 364 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+ size_t __cnt = __size * __n;
+#line 365 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+#line 365 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+char *__cptr = ((char *)__ptr);
+#line 366 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__cnt == 0){
+return 0; }
+#line 369 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+for(;__cnt > 0;(--__cnt)) { { 
+#line 371 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+#line 371 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+int __c = ((__builtin_expect((((__stream)->_IO_read_ptr) >= ((__stream)->_IO_read_end)), 0)?__uflow(__stream):(*((unsigned char *)((__stream)->_IO_read_ptr)++))));
+#line 372 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__c == ((-1))){
+break; }
+#line 374 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+(*__cptr++) = __c; } } 
+#line 376 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+return (__cptr - ((char *)__ptr)) / __size; } }
+#line 379 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+return __fread_unlocked_alias(__ptr, __size, __n, __stream); }
+ 
+# 938 "/usr/include/stdio.h" 2 3 4
 # 5 "patricia_aspect.c" 2
  inline void __utac_acc__patricia_aspect__1(struct ptree *phead) {
 

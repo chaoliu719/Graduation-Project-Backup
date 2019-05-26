@@ -11,7 +11,7 @@ HEADERS := $(wildcard *.h)
 ASPECTS := $(wildcard *.ah)
 INCLUDE_LIST := $(patsubst %.ah,-include %.ah,$(ASPECTS))
 LDFLAGS := -lm
-CXXFLAGS := -static -O0 -g
+CXXFLAGS := -static -O3
 
 dijkstra: $(OBJECTS)
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)

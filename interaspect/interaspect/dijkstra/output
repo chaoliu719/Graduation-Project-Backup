@@ -76,18 +76,18 @@ dijkstra()
 fclose()
 
 -----------Profiling-----------
-            fopen: call     1 times,      0.022ms total
-           fscanf: call 10000 times,      9.415ms total
-         dijkstra: call     2 times,    936.794ms total
+            fopen: call     1 times,      0.021ms total
+           fscanf: call 10000 times,      9.597ms total
+         dijkstra: call     2 times,    841.174ms total
        init_nodes: call     2 times,      0.002ms total
-         neighbor: call     2 times,    925.326ms total
-          enqueue: call  1634 times,    182.248ms total
-           malloc: call  1634 times,      0.727ms total
-          dequeue: call  1634 times,    188.314ms total
-             free: call  1634 times,      0.768ms total
-           qcount: call  1636 times,      0.791ms total
-       print_path: call    20 times,     64.196ms total
-           printf: call    24 times,      0.036ms total
-           fflush: call    20 times,      0.102ms total
+         neighbor: call     2 times,    830.779ms total
+          enqueue: call  1634 times,    163.883ms total
+           malloc: call  1634 times,      0.663ms total
+          dequeue: call  1634 times,    169.447ms total
+             free: call  1634 times,      0.706ms total
+           qcount: call  1636 times,      0.826ms total
+       print_path: call    20 times,     57.489ms total
+           printf: call    24 times,      0.032ms total
+           fflush: call    20 times,      0.095ms total
 __builtin_putchar: call     2 times,      0.011ms total
-           fclose: call     1 times,      0.022ms total
+           fclose: call     1 times,      0.023ms total

@@ -28,7 +28,6 @@ struct JoinPoint {
 
 
 # 1 "patricia_advice.c" 
-# 1 "/aop/Graduation-Project-Backup/ACC/acc/patricia/working//" 
 # 1 "<built-in>" 
 # 1 "<command-line>" 
 # 1 "patricia_advice.c" 
@@ -299,14 +298,14 @@ extern int rename(const char *__old, const char *__new) __attribute__  (( __noth
 #line 186 "/usr/include/stdio.h"
 extern int renameat(int __oldfd, const char *__old, int __newfd, const char *__new) __attribute__  (( __nothrow__ )) ; 
 #line 195 "/usr/include/stdio.h"
-extern  FILE *tmpfile(void ); 
+extern  FILE *tmpfile(void ) __attribute__  (( __warn_unused_result__ )) ; 
 #line 209 "/usr/include/stdio.h"
-extern char *tmpnam(char *__s) __attribute__  (( __nothrow__ )) ; 
+extern char *tmpnam(char *__s) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 215 "/usr/include/stdio.h"
-extern char *tmpnam_r(char *__s) __attribute__  (( __nothrow__ )) ; 
+extern char *tmpnam_r(char *__s) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 # 209 "/usr/include/stdio.h" 3 4
 # 228 "/usr/include/stdio.h" 3 4
-extern char *tempnam(const char *__dir, const char *__pfx) __attribute__  (( __nothrow__ ))  __attribute__  (( __malloc__ )) ; 
+extern char *tempnam(const char *__dir, const char *__pfx) __attribute__  (( __nothrow__ ))  __attribute__  (( __malloc__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 237 "/usr/include/stdio.h"
 extern int fclose( FILE *__stream); 
 #line 242 "/usr/include/stdio.h"
@@ -315,16 +314,16 @@ extern int fflush( FILE *__stream);
 extern int fflush_unlocked( FILE *__stream); 
 # 252 "/usr/include/stdio.h" 3 4
 # 273 "/usr/include/stdio.h" 3 4
-extern  FILE *fopen(const char *__restrict __filename, const char *__restrict __modes); 
+extern  FILE *fopen(const char *__restrict __filename, const char *__restrict __modes) __attribute__  (( __warn_unused_result__ )) ; 
 #line 280 "/usr/include/stdio.h"
-extern  FILE *freopen(const char *__restrict __filename, const char *__restrict __modes,  FILE *__restrict __stream); 
+extern  FILE *freopen(const char *__restrict __filename, const char *__restrict __modes,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 # 295 "/usr/include/stdio.h" 3 4
 # 306 "/usr/include/stdio.h" 3 4
-extern  FILE *fdopen(int __fd, const char *__modes) __attribute__  (( __nothrow__ )) ; 
+extern  FILE *fdopen(int __fd, const char *__modes) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 320 "/usr/include/stdio.h"
-extern  FILE *fmemopen(void *__s,  size_t __len, const char *__modes) __attribute__  (( __nothrow__ )) ; 
+extern  FILE *fmemopen(void *__s,  size_t __len, const char *__modes) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 325 "/usr/include/stdio.h"
-extern  FILE *open_memstream(char **__bufloc,  size_t *__sizeloc) __attribute__  (( __nothrow__ )) ; 
+extern  FILE *open_memstream(char **__bufloc,  size_t *__sizeloc) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 332 "/usr/include/stdio.h"
 extern void setbuf( FILE *__restrict __stream, char *__restrict __buf) __attribute__  (( __nothrow__ )) ; 
 #line 337 "/usr/include/stdio.h"
@@ -355,28 +354,28 @@ extern int vdprintf(int __fd, const char *__restrict __fmt,  __gnuc_va_list __ar
 #line 416 "/usr/include/stdio.h"
 extern int dprintf(int __fd, const char *__restrict __fmt, ...) __attribute__  (( __format__ ( __printf__, 2, 3 )  )) ; 
 #line 426 "/usr/include/stdio.h"
-extern int fscanf( FILE *__restrict __stream, const char *__restrict __format, ...); 
+extern int fscanf( FILE *__restrict __stream, const char *__restrict __format, ...) __attribute__  (( __warn_unused_result__ )) ; 
 #line 431 "/usr/include/stdio.h"
-extern int scanf(const char *__restrict __format, ...); 
+extern int scanf(const char *__restrict __format, ...) __attribute__  (( __warn_unused_result__ )) ; 
 #line 434 "/usr/include/stdio.h"
 extern int sscanf(const char *__restrict __s, const char *__restrict __format, ...) __attribute__  (( __nothrow__ )) ; 
 #line 443 "/usr/include/stdio.h"
-extern int fscanf( FILE *__restrict __stream, const char *__restrict __format, ...) __asm__ ("""__isoc99_fscanf"); 
+extern int fscanf( FILE *__restrict __stream, const char *__restrict __format, ...) __asm__ ("""__isoc99_fscanf") __attribute__  (( __warn_unused_result__ )) ; 
 #line 446 "/usr/include/stdio.h"
-extern int scanf(const char *__restrict __format, ...) __asm__ ("""__isoc99_scanf"); 
+extern int scanf(const char *__restrict __format, ...) __asm__ ("""__isoc99_scanf") __attribute__  (( __warn_unused_result__ )) ; 
 #line 448 "/usr/include/stdio.h"
 extern int sscanf(const char *__restrict __s, const char *__restrict __format, ...) __asm__ ("""__isoc99_sscanf") __attribute__  (( __nothrow__ )) ; 
 # 443 "/usr/include/stdio.h" 3 4
 # 473 "/usr/include/stdio.h" 3 4
-extern int vfscanf( FILE *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __attribute__  (( __format__ ( __scanf__, 2, 0 )  )) ; 
+extern int vfscanf( FILE *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __attribute__  (( __format__ ( __scanf__, 2, 0 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 480 "/usr/include/stdio.h"
-extern int vscanf(const char *__restrict __format,  __gnuc_va_list __arg) __attribute__  (( __format__ ( __scanf__, 1, 0 )  )) ; 
+extern int vscanf(const char *__restrict __format,  __gnuc_va_list __arg) __attribute__  (( __format__ ( __scanf__, 1, 0 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 485 "/usr/include/stdio.h"
 extern int vsscanf(const char *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __attribute__  (( __nothrow__ ))  __attribute__  (( __format__ ( __scanf__, 2, 0 )  )) ; 
 #line 498 "/usr/include/stdio.h"
-extern int vfscanf( FILE *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __asm__ ("""__isoc99_vfscanf") __attribute__  (( __format__ ( __scanf__, 2, 0 )  )) ; 
+extern int vfscanf( FILE *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __asm__ ("""__isoc99_vfscanf") __attribute__  (( __format__ ( __scanf__, 2, 0 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 501 "/usr/include/stdio.h"
-extern int vscanf(const char *__restrict __format,  __gnuc_va_list __arg) __asm__ ("""__isoc99_vscanf") __attribute__  (( __format__ ( __scanf__, 1, 0 )  )) ; 
+extern int vscanf(const char *__restrict __format,  __gnuc_va_list __arg) __asm__ ("""__isoc99_vscanf") __attribute__  (( __format__ ( __scanf__, 1, 0 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 506 "/usr/include/stdio.h"
 extern int vsscanf(const char *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __asm__ ("""__isoc99_vsscanf") __attribute__  (( __nothrow__ ))  __attribute__  (( __format__ ( __scanf__, 2, 0 )  )) ; 
 # 494 "/usr/include/stdio.h" 3 4
@@ -410,16 +409,16 @@ extern int getw( FILE *__stream);
 #line 613 "/usr/include/stdio.h"
 extern int putw(int __w,  FILE *__stream); 
 #line 623 "/usr/include/stdio.h"
-extern char *fgets(char *__restrict __s, int __n,  FILE *__restrict __stream); 
+extern char *fgets(char *__restrict __s, int __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 # 594 "/usr/include/stdio.h" 3 4
 # 638 "/usr/include/stdio.h" 3 4
-extern char *gets(char *__s) __attribute__  (( __deprecated__ )) ; 
+extern char *gets(char *__s) __attribute__  (( __warn_unused_result__ ))  __attribute__  (( __deprecated__ )) ; 
 #line 667 "/usr/include/stdio.h"
-extern  __ssize_t __getdelim(char **__restrict __lineptr,  size_t *__restrict __n, int __delimiter,  FILE *__restrict __stream); 
+extern  __ssize_t __getdelim(char **__restrict __lineptr,  size_t *__restrict __n, int __delimiter,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 #line 670 "/usr/include/stdio.h"
-extern  __ssize_t getdelim(char **__restrict __lineptr,  size_t *__restrict __n, int __delimiter,  FILE *__restrict __stream); 
+extern  __ssize_t getdelim(char **__restrict __lineptr,  size_t *__restrict __n, int __delimiter,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 #line 680 "/usr/include/stdio.h"
-extern  __ssize_t getline(char **__restrict __lineptr,  size_t *__restrict __n,  FILE *__restrict __stream); 
+extern  __ssize_t getline(char **__restrict __lineptr,  size_t *__restrict __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 #line 689 "/usr/include/stdio.h"
 extern int fputs(const char *__restrict __s,  FILE *__restrict __stream); 
 #line 695 "/usr/include/stdio.h"
@@ -427,24 +426,24 @@ extern int puts(const char *__s);
 #line 702 "/usr/include/stdio.h"
 extern int ungetc(int __c,  FILE *__stream); 
 #line 710 "/usr/include/stdio.h"
-extern  size_t fread(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream); 
+extern  size_t fread(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 #line 716 "/usr/include/stdio.h"
 extern  size_t fwrite(const void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __s); 
 # 665 "/usr/include/stdio.h" 3 4
 # 738 "/usr/include/stdio.h" 3 4
-extern  size_t fread_unlocked(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream); 
+extern  size_t fread_unlocked(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 #line 740 "/usr/include/stdio.h"
 extern  size_t fwrite_unlocked(const void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream); 
 #line 749 "/usr/include/stdio.h"
 extern int fseek( FILE *__stream, long int __off, int __whence); 
 #line 754 "/usr/include/stdio.h"
-extern long int ftell( FILE *__stream); 
+extern long int ftell( FILE *__stream) __attribute__  (( __warn_unused_result__ )) ; 
 #line 759 "/usr/include/stdio.h"
 extern void rewind( FILE *__stream); 
 #line 773 "/usr/include/stdio.h"
 extern int fseeko( FILE *__stream,  __off_t __off, int __whence); 
 #line 778 "/usr/include/stdio.h"
-extern  __off_t ftello( FILE *__stream); 
+extern  __off_t ftello( FILE *__stream) __attribute__  (( __warn_unused_result__ )) ; 
 # 773 "/usr/include/stdio.h" 3 4
 # 798 "/usr/include/stdio.h" 3 4
 extern int fgetpos( FILE *__restrict __stream,  fpos_t *__restrict __pos); 
@@ -454,15 +453,15 @@ extern int fsetpos( FILE *__stream, const  fpos_t *__pos);
 # 826 "/usr/include/stdio.h" 3 4
 extern void clearerr( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
 #line 828 "/usr/include/stdio.h"
-extern int feof( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int feof( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 830 "/usr/include/stdio.h"
-extern int ferror( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int ferror( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 835 "/usr/include/stdio.h"
 extern void clearerr_unlocked( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
 #line 836 "/usr/include/stdio.h"
-extern int feof_unlocked( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int feof_unlocked( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 837 "/usr/include/stdio.h"
-extern int ferror_unlocked( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int ferror_unlocked( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 846 "/usr/include/stdio.h"
 extern void perror(const char *__s); 
 # 1 "/usr/include/x86_64-linux-gnu/bits/sys_errlist.h" 1 3 4
@@ -471,12 +470,12 @@ extern int sys_nerr;
 #line 27 "/usr/include/x86_64-linux-gnu/bits/sys_errlist.h"
 extern const char *const sys_errlist[]; 
 #line 858 "/usr/include/stdio.h"
-extern int fileno( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int fileno( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 863 "/usr/include/stdio.h"
-extern int fileno_unlocked( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int fileno_unlocked( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 # 854 "/usr/include/stdio.h" 2 3 4
 # 873 "/usr/include/stdio.h" 3 4
-extern  FILE *popen(const char *__command, const char *__modes); 
+extern  FILE *popen(const char *__command, const char *__modes) __attribute__  (( __warn_unused_result__ )) ; 
 #line 879 "/usr/include/stdio.h"
 extern int pclose( FILE *__stream); 
 #line 885 "/usr/include/stdio.h"
@@ -484,11 +483,905 @@ extern char *ctermid(char *__s) __attribute__  (( __nothrow__ )) ;
 #line 913 "/usr/include/stdio.h"
 extern void flockfile( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
 #line 917 "/usr/include/stdio.h"
-extern int ftrylockfile( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int ftrylockfile( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 920 "/usr/include/stdio.h"
 extern void funlockfile( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
 # 913 "/usr/include/stdio.h" 3 4
-# 943 "/usr/include/stdio.h" 3 4
+# 934 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdio.h" 1 3 4
+# 45 "/usr/include/x86_64-linux-gnu/bits/stdio.h" 3 4
+extern __inline  __attribute__  (( __gnu_inline__ )) int getchar(void )  
+# 495 "patricia_advice.c"
+{
+# 497 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 503 "patricia_advice.c"
+{
+
+#line 46 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+
+# 508 "patricia_advice.c"
+retValue_acc = _IO_getc(stdin);
+# 510 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 513 "patricia_advice.c"
+
+}
+
+# 517 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 520 "patricia_advice.c"
+
+}
+ 
+#line 54 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int fgetc_unlocked( FILE *__fp)  
+# 526 "patricia_advice.c"
+{
+# 528 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 534 "patricia_advice.c"
+{
+
+#line 55 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+
+# 539 "patricia_advice.c"
+retValue_acc = ((__builtin_expect((((__fp)->_IO_read_ptr) >= ((__fp)->_IO_read_end)), 0)?__uflow(__fp):(*((unsigned char *)((__fp)->_IO_read_ptr)++))));
+# 541 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 544 "patricia_advice.c"
+
+}
+
+# 548 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 551 "patricia_advice.c"
+
+}
+ 
+#line 64 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int getc_unlocked( FILE *__fp)  
+# 557 "patricia_advice.c"
+{
+# 559 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 565 "patricia_advice.c"
+{
+
+#line 65 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+
+# 570 "patricia_advice.c"
+retValue_acc = ((__builtin_expect((((__fp)->_IO_read_ptr) >= ((__fp)->_IO_read_end)), 0)?__uflow(__fp):(*((unsigned char *)((__fp)->_IO_read_ptr)++))));
+# 572 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 575 "patricia_advice.c"
+
+}
+
+# 579 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 582 "patricia_advice.c"
+
+}
+ 
+#line 71 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int getchar_unlocked(void )  
+# 588 "patricia_advice.c"
+{
+# 590 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 596 "patricia_advice.c"
+{
+
+#line 72 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+
+# 601 "patricia_advice.c"
+retValue_acc = ((__builtin_expect((((stdin)->_IO_read_ptr) >= ((stdin)->_IO_read_end)), 0)?__uflow(stdin):(*((unsigned char *)((stdin)->_IO_read_ptr)++))));
+# 603 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 606 "patricia_advice.c"
+
+}
+
+# 610 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 613 "patricia_advice.c"
+
+}
+ 
+#line 80 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int putchar(int __c)  
+# 619 "patricia_advice.c"
+{
+# 621 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 627 "patricia_advice.c"
+{
+
+#line 81 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+
+# 632 "patricia_advice.c"
+retValue_acc = _IO_putc(__c, stdout);
+# 634 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 637 "patricia_advice.c"
+
+}
+
+# 641 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 644 "patricia_advice.c"
+
+}
+ 
+#line 89 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int fputc_unlocked(int __c,  FILE *__stream)  
+# 650 "patricia_advice.c"
+{
+# 652 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 658 "patricia_advice.c"
+{
+
+#line 90 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+
+# 663 "patricia_advice.c"
+retValue_acc = ((__builtin_expect((((__stream)->_IO_write_ptr) >= ((__stream)->_IO_write_end)), 0)?__overflow(__stream, ((unsigned char )(__c))):((unsigned char )((*((__stream)->_IO_write_ptr)++) = (__c)))));
+# 665 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 668 "patricia_advice.c"
+
+}
+
+# 672 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 675 "patricia_advice.c"
+
+}
+ 
+#line 99 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int putc_unlocked(int __c,  FILE *__stream)  
+# 681 "patricia_advice.c"
+{
+# 683 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 689 "patricia_advice.c"
+{
+
+#line 100 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+
+# 694 "patricia_advice.c"
+retValue_acc = ((__builtin_expect((((__stream)->_IO_write_ptr) >= ((__stream)->_IO_write_end)), 0)?__overflow(__stream, ((unsigned char )(__c))):((unsigned char )((*((__stream)->_IO_write_ptr)++) = (__c)))));
+# 696 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 699 "patricia_advice.c"
+
+}
+
+# 703 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 706 "patricia_advice.c"
+
+}
+ 
+#line 106 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int putchar_unlocked(int __c)  
+# 712 "patricia_advice.c"
+{
+# 714 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 720 "patricia_advice.c"
+{
+
+#line 107 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+
+# 725 "patricia_advice.c"
+retValue_acc = ((__builtin_expect((((stdout)->_IO_write_ptr) >= ((stdout)->_IO_write_end)), 0)?__overflow(stdout, ((unsigned char )(__c))):((unsigned char )((*((stdout)->_IO_write_ptr)++) = (__c)))));
+# 727 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 730 "patricia_advice.c"
+
+}
+
+# 734 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 737 "patricia_advice.c"
+
+}
+ 
+#line 126 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int  __attribute__  (( __nothrow__ )) feof_unlocked( FILE *__stream)  
+# 743 "patricia_advice.c"
+{
+# 745 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 751 "patricia_advice.c"
+{
+
+#line 127 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+
+# 756 "patricia_advice.c"
+retValue_acc = ((((__stream)->_flags) & 0x10) != 0);
+# 758 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 761 "patricia_advice.c"
+
+}
+
+# 765 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 768 "patricia_advice.c"
+
+}
+ 
+#line 133 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int  __attribute__  (( __nothrow__ )) ferror_unlocked( FILE *__stream)  
+# 774 "patricia_advice.c"
+{
+# 776 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 782 "patricia_advice.c"
+{
+
+#line 134 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+
+# 787 "patricia_advice.c"
+retValue_acc = ((((__stream)->_flags) & 0x20) != 0);
+# 789 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 792 "patricia_advice.c"
+
+}
+
+# 796 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 799 "patricia_advice.c"
+
+}
+ 
+# 124 "/usr/include/x86_64-linux-gnu/bits/stdio.h" 3 4
+# 935 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdio2.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/stdio2.h" 3 4
+extern int __sprintf_chk(char *__restrict __s, int __flag,  size_t __slen, const char *__restrict __format, ...) __attribute__  (( __nothrow__ )) ; 
+#line 27 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __vsprintf_chk(char *__restrict __s, int __flag,  size_t __slen, const char *__restrict __format,  __gnuc_va_list __ap) __attribute__  (( __nothrow__ )) ; 
+#line 32 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int  __attribute__  (( __nothrow__ )) sprintf(char *__restrict __s, const char *__restrict __fmt, ...)  
+# 812 "patricia_advice.c"
+{
+# 814 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 820 "patricia_advice.c"
+{
+
+#line 34 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 825 "patricia_advice.c"
+retValue_acc = __builtin___sprintf_chk(__s, 2 - 1, __builtin_object_size(__s, 2 > 1), __fmt, __builtin_va_arg_pack());
+# 827 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 830 "patricia_advice.c"
+
+}
+
+# 834 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 837 "patricia_advice.c"
+
+}
+ 
+#line 45 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int  __attribute__  (( __nothrow__ )) vsprintf(char *__restrict __s, const char *__restrict __fmt,  __gnuc_va_list __ap)  
+# 843 "patricia_advice.c"
+{
+# 845 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 851 "patricia_advice.c"
+{
+
+#line 47 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 856 "patricia_advice.c"
+retValue_acc = __builtin___vsprintf_chk(__s, 2 - 1, __builtin_object_size(__s, 2 > 1), __fmt, __ap);
+# 858 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 861 "patricia_advice.c"
+
+}
+
+# 865 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 868 "patricia_advice.c"
+
+}
+ 
+#line 54 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __snprintf_chk(char *__restrict __s,  size_t __n, int __flag,  size_t __slen, const char *__restrict __format, ...) __attribute__  (( __nothrow__ )) ; 
+#line 57 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __vsnprintf_chk(char *__restrict __s,  size_t __n, int __flag,  size_t __slen, const char *__restrict __format,  __gnuc_va_list __ap) __attribute__  (( __nothrow__ )) ; 
+#line 63 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int  __attribute__  (( __nothrow__ )) snprintf(char *__restrict __s,  size_t __n, const char *__restrict __fmt, ...)  
+# 878 "patricia_advice.c"
+{
+# 880 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 886 "patricia_advice.c"
+{
+
+#line 65 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 891 "patricia_advice.c"
+retValue_acc = __builtin___snprintf_chk(__s, __n, 2 - 1, __builtin_object_size(__s, 2 > 1), __fmt, __builtin_va_arg_pack());
+# 893 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 896 "patricia_advice.c"
+
+}
+
+# 900 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 903 "patricia_advice.c"
+
+}
+ 
+#line 76 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int  __attribute__  (( __nothrow__ )) vsnprintf(char *__restrict __s,  size_t __n, const char *__restrict __fmt,  __gnuc_va_list __ap)  
+# 909 "patricia_advice.c"
+{
+# 911 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 917 "patricia_advice.c"
+{
+
+#line 78 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 922 "patricia_advice.c"
+retValue_acc = __builtin___vsnprintf_chk(__s, __n, 2 - 1, __builtin_object_size(__s, 2 > 1), __fmt, __ap);
+# 924 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 927 "patricia_advice.c"
+
+}
+
+# 931 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 934 "patricia_advice.c"
+
+}
+ 
+#line 86 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __fprintf_chk( FILE *__restrict __stream, int __flag, const char *__restrict __format, ...); 
+#line 87 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __printf_chk(int __flag, const char *__restrict __format, ...); 
+#line 89 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __vfprintf_chk( FILE *__restrict __stream, int __flag, const char *__restrict __format,  __gnuc_va_list __ap); 
+#line 91 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __vprintf_chk(int __flag, const char *__restrict __format,  __gnuc_va_list __ap); 
+#line 96 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int fprintf( FILE *__restrict __stream, const char *__restrict __fmt, ...)  
+# 948 "patricia_advice.c"
+{
+# 950 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 956 "patricia_advice.c"
+{
+
+#line 98 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 961 "patricia_advice.c"
+retValue_acc = __fprintf_chk(__stream, 2 - 1, __fmt, __builtin_va_arg_pack());
+# 963 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 966 "patricia_advice.c"
+
+}
+
+# 970 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 973 "patricia_advice.c"
+
+}
+ 
+#line 103 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int printf(const char *__restrict __fmt, ...)  
+# 979 "patricia_advice.c"
+{
+# 981 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 987 "patricia_advice.c"
+{
+
+#line 104 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 992 "patricia_advice.c"
+retValue_acc = __printf_chk(2 - 1, __fmt, __builtin_va_arg_pack());
+# 994 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 997 "patricia_advice.c"
+
+}
+
+# 1001 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 1004 "patricia_advice.c"
+
+}
+ 
+#line 115 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int vprintf(const char *__restrict __fmt,  __gnuc_va_list __ap)  
+# 1010 "patricia_advice.c"
+{
+# 1012 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 1018 "patricia_advice.c"
+{
+
+#line 117 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 1023 "patricia_advice.c"
+retValue_acc = __vfprintf_chk(stdout, 2 - 1, __fmt, __ap);
+# 1025 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 1028 "patricia_advice.c"
+
+}
+
+# 1032 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 1035 "patricia_advice.c"
+
+}
+ 
+#line 126 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int vfprintf( FILE *__restrict __stream, const char *__restrict __fmt,  __gnuc_va_list __ap)  
+# 1041 "patricia_advice.c"
+{
+# 1043 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 1049 "patricia_advice.c"
+{
+
+#line 127 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 1054 "patricia_advice.c"
+retValue_acc = __vfprintf_chk(__stream, 2 - 1, __fmt, __ap);
+# 1056 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 1059 "patricia_advice.c"
+
+}
+
+# 1063 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 1066 "patricia_advice.c"
+
+}
+ 
+#line 132 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __dprintf_chk(int __fd, int __flag, const char *__restrict __fmt, ...) __attribute__  (( __format__ ( __printf__, 3, 4 )  )) ; 
+#line 135 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __vdprintf_chk(int __fd, int __flag, const char *__restrict __fmt,  __gnuc_va_list __arg) __attribute__  (( __format__ ( __printf__, 3, 0 )  )) ; 
+#line 140 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int dprintf(int __fd, const char *__restrict __fmt, ...)  
+# 1076 "patricia_advice.c"
+{
+# 1078 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 1084 "patricia_advice.c"
+{
+
+#line 142 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 1089 "patricia_advice.c"
+retValue_acc = __dprintf_chk(__fd, 2 - 1, __fmt, __builtin_va_arg_pack());
+# 1091 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 1094 "patricia_advice.c"
+
+}
+
+# 1098 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 1101 "patricia_advice.c"
+
+}
+ 
+#line 151 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int vdprintf(int __fd, const char *__restrict __fmt,  __gnuc_va_list __ap)  
+# 1107 "patricia_advice.c"
+{
+# 1109 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 1115 "patricia_advice.c"
+{
+
+#line 152 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 1120 "patricia_advice.c"
+retValue_acc = __vdprintf_chk(__fd, 2 - 1, __fmt, __ap);
+# 1122 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 1125 "patricia_advice.c"
+
+}
+
+# 1129 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 1132 "patricia_advice.c"
+
+}
+ 
+#line 227 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern char *__gets_chk(char *__str,  size_t ) __attribute__  (( __warn_unused_result__ )) ; 
+#line 229 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern char *__gets_warn(char *__str) __asm__ ("""gets") __attribute__  (( __warn_unused_result__ ))  __attribute__  (( __warning__ ( "please use fgets or getline instead, gets can't ""specify buffer size" )  )) ; 
+#line 234 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  __attribute__  (( __warn_unused_result__ )) char *gets(char *__str)  
+# 1142 "patricia_advice.c"
+{
+# 1144 "patricia_advice.c"
+char* retValue_acc;
+
+
+
+
+# 1150 "patricia_advice.c"
+{
+
+#line 237 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__builtin_object_size(__str, 2 > 1) != (( size_t )(-1))){
+
+# 1156 "patricia_advice.c"
+retValue_acc = __gets_chk(__str, __builtin_object_size(__str, 2 > 1));
+# 1158 "patricia_advice.c"
+return (char* )retValue_acc;
+ }
+#line 237 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 1163 "patricia_advice.c"
+retValue_acc = __gets_warn(__str);
+# 1165 "patricia_advice.c"
+return (char* )retValue_acc;
+ 
+# 1168 "patricia_advice.c"
+
+}
+
+# 1172 "patricia_advice.c"
+return (char* )retValue_acc;
+
+# 1175 "patricia_advice.c"
+
+}
+ 
+#line 242 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern char *__fgets_chk(char *__restrict __s,  size_t __size, int __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
+#line 243 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern char *__fgets_alias(char *__restrict __s, int __n,  FILE *__restrict __stream) __asm__ ("""fgets") __attribute__  (( __warn_unused_result__ )) ; 
+#line 249 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern char *__fgets_chk_warn(char *__restrict __s,  size_t __size, int __n,  FILE *__restrict __stream) __asm__ ("""__fgets_chk") __attribute__  (( __warn_unused_result__ ))  __attribute__  (( __warning__ ( "fgets called with bigger size than length ""of destination buffer" )  )) ; 
+#line 254 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  __attribute__  (( __warn_unused_result__ )) char *fgets(char *__restrict __s, int __n,  FILE *__restrict __stream)  
+# 1187 "patricia_advice.c"
+{
+# 1189 "patricia_advice.c"
+char* retValue_acc;
+
+
+
+
+# 1195 "patricia_advice.c"
+{
+
+#line 263 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__builtin_object_size(__s, 2 > 1) != (( size_t )(-1))){
+{ 
+#line 260 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if ((!__builtin_constant_p(__n)) || __n <= 0){
+
+# 1204 "patricia_advice.c"
+retValue_acc = __fgets_chk(__s, __builtin_object_size(__s, 2 > 1), __n, __stream);
+# 1206 "patricia_advice.c"
+return (char* )retValue_acc;
+ }
+#line 260 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if ((( size_t )__n) > __builtin_object_size(__s, 2 > 1)){
+
+# 1212 "patricia_advice.c"
+retValue_acc = __fgets_chk_warn(__s, __builtin_object_size(__s, 2 > 1), __n, __stream);
+# 1214 "patricia_advice.c"
+return (char* )retValue_acc;
+ }} }
+#line 263 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 1219 "patricia_advice.c"
+retValue_acc = __fgets_alias(__s, __n, __stream);
+# 1221 "patricia_advice.c"
+return (char* )retValue_acc;
+ 
+# 1224 "patricia_advice.c"
+
+}
+
+# 1228 "patricia_advice.c"
+return (char* )retValue_acc;
+
+# 1231 "patricia_advice.c"
+
+}
+ 
+#line 268 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern  size_t __fread_chk(void *__restrict __ptr,  size_t __ptrlen,  size_t __size,  size_t __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
+#line 269 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern  size_t __fread_alias(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream) __asm__ ("""fread") __attribute__  (( __warn_unused_result__ )) ; 
+#line 278 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern  size_t __fread_chk_warn(void *__restrict __ptr,  size_t __ptrlen,  size_t __size,  size_t __n,  FILE *__restrict __stream) __asm__ ("""__fread_chk") __attribute__  (( __warn_unused_result__ ))  __attribute__  (( __warning__ ( "fread called with bigger size * nmemb than length ""of destination buffer" )  )) ; 
+#line 283 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  __attribute__  (( __warn_unused_result__ ))  size_t fread(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream)  
+# 1243 "patricia_advice.c"
+{
+# 1245 "patricia_advice.c"
+size_t retValue_acc;
+
+
+
+
+# 1251 "patricia_advice.c"
+{
+
+#line 294 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__builtin_object_size(__ptr, 0) != (( size_t )(-1))){
+{ 
+#line 291 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if ((!__builtin_constant_p(__size)) || (!__builtin_constant_p(__n)) || (__size | __n) >= (((( size_t )1)) << (8 * sizeof ( size_t ) / 2))){
+
+# 1260 "patricia_advice.c"
+retValue_acc = __fread_chk(__ptr, __builtin_object_size(__ptr, 0), __size, __n, __stream);
+# 1262 "patricia_advice.c"
+return (size_t )retValue_acc;
+ }
+#line 291 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__size * __n > __builtin_object_size(__ptr, 0)){
+
+# 1268 "patricia_advice.c"
+retValue_acc = __fread_chk_warn(__ptr, __builtin_object_size(__ptr, 0), __size, __n, __stream);
+# 1270 "patricia_advice.c"
+return (size_t )retValue_acc;
+ }} }
+#line 294 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 1275 "patricia_advice.c"
+retValue_acc = __fread_alias(__ptr, __size, __n, __stream);
+# 1277 "patricia_advice.c"
+return (size_t )retValue_acc;
+ 
+# 1280 "patricia_advice.c"
+
+}
+
+# 1284 "patricia_advice.c"
+return (size_t )retValue_acc;
+
+# 1287 "patricia_advice.c"
+
+}
+ 
+# 227 "/usr/include/x86_64-linux-gnu/bits/stdio2.h" 3 4
+# 329 "/usr/include/x86_64-linux-gnu/bits/stdio2.h" 3 4
+extern  size_t __fread_unlocked_chk(void *__restrict __ptr,  size_t __ptrlen,  size_t __size,  size_t __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
+#line 330 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern  size_t __fread_unlocked_alias(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream) __asm__ ("""fread_unlocked") __attribute__  (( __warn_unused_result__ )) ; 
+#line 339 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern  size_t __fread_unlocked_chk_warn(void *__restrict __ptr,  size_t __ptrlen,  size_t __size,  size_t __n,  FILE *__restrict __stream) __asm__ ("""__fread_unlocked_chk") __attribute__  (( __warn_unused_result__ ))  __attribute__  (( __warning__ ( "fread_unlocked called with bigger size * nmemb than ""length of destination buffer" )  )) ; 
+#line 344 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  __attribute__  (( __warn_unused_result__ ))  size_t fread_unlocked(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream)  
+# 1300 "patricia_advice.c"
+{
+# 1302 "patricia_advice.c"
+size_t retValue_acc;
+
+
+
+
+# 1308 "patricia_advice.c"
+{
+
+#line 359 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__builtin_object_size(__ptr, 0) != (( size_t )(-1))){
+{ 
+#line 353 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if ((!__builtin_constant_p(__size)) || (!__builtin_constant_p(__n)) || (__size | __n) >= (((( size_t )1)) << (8 * sizeof ( size_t ) / 2))){
+
+# 1317 "patricia_advice.c"
+retValue_acc = __fread_unlocked_chk(__ptr, __builtin_object_size(__ptr, 0), __size, __n, __stream);
+# 1319 "patricia_advice.c"
+return (size_t )retValue_acc;
+ }
+#line 353 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__size * __n > __builtin_object_size(__ptr, 0)){
+
+# 1325 "patricia_advice.c"
+retValue_acc = __fread_unlocked_chk_warn(__ptr, __builtin_object_size(__ptr, 0), __size, __n, __stream);
+# 1327 "patricia_advice.c"
+return (size_t )retValue_acc;
+ }} }
+#line 359 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__builtin_constant_p(__size) && __builtin_constant_p(__n) && (__size | __n) < (((( size_t )1)) << (8 * sizeof ( size_t ) / 2)) && __size * __n <= 8){
+{ 
+#line 364 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+#line 364 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+ size_t __cnt = __size * __n;
+#line 365 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+#line 365 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+char *__cptr = ((char *)__ptr);
+#line 366 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__cnt == 0){
+
+# 1344 "patricia_advice.c"
+retValue_acc = 0;
+# 1346 "patricia_advice.c"
+return (size_t )retValue_acc;
+ }
+#line 369 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+for(;__cnt > 0;(--__cnt)) { { 
+#line 371 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+#line 371 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+int __c = ((__builtin_expect((((__stream)->_IO_read_ptr) >= ((__stream)->_IO_read_end)), 0)?__uflow(__stream):(*((unsigned char *)((__stream)->_IO_read_ptr)++))));
+#line 372 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__c == ((-1))){
+break; }
+#line 374 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+(*__cptr++) = __c; } } 
+#line 376 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 1362 "patricia_advice.c"
+retValue_acc = (__cptr - ((char *)__ptr)) / __size;
+# 1364 "patricia_advice.c"
+return (size_t )retValue_acc;
+ } }
+#line 379 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 1369 "patricia_advice.c"
+retValue_acc = __fread_unlocked_alias(__ptr, __size, __n, __stream);
+# 1371 "patricia_advice.c"
+return (size_t )retValue_acc;
+ 
+# 1374 "patricia_advice.c"
+
+}
+
+# 1378 "patricia_advice.c"
+return (size_t )retValue_acc;
+
+# 1381 "patricia_advice.c"
+
+}
+ 
+# 938 "/usr/include/stdio.h" 2 3 4
 # 4 "patricia_advice.c" 2
 # 1 "/usr/include/assert.h" 1 3 4
 # 71 "/usr/include/assert.h" 3 4
@@ -523,63 +1416,63 @@ typedef enum {P_ALL,P_PID,P_PGID}idtype_t;
 # 36 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 2 3 4
 # 46 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 3 4
 static __inline unsigned int __bswap_32(unsigned int __bsx)  
-# 527 "patricia_advice.c"
+# 1420 "patricia_advice.c"
 {
-# 529 "patricia_advice.c"
+# 1422 "patricia_advice.c"
 unsigned int retValue_acc;
 
 
 
 
-# 535 "patricia_advice.c"
+# 1428 "patricia_advice.c"
 {
 
 #line 47 "/usr/include/x86_64-linux-gnu/bits/byteswap.h"
 
-# 540 "patricia_advice.c"
+# 1433 "patricia_advice.c"
 retValue_acc = __builtin_bswap32(__bsx);
-# 542 "patricia_advice.c"
+# 1435 "patricia_advice.c"
 return (unsigned int )retValue_acc;
  
-# 545 "patricia_advice.c"
+# 1438 "patricia_advice.c"
 
 }
 
-# 549 "patricia_advice.c"
+# 1442 "patricia_advice.c"
 return (unsigned int )retValue_acc;
 
-# 552 "patricia_advice.c"
+# 1445 "patricia_advice.c"
 
 }
  
 #line 109 "/usr/include/x86_64-linux-gnu/bits/byteswap.h"
 static __inline  __uint64_t __bswap_64( __uint64_t __bsx)  
-# 558 "patricia_advice.c"
+# 1451 "patricia_advice.c"
 {
-# 560 "patricia_advice.c"
+# 1453 "patricia_advice.c"
 __uint64_t retValue_acc;
 
 
 
 
-# 566 "patricia_advice.c"
+# 1459 "patricia_advice.c"
 {
 
 #line 110 "/usr/include/x86_64-linux-gnu/bits/byteswap.h"
 
-# 571 "patricia_advice.c"
+# 1464 "patricia_advice.c"
 retValue_acc = __builtin_bswap64(__bsx);
-# 573 "patricia_advice.c"
+# 1466 "patricia_advice.c"
 return (__uint64_t )retValue_acc;
  
-# 576 "patricia_advice.c"
+# 1469 "patricia_advice.c"
 
 }
 
-# 580 "patricia_advice.c"
+# 1473 "patricia_advice.c"
 return (__uint64_t )retValue_acc;
 
-# 583 "patricia_advice.c"
+# 1476 "patricia_advice.c"
 
 }
  
@@ -605,15 +1498,15 @@ typedef struct {long int quot; long int rem;
 }lldiv_t; 
 # 95 "/usr/include/stdlib.h" 3 4
 # 139 "/usr/include/stdlib.h" 3 4
-extern  size_t __ctype_get_mb_cur_max(void ) __attribute__  (( __nothrow__ )) ; 
+extern  size_t __ctype_get_mb_cur_max(void ) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 145 "/usr/include/stdlib.h"
-extern double atof(const char *__nptr) __attribute__  (( __nothrow__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+extern double atof(const char *__nptr) __attribute__  (( __nothrow__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 148 "/usr/include/stdlib.h"
-extern int atoi(const char *__nptr) __attribute__  (( __nothrow__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+extern int atoi(const char *__nptr) __attribute__  (( __nothrow__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 151 "/usr/include/stdlib.h"
-extern long int atol(const char *__nptr) __attribute__  (( __nothrow__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+extern long int atol(const char *__nptr) __attribute__  (( __nothrow__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 158 "/usr/include/stdlib.h"
- __extension__ extern long long int atoll(const char *__nptr) __attribute__  (( __nothrow__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+ __extension__ extern long long int atoll(const char *__nptr) __attribute__  (( __nothrow__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 166 "/usr/include/stdlib.h"
 extern double strtod(const char *__restrict __nptr, char **__restrict __endptr) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
 #line 173 "/usr/include/stdlib.h"
@@ -632,11 +1525,104 @@ extern unsigned long int strtoul(const char *__restrict __nptr, char **__restric
  __extension__ extern long long int strtoll(const char *__restrict __nptr, char **__restrict __endptr, int __base) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
 #line 216 "/usr/include/stdlib.h"
  __extension__ extern unsigned long long int strtoull(const char *__restrict __nptr, char **__restrict __endptr, int __base) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 305 "/usr/include/stdlib.h"
-extern char *l64a(long int __n) __attribute__  (( __nothrow__ )) ; 
-#line 309 "/usr/include/stdlib.h"
-extern long int a64l(const char *__s) __attribute__  (( __nothrow__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+#line 279 "/usr/include/stdlib.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int  __attribute__  (( __nothrow__ )) atoi(const char *__nptr)  
+# 1531 "patricia_advice.c"
+{
+# 1533 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 1539 "patricia_advice.c"
+{
+
+#line 280 "/usr/include/stdlib.h"
+
+# 1544 "patricia_advice.c"
+retValue_acc = ((int )strtol(__nptr, ((char **)(((void *)0))), 10));
+# 1546 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 1549 "patricia_advice.c"
+
+}
+
+# 1553 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 1556 "patricia_advice.c"
+
+}
+ 
+#line 284 "/usr/include/stdlib.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) long int  __attribute__  (( __nothrow__ )) atol(const char *__nptr)  
+# 1562 "patricia_advice.c"
+{
+# 1564 "patricia_advice.c"
+long int retValue_acc;
+
+
+
+
+# 1570 "patricia_advice.c"
+{
+
+#line 285 "/usr/include/stdlib.h"
+
+# 1575 "patricia_advice.c"
+retValue_acc = strtol(__nptr, ((char **)(((void *)0))), 10);
+# 1577 "patricia_advice.c"
+return (long int )retValue_acc;
+ 
+# 1580 "patricia_advice.c"
+
+}
+
+# 1584 "patricia_advice.c"
+return (long int )retValue_acc;
+
+# 1587 "patricia_advice.c"
+
+}
+ 
+#line 293 "/usr/include/stdlib.h"
+ __extension__ extern __inline  __attribute__  (( __gnu_inline__ )) long long int  __attribute__  (( __nothrow__ )) atoll(const char *__nptr)  
+# 1593 "patricia_advice.c"
+{
+# 1595 "patricia_advice.c"
+long long int retValue_acc;
+
+
+
+
+# 1601 "patricia_advice.c"
+{
+
+#line 294 "/usr/include/stdlib.h"
+
+# 1606 "patricia_advice.c"
+retValue_acc = strtoll(__nptr, ((char **)(((void *)0))), 10);
+# 1608 "patricia_advice.c"
+return (long long int )retValue_acc;
+ 
+# 1611 "patricia_advice.c"
+
+}
+
+# 1615 "patricia_advice.c"
+return (long long int )retValue_acc;
+
+# 1618 "patricia_advice.c"
+
+}
+ 
+# 276 "/usr/include/stdlib.h" 3 4
 # 305 "/usr/include/stdlib.h" 3 4
+extern char *l64a(long int __n) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
+#line 309 "/usr/include/stdlib.h"
+extern long int a64l(const char *__s) __attribute__  (( __nothrow__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 # 1 "/usr/include/x86_64-linux-gnu/sys/types.h" 1 3 4
 # 33 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
 typedef  __u_char u_char; 
@@ -760,7 +1746,12 @@ extern int select(int __nfds,  fd_set *__restrict __readfds,  fd_set *__restrict
 #line 122 "/usr/include/x86_64-linux-gnu/sys/select.h"
 extern int pselect(int __nfds,  fd_set *__restrict __readfds,  fd_set *__restrict __writefds,  fd_set *__restrict __exceptfds, const struct timespec *__restrict __timeout, const  __sigset_t *__restrict __sigmask); 
 # 118 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
-# 131 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/select2.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/select2.h" 3 4
+extern long int __fdelt_chk(long int __d); 
+#line 26 "/usr/include/x86_64-linux-gnu/bits/select2.h"
+extern long int __fdelt_warn(long int __d) __attribute__  (( __warning__ ( "bit outside of fd_set selected" )  )) ; 
+# 129 "/usr/include/x86_64-linux-gnu/sys/select.h" 2 3 4
 # 220 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
 # 1 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 1 3 4
 # 28 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 3 4
@@ -769,8 +1760,100 @@ extern int pselect(int __nfds,  fd_set *__restrict __readfds,  fd_set *__restric
  __extension__ extern unsigned int gnu_dev_minor(unsigned long long int __dev) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ )) ; 
 #line 35 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h"
  __extension__ extern unsigned long long int gnu_dev_makedev(unsigned int __major, unsigned int __minor) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ )) ; 
-# 58 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 3 4
-# 228 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+#line 40 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h"
+ __extension__ extern __inline  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __const__ )) unsigned int  __attribute__  (( __nothrow__ )) gnu_dev_major(unsigned long long int __dev)  
+# 1766 "patricia_advice.c"
+{
+# 1768 "patricia_advice.c"
+unsigned int retValue_acc;
+
+
+
+
+# 1774 "patricia_advice.c"
+{
+
+#line 41 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h"
+
+# 1779 "patricia_advice.c"
+retValue_acc = ((__dev >> 8) & 0xfff) | (((unsigned int )(__dev >> 32)) & (~0xfff));
+# 1781 "patricia_advice.c"
+return (unsigned int )retValue_acc;
+ 
+# 1784 "patricia_advice.c"
+
+}
+
+# 1788 "patricia_advice.c"
+return (unsigned int )retValue_acc;
+
+# 1791 "patricia_advice.c"
+
+}
+ 
+#line 46 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h"
+ __extension__ extern __inline  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __const__ )) unsigned int  __attribute__  (( __nothrow__ )) gnu_dev_minor(unsigned long long int __dev)  
+# 1797 "patricia_advice.c"
+{
+# 1799 "patricia_advice.c"
+unsigned int retValue_acc;
+
+
+
+
+# 1805 "patricia_advice.c"
+{
+
+#line 47 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h"
+
+# 1810 "patricia_advice.c"
+retValue_acc = (__dev & 0xff) | (((unsigned int )(__dev >> 12)) & (~0xff));
+# 1812 "patricia_advice.c"
+return (unsigned int )retValue_acc;
+ 
+# 1815 "patricia_advice.c"
+
+}
+
+# 1819 "patricia_advice.c"
+return (unsigned int )retValue_acc;
+
+# 1822 "patricia_advice.c"
+
+}
+ 
+#line 52 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h"
+ __extension__ extern __inline  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __const__ )) unsigned long long int  __attribute__  (( __nothrow__ )) gnu_dev_makedev(unsigned int __major, unsigned int __minor)  
+# 1828 "patricia_advice.c"
+{
+# 1830 "patricia_advice.c"
+unsigned long long int retValue_acc;
+
+
+
+
+# 1836 "patricia_advice.c"
+{
+
+#line 55 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h"
+
+# 1841 "patricia_advice.c"
+retValue_acc = ((__minor & 0xff) | ((__major & 0xfff) << 8) | ((((unsigned long long int )(__minor & (~0xff)))) << 12) | ((((unsigned long long int )(__major & (~0xfff)))) << 32));
+# 1843 "patricia_advice.c"
+return (unsigned long long int )retValue_acc;
+ 
+# 1846 "patricia_advice.c"
+
+}
+
+# 1850 "patricia_advice.c"
+return (unsigned long long int )retValue_acc;
+
+# 1853 "patricia_advice.c"
+
+}
+ 
+#line 228 "/usr/include/x86_64-linux-gnu/sys/types.h"
 typedef  __blksize_t blksize_t; 
 #line 235 "/usr/include/x86_64-linux-gnu/sys/types.h"
 typedef  __blkcnt_t blkcnt_t; 
@@ -778,6 +1861,7 @@ typedef  __blkcnt_t blkcnt_t;
 typedef  __fsblkcnt_t fsblkcnt_t; 
 #line 243 "/usr/include/x86_64-linux-gnu/sys/types.h"
 typedef  __fsfilcnt_t fsfilcnt_t; 
+# 223 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
 # 270 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 1 3 4
 # 21 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 3 4
@@ -894,9 +1978,9 @@ extern int seed48_r(unsigned short int __seed16v[3], struct drand48_data *__buff
 #line 456 "/usr/include/stdlib.h"
 extern int lcong48_r(unsigned short int __param[7], struct drand48_data *__buffer) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
 #line 466 "/usr/include/stdlib.h"
-extern void *malloc( size_t __size) __attribute__  (( __nothrow__ ))  __attribute__  (( __malloc__ )) ; 
+extern void *malloc( size_t __size) __attribute__  (( __nothrow__ ))  __attribute__  (( __malloc__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 469 "/usr/include/stdlib.h"
-extern void *calloc( size_t __nmemb,  size_t __size) __attribute__  (( __nothrow__ ))  __attribute__  (( __malloc__ )) ; 
+extern void *calloc( size_t __nmemb,  size_t __size) __attribute__  (( __nothrow__ ))  __attribute__  (( __malloc__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 481 "/usr/include/stdlib.h"
 extern void *realloc(void *__ptr,  size_t __size) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 483 "/usr/include/stdlib.h"
@@ -909,9 +1993,9 @@ extern void cfree(void *__ptr) __attribute__  (( __nothrow__ )) ;
 # 32 "/usr/include/alloca.h" 2 3 4
 extern void *alloca( size_t __size) __attribute__  (( __nothrow__ )) ; 
 #line 498 "/usr/include/stdlib.h"
-extern void *valloc( size_t __size) __attribute__  (( __nothrow__ ))  __attribute__  (( __malloc__ )) ; 
+extern void *valloc( size_t __size) __attribute__  (( __nothrow__ ))  __attribute__  (( __malloc__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 504 "/usr/include/stdlib.h"
-extern int posix_memalign(void **__memptr,  size_t __alignment,  size_t __size) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+extern int posix_memalign(void **__memptr,  size_t __alignment,  size_t __size) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 # 493 "/usr/include/stdlib.h" 2 3 4
 # 515 "/usr/include/stdlib.h" 3 4
 extern void abort(void ) __attribute__  (( __nothrow__ ))  __attribute__  (( __noreturn__ )) ; 
@@ -924,7 +2008,7 @@ extern void exit(int __status) __attribute__  (( __nothrow__ ))  __attribute__  
 #line 557 "/usr/include/stdlib.h"
 extern void _Exit(int __status) __attribute__  (( __nothrow__ ))  __attribute__  (( __noreturn__ )) ; 
 #line 564 "/usr/include/stdlib.h"
-extern char *getenv(const char *__name) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+extern char *getenv(const char *__name) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 # 530 "/usr/include/stdlib.h" 3 4
 # 578 "/usr/include/stdlib.h" 3 4
 extern int putenv(char *__string) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
@@ -938,48 +2022,116 @@ extern int clearenv(void ) __attribute__  (( __nothrow__ )) ;
 extern char *mktemp(char *__template) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
 # 606 "/usr/include/stdlib.h" 3 4
 # 620 "/usr/include/stdlib.h" 3 4
-extern int mkstemp(char *__template) __attribute__  (( __nonnull__ ( 1 )  )) ; 
+extern int mkstemp(char *__template) __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 642 "/usr/include/stdlib.h"
-extern int mkstemps(char *__template, int __suffixlen) __attribute__  (( __nonnull__ ( 1 )  )) ; 
+extern int mkstemps(char *__template, int __suffixlen) __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 # 642 "/usr/include/stdlib.h" 3 4
 # 663 "/usr/include/stdlib.h" 3 4
-extern char *mkdtemp(char *__template) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+extern char *mkdtemp(char *__template) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 717 "/usr/include/stdlib.h"
-extern int system(const char *__command); 
+extern int system(const char *__command) __attribute__  (( __warn_unused_result__ )) ; 
 # 712 "/usr/include/stdlib.h" 3 4
 # 735 "/usr/include/stdlib.h" 3 4
-extern char *realpath(const char *__restrict __name, char *__restrict __resolved) __attribute__  (( __nothrow__ )) ; 
+extern char *realpath(const char *__restrict __name, char *__restrict __resolved) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 742 "/usr/include/stdlib.h"
 typedef int (*__compar_fn_t)(const void *, const void *); 
 #line 757 "/usr/include/stdlib.h"
-extern void *bsearch(const void *__key, const void *__base,  size_t __nmemb,  size_t __size,  __compar_fn_t __compar) __attribute__  (( __nonnull__ ( 1, 2, 5 )  )) ; 
+extern void *bsearch(const void *__key, const void *__base,  size_t __nmemb,  size_t __size,  __compar_fn_t __compar) __attribute__  (( __nonnull__ ( 1, 2, 5 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
+# 752 "/usr/include/stdlib.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h" 1 3 4
+# 22 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h" 3 4
+extern __inline  __attribute__  (( __gnu_inline__ )) void *bsearch(const void *__key, const void *__base,  size_t __nmemb,  size_t __size,  __compar_fn_t __compar)  
+# 2045 "patricia_advice.c"
+{
+# 2047 "patricia_advice.c"
+void* retValue_acc;
+
+
+
+
+# 2053 "patricia_advice.c"
+{
+
+#line 23 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+
+#line 23 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+ size_t __l,__u,__idx;
+#line 24 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+
+#line 24 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+const void *__p;
+#line 25 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+
+#line 25 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+int __comparison;
+#line 27 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+__l = 0; 
+#line 28 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+__u = __nmemb; 
+#line 29 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+while(__l < __u) { { 
+#line 31 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+__idx = (__l + __u) / 2; 
+#line 32 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+__p = ((void *)((((const char *)__base)) + (__idx * __size))); 
+#line 33 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+__comparison = ((*__compar))(__key, __p); 
+#line 34 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+if (__comparison < 0){
+__u = __idx; }else{
+if (__comparison > 0){
+__l = __idx + 1; }else{
+
+# 2086 "patricia_advice.c"
+retValue_acc = ((void *)__p);
+# 2088 "patricia_advice.c"
+return (void* )retValue_acc;
+ }}} } 
+#line 42 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+
+# 2093 "patricia_advice.c"
+retValue_acc = (((void *)0));
+# 2095 "patricia_advice.c"
+return (void* )retValue_acc;
+ 
+# 2098 "patricia_advice.c"
+
+}
+
+# 2102 "patricia_advice.c"
+return (void* )retValue_acc;
+
+# 2105 "patricia_advice.c"
+
+}
+ 
 #line 766 "/usr/include/stdlib.h"
 extern void qsort(void *__base,  size_t __nmemb,  size_t __size,  __compar_fn_t __compar) __attribute__  (( __nonnull__ ( 1, 4 )  )) ; 
-# 752 "/usr/include/stdlib.h" 3 4
+# 761 "/usr/include/stdlib.h" 2 3 4
 # 775 "/usr/include/stdlib.h" 3 4
-extern int abs(int __x) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ )) ; 
+extern int abs(int __x) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 776 "/usr/include/stdlib.h"
-extern long int labs(long int __x) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ )) ; 
+extern long int labs(long int __x) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 781 "/usr/include/stdlib.h"
- __extension__ extern long long int llabs(long long int __x) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ )) ; 
+ __extension__ extern long long int llabs(long long int __x) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 790 "/usr/include/stdlib.h"
-extern  div_t div(int __numer, int __denom) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ )) ; 
+extern  div_t div(int __numer, int __denom) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 792 "/usr/include/stdlib.h"
-extern  ldiv_t ldiv(long int __numer, long int __denom) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ )) ; 
+extern  ldiv_t ldiv(long int __numer, long int __denom) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 799 "/usr/include/stdlib.h"
- __extension__ extern  lldiv_t lldiv(long long int __numer, long long int __denom) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ )) ; 
+ __extension__ extern  lldiv_t lldiv(long long int __numer, long long int __denom) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 813 "/usr/include/stdlib.h"
-extern char *ecvt(double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3, 4 )  )) ; 
+extern char *ecvt(double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3, 4 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 819 "/usr/include/stdlib.h"
-extern char *fcvt(double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3, 4 )  )) ; 
+extern char *fcvt(double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3, 4 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 825 "/usr/include/stdlib.h"
-extern char *gcvt(double __value, int __ndigit, char *__buf) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3 )  )) ; 
+extern char *gcvt(double __value, int __ndigit, char *__buf) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 832 "/usr/include/stdlib.h"
-extern char *qecvt(long double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3, 4 )  )) ; 
+extern char *qecvt(long double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3, 4 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 835 "/usr/include/stdlib.h"
-extern char *qfcvt(long double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3, 4 )  )) ; 
+extern char *qfcvt(long double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3, 4 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 837 "/usr/include/stdlib.h"
-extern char *qgcvt(long double __value, int __ndigit, char *__buf) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3 )  )) ; 
+extern char *qgcvt(long double __value, int __ndigit, char *__buf) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 844 "/usr/include/stdlib.h"
 extern int ecvt_r(double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign, char *__restrict __buf,  size_t __len) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3, 4, 5 )  )) ; 
 #line 847 "/usr/include/stdlib.h"
@@ -999,15 +2151,306 @@ extern  size_t mbstowcs( wchar_t *__restrict __pwcs, const char *__restrict __s,
 #line 879 "/usr/include/stdlib.h"
 extern  size_t wcstombs(char *__restrict __s, const  wchar_t *__restrict __pwcs,  size_t __n) __attribute__  (( __nothrow__ )) ; 
 #line 888 "/usr/include/stdlib.h"
-extern int rpmatch(const char *__response) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+extern int rpmatch(const char *__response) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 # 812 "/usr/include/stdlib.h" 3 4
 # 902 "/usr/include/stdlib.h" 3 4
-extern int getsubopt(char **__restrict __optionp, char *const *__restrict __tokens, char **__restrict __valuep) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1, 2, 3 )  )) ; 
+extern int getsubopt(char **__restrict __optionp, char *const *__restrict __tokens, char **__restrict __valuep) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1, 2, 3 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 952 "/usr/include/stdlib.h"
 extern int getloadavg(double __loadavg[], int __nelem) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
 # 951 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/stdlib-float.h" 1 3 4
+# 27 "/usr/include/x86_64-linux-gnu/bits/stdlib-float.h" 3 4
+extern __inline  __attribute__  (( __gnu_inline__ )) double  __attribute__  (( __nothrow__ )) atof(const char *__nptr)  
+# 2165 "patricia_advice.c"
+{
+# 2167 "patricia_advice.c"
+double retValue_acc;
+
+
+
+
+# 2173 "patricia_advice.c"
+{
+
+#line 28 "/usr/include/x86_64-linux-gnu/bits/stdlib-float.h"
+
+# 2178 "patricia_advice.c"
+retValue_acc = strtod(__nptr, ((char **)(((void *)0))));
+# 2180 "patricia_advice.c"
+return (double )retValue_acc;
+ 
+# 2183 "patricia_advice.c"
+
+}
+
+# 2187 "patricia_advice.c"
+return (double )retValue_acc;
+
+# 2190 "patricia_advice.c"
+
+}
+ 
 # 956 "/usr/include/stdlib.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdlib.h" 1 3 4
+# 25 "/usr/include/x86_64-linux-gnu/bits/stdlib.h" 3 4
+extern char *__realpath_chk(const char *__restrict __name, char *__restrict __resolved,  size_t __resolvedlen) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
+#line 26 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern char *__realpath_alias(const char *__restrict __name, char *__restrict __resolved) __asm__ ("""realpath") __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
+#line 33 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern char *__realpath_chk_warn(const char *__restrict __name, char *__restrict __resolved,  size_t __resolvedlen) __asm__ ("""__realpath_chk") __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ ))  __attribute__  (( __warning__ ( "second argument of realpath must be either NULL or at ""least PATH_MAX bytes long buffer" )  )) ; 
+#line 38 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  __attribute__  (( __warn_unused_result__ )) char * __attribute__  (( __nothrow__ )) realpath(const char *__restrict __name, char *__restrict __resolved)  
+# 2204 "patricia_advice.c"
+{
+# 2206 "patricia_advice.c"
+char* retValue_acc;
+
+
+
+
+# 2212 "patricia_advice.c"
+{
+
+#line 48 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if (__builtin_object_size(__resolved, 2 > 1) != (( size_t )(-1))){
+{ 
+#line 45 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+
+# 2220 "patricia_advice.c"
+retValue_acc = __realpath_chk(__name, __resolved, __builtin_object_size(__resolved, 2 > 1));
+# 2222 "patricia_advice.c"
+return (char* )retValue_acc;
+ } }
+#line 48 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+
+# 2227 "patricia_advice.c"
+retValue_acc = __realpath_alias(__name, __resolved);
+# 2229 "patricia_advice.c"
+return (char* )retValue_acc;
+ 
+# 2232 "patricia_advice.c"
+
+}
+
+# 2236 "patricia_advice.c"
+return (char* )retValue_acc;
+
+# 2239 "patricia_advice.c"
+
+}
+ 
+#line 53 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern int __ptsname_r_chk(int __fd, char *__buf,  size_t __buflen,  size_t __nreal) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 2 )  )) ; 
+#line 56 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern int __ptsname_r_alias(int __fd, char *__buf,  size_t __buflen) __asm__ ("""ptsname_r") __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 2 )  )) ; 
+#line 60 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern int __ptsname_r_chk_warn(int __fd, char *__buf,  size_t __buflen,  size_t __nreal) __asm__ ("""__ptsname_r_chk") __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 2 )  ))  __attribute__  (( __warning__ ( "ptsname_r called with buflen bigger than ""size of buf" )  )) ; 
+#line 65 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int  __attribute__  (( __nothrow__ )) ptsname_r(int __fd, char *__buf,  size_t __buflen)  
+# 2251 "patricia_advice.c"
+{
+# 2253 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 2259 "patricia_advice.c"
+{
+
+#line 73 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if (__builtin_object_size(__buf, 2 > 1) != (( size_t )(-1))){
+{ 
+#line 70 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if ((!__builtin_constant_p(__buflen))){
+
+# 2268 "patricia_advice.c"
+retValue_acc = __ptsname_r_chk(__fd, __buf, __buflen, __builtin_object_size(__buf, 2 > 1));
+# 2270 "patricia_advice.c"
+return (int )retValue_acc;
+ }
+#line 70 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if (__buflen > __builtin_object_size(__buf, 2 > 1)){
+
+# 2276 "patricia_advice.c"
+retValue_acc = __ptsname_r_chk_warn(__fd, __buf, __buflen, __builtin_object_size(__buf, 2 > 1));
+# 2278 "patricia_advice.c"
+return (int )retValue_acc;
+ }} }
+#line 73 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+
+# 2283 "patricia_advice.c"
+retValue_acc = __ptsname_r_alias(__fd, __buf, __buflen);
+# 2285 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 2288 "patricia_advice.c"
+
+}
+
+# 2292 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 2295 "patricia_advice.c"
+
+}
+ 
+#line 78 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern int __wctomb_chk(char *__s,  wchar_t __wchar,  size_t __buflen) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
+#line 79 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern int __wctomb_alias(char *__s,  wchar_t __wchar) __asm__ ("""wctomb") __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
+#line 84 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  __attribute__  (( __warn_unused_result__ )) int  __attribute__  (( __nothrow__ )) wctomb(char *__s,  wchar_t __wchar)  
+# 2305 "patricia_advice.c"
+{
+# 2307 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 2313 "patricia_advice.c"
+{
+
+#line 94 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if (__builtin_object_size(__s, 2 > 1) != (( size_t )(-1)) && 16 > __builtin_object_size(__s, 2 > 1)){
+
+# 2319 "patricia_advice.c"
+retValue_acc = __wctomb_chk(__s, __wchar, __builtin_object_size(__s, 2 > 1));
+# 2321 "patricia_advice.c"
+return (int )retValue_acc;
+ }
+#line 94 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+
+# 2326 "patricia_advice.c"
+retValue_acc = __wctomb_alias(__s, __wchar);
+# 2328 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 2331 "patricia_advice.c"
+
+}
+
+# 2335 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 2338 "patricia_advice.c"
+
+}
+ 
+#line 100 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern  size_t __mbstowcs_chk( wchar_t *__restrict __dst, const char *__restrict __src,  size_t __len,  size_t __dstlen) __attribute__  (( __nothrow__ )) ; 
+#line 101 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern  size_t __mbstowcs_alias( wchar_t *__restrict __dst, const char *__restrict __src,  size_t __len) __asm__ ("""mbstowcs") __attribute__  (( __nothrow__ )) ; 
+#line 109 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern  size_t __mbstowcs_chk_warn( wchar_t *__restrict __dst, const char *__restrict __src,  size_t __len,  size_t __dstlen) __asm__ ("""__mbstowcs_chk") __attribute__  (( __nothrow__ ))  __attribute__  (( __warning__ ( "mbstowcs called with dst buffer smaller than len ""* sizeof (wchar_t)" )  )) ; 
+#line 114 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  size_t  __attribute__  (( __nothrow__ )) mbstowcs( wchar_t *__restrict __dst, const char *__restrict __src,  size_t __len)  
+# 2350 "patricia_advice.c"
+{
+# 2352 "patricia_advice.c"
+size_t retValue_acc;
+
+
+
+
+# 2358 "patricia_advice.c"
+{
+
+#line 125 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if (__builtin_object_size(__dst, 2 > 1) != (( size_t )(-1))){
+{ 
+#line 121 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if ((!__builtin_constant_p(__len))){
+
+# 2367 "patricia_advice.c"
+retValue_acc = __mbstowcs_chk(__dst, __src, __len, __builtin_object_size(__dst, 2 > 1) / sizeof ( wchar_t ));
+# 2369 "patricia_advice.c"
+return (size_t )retValue_acc;
+ }
+#line 121 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if (__len > __builtin_object_size(__dst, 2 > 1) / sizeof ( wchar_t )){
+
+# 2375 "patricia_advice.c"
+retValue_acc = __mbstowcs_chk_warn(__dst, __src, __len, __builtin_object_size(__dst, 2 > 1) / sizeof ( wchar_t ));
+# 2377 "patricia_advice.c"
+return (size_t )retValue_acc;
+ }} }
+#line 125 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+
+# 2382 "patricia_advice.c"
+retValue_acc = __mbstowcs_alias(__dst, __src, __len);
+# 2384 "patricia_advice.c"
+return (size_t )retValue_acc;
+ 
+# 2387 "patricia_advice.c"
+
+}
+
+# 2391 "patricia_advice.c"
+return (size_t )retValue_acc;
+
+# 2394 "patricia_advice.c"
+
+}
+ 
+#line 131 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern  size_t __wcstombs_chk(char *__restrict __dst, const  wchar_t *__restrict __src,  size_t __len,  size_t __dstlen) __attribute__  (( __nothrow__ )) ; 
+#line 132 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern  size_t __wcstombs_alias(char *__restrict __dst, const  wchar_t *__restrict __src,  size_t __len) __asm__ ("""wcstombs") __attribute__  (( __nothrow__ )) ; 
+#line 140 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern  size_t __wcstombs_chk_warn(char *__restrict __dst, const  wchar_t *__restrict __src,  size_t __len,  size_t __dstlen) __asm__ ("""__wcstombs_chk") __attribute__  (( __nothrow__ ))  __attribute__  (( __warning__ ( "wcstombs called with dst buffer smaller than len" )  )) ; 
+#line 144 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  size_t  __attribute__  (( __nothrow__ )) wcstombs(char *__restrict __dst, const  wchar_t *__restrict __src,  size_t __len)  
+# 2406 "patricia_advice.c"
+{
+# 2408 "patricia_advice.c"
+size_t retValue_acc;
+
+
+
+
+# 2414 "patricia_advice.c"
+{
+
+#line 152 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if (__builtin_object_size(__dst, 2 > 1) != (( size_t )(-1))){
+{ 
+#line 149 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if ((!__builtin_constant_p(__len))){
+
+# 2423 "patricia_advice.c"
+retValue_acc = __wcstombs_chk(__dst, __src, __len, __builtin_object_size(__dst, 2 > 1));
+# 2425 "patricia_advice.c"
+return (size_t )retValue_acc;
+ }
+#line 149 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if (__len > __builtin_object_size(__dst, 2 > 1)){
+
+# 2431 "patricia_advice.c"
+retValue_acc = __wcstombs_chk_warn(__dst, __src, __len, __builtin_object_size(__dst, 2 > 1));
+# 2433 "patricia_advice.c"
+return (size_t )retValue_acc;
+ }} }
+#line 152 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+
+# 2438 "patricia_advice.c"
+retValue_acc = __wcstombs_alias(__dst, __src, __len);
+# 2440 "patricia_advice.c"
+return (size_t )retValue_acc;
+ 
+# 2443 "patricia_advice.c"
+
+}
+
+# 2447 "patricia_advice.c"
+return (size_t )retValue_acc;
+
+# 2450 "patricia_advice.c"
+
+}
+ 
+# 960 "/usr/include/stdlib.h" 2 3 4
 # 968 "/usr/include/stdlib.h" 3 4
 # 6 "patricia_advice.c" 2
 # 1 "/usr/include/math.h" 1 3 4
@@ -1922,6 +3365,119 @@ struct exception {int type; char *name; double arg1; double arg2; double retval;
 #line 339 "/usr/include/math.h"
 extern int matherr(struct exception *__exc); 
 # 326 "/usr/include/math.h" 3 4
+# 426 "/usr/include/math.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/mathinline.h" 1 3 4
+# 128 "/usr/include/x86_64-linux-gnu/bits/mathinline.h" 3 4
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ )) int  __attribute__  (( __nothrow__ )) __signbitf(float __x)  
+# 3373 "patricia_advice.c"
+{
+# 3375 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 3381 "patricia_advice.c"
+{
+
+#line 130 "/usr/include/x86_64-linux-gnu/bits/mathinline.h"
+
+#line 130 "/usr/include/x86_64-linux-gnu/bits/mathinline.h"
+int __m;
+#line 131 "/usr/include/x86_64-linux-gnu/bits/mathinline.h"
+ __asm ("pmovmskb %1, %0" : "=r"(__m) : "x"(__x)); 
+#line 132 "/usr/include/x86_64-linux-gnu/bits/mathinline.h"
+
+# 3392 "patricia_advice.c"
+retValue_acc = (__m & 0x8) != 0;
+# 3394 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 3397 "patricia_advice.c"
+
+}
+
+# 3401 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 3404 "patricia_advice.c"
+
+}
+ 
+#line 140 "/usr/include/x86_64-linux-gnu/bits/mathinline.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ )) int  __attribute__  (( __nothrow__ )) __signbit(double __x)  
+# 3410 "patricia_advice.c"
+{
+# 3412 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 3418 "patricia_advice.c"
+{
+
+#line 142 "/usr/include/x86_64-linux-gnu/bits/mathinline.h"
+
+#line 142 "/usr/include/x86_64-linux-gnu/bits/mathinline.h"
+int __m;
+#line 143 "/usr/include/x86_64-linux-gnu/bits/mathinline.h"
+ __asm ("pmovmskb %1, %0" : "=r"(__m) : "x"(__x)); 
+#line 144 "/usr/include/x86_64-linux-gnu/bits/mathinline.h"
+
+# 3429 "patricia_advice.c"
+retValue_acc = (__m & 0x80) != 0;
+# 3431 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 3434 "patricia_advice.c"
+
+}
+
+# 3438 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 3441 "patricia_advice.c"
+
+}
+ 
+#line 152 "/usr/include/x86_64-linux-gnu/bits/mathinline.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ )) int  __attribute__  (( __nothrow__ )) __signbitl(long double __x)  
+# 3447 "patricia_advice.c"
+{
+# 3449 "patricia_advice.c"
+int retValue_acc;
+
+
+
+
+# 3455 "patricia_advice.c"
+{
+
+#line 153 "/usr/include/x86_64-linux-gnu/bits/mathinline.h"
+
+#line 153 "/usr/include/x86_64-linux-gnu/bits/mathinline.h"
+ __extension__ union {long double __l; int __i[3]; 
+}__u = {__l:__x};
+#line 154 "/usr/include/x86_64-linux-gnu/bits/mathinline.h"
+
+# 3465 "patricia_advice.c"
+retValue_acc = (__u.__i[2] & 0x8000) != 0;
+# 3467 "patricia_advice.c"
+return (int )retValue_acc;
+ 
+# 3470 "patricia_advice.c"
+
+}
+
+# 3474 "patricia_advice.c"
+return (int )retValue_acc;
+
+# 3477 "patricia_advice.c"
+
+}
+ 
+# 427 "/usr/include/math.h" 2 3 4
 # 488 "/usr/include/math.h" 3 4
 # 7 "patricia_advice.c" 2
 # 1 "/usr/include/arpa/inet.h" 1 3 4
@@ -1996,14 +3552,14 @@ struct iovec {void *iov_base;  size_t iov_len;
 }; 
 # 29 "/usr/include/x86_64-linux-gnu/sys/uio.h" 2 3 4
 # 40 "/usr/include/x86_64-linux-gnu/sys/uio.h" 3 4
-extern  ssize_t readv(int __fd, const struct iovec *__iovec, int __count); 
+extern  ssize_t readv(int __fd, const struct iovec *__iovec, int __count) __attribute__  (( __warn_unused_result__ )) ; 
 #line 51 "/usr/include/x86_64-linux-gnu/sys/uio.h"
-extern  ssize_t writev(int __fd, const struct iovec *__iovec, int __count); 
+extern  ssize_t writev(int __fd, const struct iovec *__iovec, int __count) __attribute__  (( __warn_unused_result__ )) ; 
 # 50 "/usr/include/x86_64-linux-gnu/sys/uio.h" 3 4
 # 66 "/usr/include/x86_64-linux-gnu/sys/uio.h" 3 4
-extern  ssize_t preadv(int __fd, const struct iovec *__iovec, int __count,  __off_t __offset); 
+extern  ssize_t preadv(int __fd, const struct iovec *__iovec, int __count,  __off_t __offset) __attribute__  (( __warn_unused_result__ )) ; 
 #line 78 "/usr/include/x86_64-linux-gnu/sys/uio.h"
-extern  ssize_t pwritev(int __fd, const struct iovec *__iovec, int __count,  __off_t __offset); 
+extern  ssize_t pwritev(int __fd, const struct iovec *__iovec, int __count,  __off_t __offset) __attribute__  (( __warn_unused_result__ )) ; 
 # 77 "/usr/include/x86_64-linux-gnu/sys/uio.h" 3 4
 # 120 "/usr/include/x86_64-linux-gnu/sys/uio.h" 3 4
 # 27 "/usr/include/x86_64-linux-gnu/sys/socket.h" 2 3 4
@@ -2040,9 +3596,58 @@ struct cmsghdr { size_t cmsg_len; int cmsg_level; int cmsg_type;  __extension__ 
 }; 
 #line 273 "/usr/include/x86_64-linux-gnu/bits/socket.h"
 extern struct cmsghdr *__cmsg_nxthdr(struct msghdr *__mhdr, struct cmsghdr *__cmsg) __attribute__  (( __nothrow__ )) ; 
-# 272 "/usr/include/x86_64-linux-gnu/bits/socket.h" 3 4
-# 307 "/usr/include/x86_64-linux-gnu/bits/socket.h" 3 4
+#line 280 "/usr/include/x86_64-linux-gnu/bits/socket.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) struct cmsghdr * __attribute__  (( __nothrow__ )) __cmsg_nxthdr(struct msghdr *__mhdr, struct cmsghdr *__cmsg)  
+# 3602 "patricia_advice.c"
+{
+# 3604 "patricia_advice.c"
+struct cmsghdr * retValue_acc;
+
+
+
+
+# 3610 "patricia_advice.c"
+{
+
+#line 285 "/usr/include/x86_64-linux-gnu/bits/socket.h"
+if ((( size_t )(__cmsg->cmsg_len)) < sizeof (struct cmsghdr )){
+
+# 3616 "patricia_advice.c"
+retValue_acc = ((struct cmsghdr *)0);
+# 3618 "patricia_advice.c"
+return (struct cmsghdr * )retValue_acc;
+ }
+#line 285 "/usr/include/x86_64-linux-gnu/bits/socket.h"
+__cmsg = ((struct cmsghdr *)(((unsigned char *)__cmsg) + ((((__cmsg->cmsg_len)) + sizeof ( size_t ) - 1) & (( size_t )(~(sizeof ( size_t ) - 1)))))); 
+#line 287 "/usr/include/x86_64-linux-gnu/bits/socket.h"
+if (((unsigned char *)(__cmsg + 1)) > (((unsigned char *)(__mhdr->msg_control)) + (__mhdr->msg_controllen)) || (((unsigned char *)__cmsg) + ((((__cmsg->cmsg_len)) + sizeof ( size_t ) - 1) & (( size_t )(~(sizeof ( size_t ) - 1)))) > (((unsigned char *)(__mhdr->msg_control)) + (__mhdr->msg_controllen)))){
+
+# 3626 "patricia_advice.c"
+retValue_acc = ((struct cmsghdr *)0);
+# 3628 "patricia_advice.c"
+return (struct cmsghdr * )retValue_acc;
+ }
+#line 293 "/usr/include/x86_64-linux-gnu/bits/socket.h"
+
+# 3633 "patricia_advice.c"
+retValue_acc = __cmsg;
+# 3635 "patricia_advice.c"
+return (struct cmsghdr * )retValue_acc;
+ 
+# 3638 "patricia_advice.c"
+
+}
+
+# 3642 "patricia_advice.c"
+return (struct cmsghdr * )retValue_acc;
+
+# 3645 "patricia_advice.c"
+
+}
+ 
+#line 307 "/usr/include/x86_64-linux-gnu/bits/socket.h"
 enum {SCM_RIGHTS=0x01}; 
+# 272 "/usr/include/x86_64-linux-gnu/bits/socket.h" 3 4
 # 345 "/usr/include/x86_64-linux-gnu/bits/socket.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/asm/socket.h" 1 3 4
 # 1 "/usr/include/asm-generic/socket.h" 1 3 4
@@ -2102,7 +3707,120 @@ extern int shutdown(int __fd, int __how) __attribute__  (( __nothrow__ )) ;
 extern int sockatmark(int __fd) __attribute__  (( __nothrow__ )) ; 
 #line 274 "/usr/include/x86_64-linux-gnu/sys/socket.h"
 extern int isfdtype(int __fd, int __fdtype) __attribute__  (( __nothrow__ )) ; 
-# 283 "/usr/include/x86_64-linux-gnu/sys/socket.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/socket2.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/socket2.h" 3 4
+extern  ssize_t __recv_chk(int __fd, void *__buf,  size_t __n,  size_t __buflen, int __flags); 
+#line 25 "/usr/include/x86_64-linux-gnu/bits/socket2.h"
+extern  ssize_t __recv_alias(int __fd, void *__buf,  size_t __n, int __flags) __asm__ ("""recv"); 
+#line 30 "/usr/include/x86_64-linux-gnu/bits/socket2.h"
+extern  ssize_t __recv_chk_warn(int __fd, void *__buf,  size_t __n,  size_t __buflen, int __flags) __asm__ ("""__recv_chk") __attribute__  (( __warning__ ( "recv called with bigger length than size of destination ""buffer" )  )) ; 
+#line 34 "/usr/include/x86_64-linux-gnu/bits/socket2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  ssize_t recv(int __fd, void *__buf,  size_t __n, int __flags)  
+# 3720 "patricia_advice.c"
+{
+# 3722 "patricia_advice.c"
+ssize_t retValue_acc;
+
+
+
+
+# 3728 "patricia_advice.c"
+{
+
+#line 43 "/usr/include/x86_64-linux-gnu/bits/socket2.h"
+if (__builtin_object_size(__buf, 0) != (( size_t )(-1))){
+{ 
+#line 40 "/usr/include/x86_64-linux-gnu/bits/socket2.h"
+if ((!__builtin_constant_p(__n))){
+
+# 3737 "patricia_advice.c"
+retValue_acc = __recv_chk(__fd, __buf, __n, __builtin_object_size(__buf, 0), __flags);
+# 3739 "patricia_advice.c"
+return (ssize_t )retValue_acc;
+ }
+#line 40 "/usr/include/x86_64-linux-gnu/bits/socket2.h"
+if (__n > __builtin_object_size(__buf, 0)){
+
+# 3745 "patricia_advice.c"
+retValue_acc = __recv_chk_warn(__fd, __buf, __n, __builtin_object_size(__buf, 0), __flags);
+# 3747 "patricia_advice.c"
+return (ssize_t )retValue_acc;
+ }} }
+#line 43 "/usr/include/x86_64-linux-gnu/bits/socket2.h"
+
+# 3752 "patricia_advice.c"
+retValue_acc = __recv_alias(__fd, __buf, __n, __flags);
+# 3754 "patricia_advice.c"
+return (ssize_t )retValue_acc;
+ 
+# 3757 "patricia_advice.c"
+
+}
+
+# 3761 "patricia_advice.c"
+return (ssize_t )retValue_acc;
+
+# 3764 "patricia_advice.c"
+
+}
+ 
+#line 49 "/usr/include/x86_64-linux-gnu/bits/socket2.h"
+extern  ssize_t __recvfrom_chk(int __fd, void *__restrict __buf,  size_t __n,  size_t __buflen, int __flags, struct sockaddr *__restrict __addr,  socklen_t *__restrict __addr_len); 
+#line 50 "/usr/include/x86_64-linux-gnu/bits/socket2.h"
+extern  ssize_t __recvfrom_alias(int __fd, void *__restrict __buf,  size_t __n, int __flags, struct sockaddr *__restrict __addr,  socklen_t *__restrict __addr_len) __asm__ ("""recvfrom"); 
+#line 59 "/usr/include/x86_64-linux-gnu/bits/socket2.h"
+extern  ssize_t __recvfrom_chk_warn(int __fd, void *__restrict __buf,  size_t __n,  size_t __buflen, int __flags, struct sockaddr *__restrict __addr,  socklen_t *__restrict __addr_len) __asm__ ("""__recvfrom_chk") __attribute__  (( __warning__ ( "recvfrom called with bigger length than size of ""destination buffer" )  )) ; 
+#line 64 "/usr/include/x86_64-linux-gnu/bits/socket2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  ssize_t recvfrom(int __fd, void *__restrict __buf,  size_t __n, int __flags, struct sockaddr *__restrict __addr,  socklen_t *__restrict __addr_len)  
+# 3776 "patricia_advice.c"
+{
+# 3778 "patricia_advice.c"
+ssize_t retValue_acc;
+
+
+
+
+# 3784 "patricia_advice.c"
+{
+
+#line 74 "/usr/include/x86_64-linux-gnu/bits/socket2.h"
+if (__builtin_object_size(__buf, 0) != (( size_t )(-1))){
+{ 
+#line 70 "/usr/include/x86_64-linux-gnu/bits/socket2.h"
+if ((!__builtin_constant_p(__n))){
+
+# 3793 "patricia_advice.c"
+retValue_acc = __recvfrom_chk(__fd, __buf, __n, __builtin_object_size(__buf, 0), __flags, __addr, __addr_len);
+# 3795 "patricia_advice.c"
+return (ssize_t )retValue_acc;
+ }
+#line 70 "/usr/include/x86_64-linux-gnu/bits/socket2.h"
+if (__n > __builtin_object_size(__buf, 0)){
+
+# 3801 "patricia_advice.c"
+retValue_acc = __recvfrom_chk_warn(__fd, __buf, __n, __builtin_object_size(__buf, 0), __flags, __addr, __addr_len);
+# 3803 "patricia_advice.c"
+return (ssize_t )retValue_acc;
+ }} }
+#line 74 "/usr/include/x86_64-linux-gnu/bits/socket2.h"
+
+# 3808 "patricia_advice.c"
+retValue_acc = __recvfrom_alias(__fd, __buf, __n, __flags, __addr, __addr_len);
+# 3810 "patricia_advice.c"
+return (ssize_t )retValue_acc;
+ 
+# 3813 "patricia_advice.c"
+
+}
+
+# 3817 "patricia_advice.c"
+return (ssize_t )retValue_acc;
+
+# 3820 "patricia_advice.c"
+
+}
+ 
+# 281 "/usr/include/x86_64-linux-gnu/sys/socket.h" 2 3 4
 # 30 "/usr/include/netinet/in.h" 2 3 4
 typedef  uint32_t in_addr_t; 
 #line 34 "/usr/include/netinet/in.h"
@@ -2225,43 +3943,43 @@ struct print_queue {int depth; struct ptree *p; struct print_queue *next;
 }; 
 #line 19 "patricia_advice.c"
 static void error()  
-# 2229 "patricia_advice.c"
+# 3947 "patricia_advice.c"
 {
 
 
 
-# 2234 "patricia_advice.c"
+# 3952 "patricia_advice.c"
 {
 
 #line 20 "patricia_advice.c"
 exit((-1)); 
-# 2239 "patricia_advice.c"
+# 3957 "patricia_advice.c"
 
 }
 
-# 2243 "patricia_advice.c"
+# 3961 "patricia_advice.c"
 
 }
  
 #line 24 "patricia_advice.c"
 static int tree_depth(struct ptree *phead, int father_pb)  
-# 2249 "patricia_advice.c"
+# 3967 "patricia_advice.c"
 {
-# 2251 "patricia_advice.c"
+# 3969 "patricia_advice.c"
 int retValue_acc;
 
 
 
 
-# 2257 "patricia_advice.c"
+# 3975 "patricia_advice.c"
 {
 
 #line 28 "patricia_advice.c"
 if (father_pb >= (phead->p_b)){
 
-# 2263 "patricia_advice.c"
+# 3981 "patricia_advice.c"
 retValue_acc = 0;
-# 2265 "patricia_advice.c"
+# 3983 "patricia_advice.c"
 return (int )retValue_acc;
  }
 #line 28 "patricia_advice.c"
@@ -2274,30 +3992,30 @@ int left = tree_depth((phead->p_left), (phead->p_b));
 int right = tree_depth((phead->p_right), (phead->p_b));
 #line 30 "patricia_advice.c"
 
-# 2278 "patricia_advice.c"
+# 3996 "patricia_advice.c"
 retValue_acc = ((left > right?left:right)) + 1;
-# 2280 "patricia_advice.c"
+# 3998 "patricia_advice.c"
 return (int )retValue_acc;
  
-# 2283 "patricia_advice.c"
+# 4001 "patricia_advice.c"
 
 }
 
-# 2287 "patricia_advice.c"
+# 4005 "patricia_advice.c"
 return (int )retValue_acc;
 
-# 2290 "patricia_advice.c"
+# 4008 "patricia_advice.c"
 
 }
  
 #line 34 "patricia_advice.c"
 static void enqueue(struct print_queue *queue, struct print_queue *node)  
-# 2296 "patricia_advice.c"
+# 4014 "patricia_advice.c"
 {
 
 
 
-# 2301 "patricia_advice.c"
+# 4019 "patricia_advice.c"
 {
 
 #line 35 "patricia_advice.c"
@@ -2314,22 +4032,22 @@ for(end = queue;(end->next) != (((void *)0));end = (end->next)) { ; }
 (end->next) = node; 
 #line 42 "patricia_advice.c"
 (node->next) = (((void *)0)); 
-# 2318 "patricia_advice.c"
+# 4036 "patricia_advice.c"
 
 }
 
-# 2322 "patricia_advice.c"
+# 4040 "patricia_advice.c"
 
 }
  
 #line 46 "patricia_advice.c"
 static void free_queue(struct print_queue *queue)  
-# 2328 "patricia_advice.c"
+# 4046 "patricia_advice.c"
 {
 
 
 
-# 2333 "patricia_advice.c"
+# 4051 "patricia_advice.c"
 {
 
 #line 47 "patricia_advice.c"
@@ -2348,25 +4066,25 @@ next = (curr->next);
 free(curr); 
 #line 54 "patricia_advice.c"
 curr = next; } } 
-# 2352 "patricia_advice.c"
+# 4070 "patricia_advice.c"
 
 }
 
-# 2356 "patricia_advice.c"
+# 4074 "patricia_advice.c"
 
 }
  
 #line 59 "patricia_advice.c"
 static struct print_queue *malloc_node(int depth, struct ptree *ptree_node)  
-# 2362 "patricia_advice.c"
+# 4080 "patricia_advice.c"
 {
-# 2364 "patricia_advice.c"
+# 4082 "patricia_advice.c"
 struct print_queue * retValue_acc;
 
 
 
 
-# 2370 "patricia_advice.c"
+# 4088 "patricia_advice.c"
 {
 
 #line 60 "patricia_advice.c"
@@ -2390,33 +4108,33 @@ error(); } }
 (node->next) = (((void *)0)); 
 #line 72 "patricia_advice.c"
 
-# 2394 "patricia_advice.c"
+# 4112 "patricia_advice.c"
 retValue_acc = node;
-# 2396 "patricia_advice.c"
+# 4114 "patricia_advice.c"
 return (struct print_queue * )retValue_acc;
  
-# 2399 "patricia_advice.c"
+# 4117 "patricia_advice.c"
 
 }
 
-# 2403 "patricia_advice.c"
+# 4121 "patricia_advice.c"
 return (struct print_queue * )retValue_acc;
 
-# 2406 "patricia_advice.c"
+# 4124 "patricia_advice.c"
 
 }
  
 #line 76 "patricia_advice.c"
 static struct print_queue *layer_traversing(struct ptree *phead)  
-# 2412 "patricia_advice.c"
+# 4130 "patricia_advice.c"
 {
-# 2414 "patricia_advice.c"
+# 4132 "patricia_advice.c"
 struct print_queue * retValue_acc;
 
 
 
 
-# 2420 "patricia_advice.c"
+# 4138 "patricia_advice.c"
 {
 
 #line 77 "patricia_advice.c"
@@ -2451,74 +4169,74 @@ enqueue(queue, malloc_node((iter->depth) + 1, (((void *)0)))); } }
 iter = (iter->next); } } 
 #line 99 "patricia_advice.c"
 
-# 2455 "patricia_advice.c"
+# 4173 "patricia_advice.c"
 retValue_acc = queue;
-# 2457 "patricia_advice.c"
+# 4175 "patricia_advice.c"
 return (struct print_queue * )retValue_acc;
  
-# 2460 "patricia_advice.c"
+# 4178 "patricia_advice.c"
 
 }
 
-# 2464 "patricia_advice.c"
+# 4182 "patricia_advice.c"
 return (struct print_queue * )retValue_acc;
 
-# 2467 "patricia_advice.c"
+# 4185 "patricia_advice.c"
 
 }
  
 #line 103 "patricia_advice.c"
 static void print_space(int num)  
-# 2473 "patricia_advice.c"
+# 4191 "patricia_advice.c"
 {
 
 
 
-# 2478 "patricia_advice.c"
+# 4196 "patricia_advice.c"
 {
 
 #line 104 "patricia_advice.c"
 (((num >= 0)?((void )(0)):__assert_fail("num >= 0", "patricia_advice.c", 104, __PRETTY_FUNCTION__))); 
 #line 105 "patricia_advice.c"
 while(num--) { printf(" "); } 
-# 2485 "patricia_advice.c"
+# 4203 "patricia_advice.c"
 
 }
 
-# 2489 "patricia_advice.c"
+# 4207 "patricia_advice.c"
 
 }
  
 #line 109 "patricia_advice.c"
 static void print_bar(int num)  
-# 2495 "patricia_advice.c"
+# 4213 "patricia_advice.c"
 {
 
 
 
-# 2500 "patricia_advice.c"
+# 4218 "patricia_advice.c"
 {
 
 #line 110 "patricia_advice.c"
 (((num >= 0)?((void )(0)):__assert_fail("num >= 0", "patricia_advice.c", 110, __PRETTY_FUNCTION__))); 
 #line 111 "patricia_advice.c"
 while(num--) { printf("-"); } 
-# 2507 "patricia_advice.c"
+# 4225 "patricia_advice.c"
 
 }
 
-# 2511 "patricia_advice.c"
+# 4229 "patricia_advice.c"
 
 }
  
 #line 115 "patricia_advice.c"
 static void print_node(int depth, int now_depth, struct print_queue *queue)  
-# 2517 "patricia_advice.c"
+# 4235 "patricia_advice.c"
 {
 
 
 
-# 2522 "patricia_advice.c"
+# 4240 "patricia_advice.c"
 {
 
 #line 116 "patricia_advice.c"
@@ -2610,7 +4328,7 @@ node = (i->p);
 if (node){
 { 
 #line 171 "patricia_advice.c"
-addr.s_addr = ntohl((node->p_key)); 
+addr.s_addr = __bswap_32((node->p_key)); 
 #line 172 "patricia_advice.c"
 printf("|%-16s|", inet_ntoa(addr)); } }else{
 printf("|%-16s|", "-              -"); }
@@ -2639,7 +4357,7 @@ node = (i->p);
 if (node && now_mask < (node->p_mlen)){
 { 
 #line 199 "patricia_advice.c"
-addr.s_addr = ntohl((node->p_m)[now_mask].pm_mask); 
+addr.s_addr = __bswap_32((node->p_m)[now_mask].pm_mask); 
 #line 200 "patricia_advice.c"
 printf("|%-16s|", inet_ntoa(addr)); } }else{
 printf("|%-16s|", "-              -"); }
@@ -2688,22 +4406,22 @@ print_space((interval + 17) / 2);
 print_bar((interval + 21) / 2); } } } }
 #line 243 "patricia_advice.c"
 printf("\n"); 
-# 2692 "patricia_advice.c"
+# 4410 "patricia_advice.c"
 
 }
 
-# 2696 "patricia_advice.c"
+# 4414 "patricia_advice.c"
 
 }
  
 #line 247 "patricia_advice.c"
 void __print_tree(void *phead)  
-# 2702 "patricia_advice.c"
+# 4420 "patricia_advice.c"
 {
 
 
 
-# 2707 "patricia_advice.c"
+# 4425 "patricia_advice.c"
 {
 
 #line 248 "patricia_advice.c"
@@ -2735,11 +4453,11 @@ print_node(depth, now_depth, iter); } }} }
 printf("\n\n"); 
 #line 264 "patricia_advice.c"
 free_queue(queue); 
-# 2739 "patricia_advice.c"
+# 4457 "patricia_advice.c"
 
 }
 
-# 2743 "patricia_advice.c"
+# 4461 "patricia_advice.c"
 
 }
  

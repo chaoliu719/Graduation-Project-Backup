@@ -1,0 +1,42 @@
+#ifndef __malloc_ah__
+#define __malloc_ah__
+
+#include <stdio.h>
+#include <assert.h>
+#include <string.h>
+
+#include "range.h"
+
+
+aspect malloc_aspect {
+
+    advice execution("% mm_init(...)") : after() {
+        clear_ranges_r();
+    };
+
+    advice execution("% mm_malloc(...)") : around() {
+        size_t size = *(size_t *)(tjp->arg(0));
+        tjp->proceed();
+        char * newp = *(char **)(tjp->result());
+        malloc_r(newp, size);
+    };
+
+    advice execution("% mm_free(...)") : around() {
+        char * oldp = *(char **)(tjp->arg(0));
+        tjp->proceed();
+        free_r(oldp);
+    };
+        
+    advice execution("% mm_realloc(...)") : around() {
+        char * oldp = *(char **)(tjp->arg(0));
+        size_t size = *(size_t *)(tjp->arg(1));
+        tjp->proceed();
+        char * newp = *(char **)(tjp->result());
+        realloc_r(oldp, size, newp);
+    };
+};
+
+
+
+
+#endif

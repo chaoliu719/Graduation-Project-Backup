@@ -1,0 +1,24 @@
+#ifndef __proxy_ah__
+#define __proxy_ah__
+
+#include <stdio.h>
+#include <string.h>
+
+#include "aspect.h"
+
+
+aspect proxy_aspect {
+
+    advice execution("% main(...)") : before() {
+        Get_main_thread();
+    };
+
+    advice execution("% doit(...)") : around() {
+        void * connfd_p = *(void **)(tjp->arg(0));
+        Create_thread(connfd_p);
+        tjp->proceed();
+        Free_pointer(connfd_p);
+    };
+};
+
+#endif

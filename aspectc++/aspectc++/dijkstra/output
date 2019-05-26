@@ -76,17 +76,17 @@ void dijkstra(int,int)()
 int fclose(_IO_FILE *)()
 
 -----------Profiling-----------
-_IO_FILE *fopen(const char *,con: call     1 times,      0.030ms total
-int fscanf(_IO_FILE *,const char: call 10000 times,     11.367ms total
-          void dijkstra(int,int): call     2 times,   4643.066ms total
-               void init_nodes(): call     2 times,      0.004ms total
-                 void neighbor(): call     2 times,   4583.005ms total
-       void enqueue(int,int,int): call  1634 times,    874.964ms total
- void *malloc(unsigned long int): call  1634 times,      1.138ms total
- void dequeue(int *,int *,int *): call  1634 times,    917.698ms total
-               void free(void *): call  1634 times,      1.102ms total
-                    int qcount(): call  1636 times,      1.286ms total
-    void print_path(_NODE *,int): call    20 times,    345.314ms total
-          int fflush(_IO_FILE *): call    20 times,      0.164ms total
-    int printf(const char *,...): call    26 times,      0.087ms total
-          int fclose(_IO_FILE *): call     1 times,      0.022ms total
+_IO_FILE *fopen(const char *,con: call     1 times,      0.005ms total
+int fscanf(_IO_FILE *,const char: call 10000 times,      9.171ms total
+          void dijkstra(int,int): call     2 times,    958.706ms total
+               void init_nodes(): call     2 times,      0.002ms total
+                 void neighbor(): call     2 times,    946.613ms total
+       void enqueue(int,int,int): call  1634 times,    170.745ms total
+ void *malloc(unsigned long int): call  1634 times,      1.034ms total
+ void dequeue(int *,int *,int *): call  1634 times,    172.740ms total
+               void free(void *): call  1634 times,      0.903ms total
+                    int qcount(): call  1636 times,      1.026ms total
+    void print_path(_NODE *,int): call    20 times,     70.152ms total
+          int fflush(_IO_FILE *): call    20 times,      0.122ms total
+    int printf(const char *,...): call    26 times,      0.057ms total
+          int fclose(_IO_FILE *): call     1 times,      0.023ms total

@@ -28,7 +28,6 @@ struct JoinPoint {
 
 
 # 1 "dijkstra.c" 
-# 1 "/aop/Graduation-Project-Backup/ACC/acc/dijkstra/working//" 
 # 1 "<built-in>" 
 # 1 "<command-line>" 
 # 1 "dijkstra.c" 
@@ -296,14 +295,14 @@ extern int rename(const char *__old, const char *__new) __attribute__  (( __noth
 #line 186 "/usr/include/stdio.h"
 extern int renameat(int __oldfd, const char *__old, int __newfd, const char *__new) __attribute__  (( __nothrow__ )) ; 
 #line 195 "/usr/include/stdio.h"
-extern  FILE *tmpfile(void ); 
+extern  FILE *tmpfile(void ) __attribute__  (( __warn_unused_result__ )) ; 
 #line 209 "/usr/include/stdio.h"
-extern char *tmpnam(char *__s) __attribute__  (( __nothrow__ )) ; 
+extern char *tmpnam(char *__s) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 215 "/usr/include/stdio.h"
-extern char *tmpnam_r(char *__s) __attribute__  (( __nothrow__ )) ; 
+extern char *tmpnam_r(char *__s) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 # 209 "/usr/include/stdio.h" 3 4
 # 228 "/usr/include/stdio.h" 3 4
-extern char *tempnam(const char *__dir, const char *__pfx) __attribute__  (( __nothrow__ ))  __attribute__  (( __malloc__ )) ; 
+extern char *tempnam(const char *__dir, const char *__pfx) __attribute__  (( __nothrow__ ))  __attribute__  (( __malloc__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 237 "/usr/include/stdio.h"
 extern int fclose( FILE *__stream); 
 #line 242 "/usr/include/stdio.h"
@@ -312,16 +311,16 @@ extern int fflush( FILE *__stream);
 extern int fflush_unlocked( FILE *__stream); 
 # 252 "/usr/include/stdio.h" 3 4
 # 273 "/usr/include/stdio.h" 3 4
-extern  FILE *fopen(const char *__restrict __filename, const char *__restrict __modes); 
+extern  FILE *fopen(const char *__restrict __filename, const char *__restrict __modes) __attribute__  (( __warn_unused_result__ )) ; 
 #line 280 "/usr/include/stdio.h"
-extern  FILE *freopen(const char *__restrict __filename, const char *__restrict __modes,  FILE *__restrict __stream); 
+extern  FILE *freopen(const char *__restrict __filename, const char *__restrict __modes,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 # 295 "/usr/include/stdio.h" 3 4
 # 306 "/usr/include/stdio.h" 3 4
-extern  FILE *fdopen(int __fd, const char *__modes) __attribute__  (( __nothrow__ )) ; 
+extern  FILE *fdopen(int __fd, const char *__modes) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 320 "/usr/include/stdio.h"
-extern  FILE *fmemopen(void *__s,  size_t __len, const char *__modes) __attribute__  (( __nothrow__ )) ; 
+extern  FILE *fmemopen(void *__s,  size_t __len, const char *__modes) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 325 "/usr/include/stdio.h"
-extern  FILE *open_memstream(char **__bufloc,  size_t *__sizeloc) __attribute__  (( __nothrow__ )) ; 
+extern  FILE *open_memstream(char **__bufloc,  size_t *__sizeloc) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 332 "/usr/include/stdio.h"
 extern void setbuf( FILE *__restrict __stream, char *__restrict __buf) __attribute__  (( __nothrow__ )) ; 
 #line 337 "/usr/include/stdio.h"
@@ -352,28 +351,28 @@ extern int vdprintf(int __fd, const char *__restrict __fmt,  __gnuc_va_list __ar
 #line 416 "/usr/include/stdio.h"
 extern int dprintf(int __fd, const char *__restrict __fmt, ...) __attribute__  (( __format__ ( __printf__, 2, 3 )  )) ; 
 #line 426 "/usr/include/stdio.h"
-extern int fscanf( FILE *__restrict __stream, const char *__restrict __format, ...); 
+extern int fscanf( FILE *__restrict __stream, const char *__restrict __format, ...) __attribute__  (( __warn_unused_result__ )) ; 
 #line 431 "/usr/include/stdio.h"
-extern int scanf(const char *__restrict __format, ...); 
+extern int scanf(const char *__restrict __format, ...) __attribute__  (( __warn_unused_result__ )) ; 
 #line 434 "/usr/include/stdio.h"
 extern int sscanf(const char *__restrict __s, const char *__restrict __format, ...) __attribute__  (( __nothrow__ )) ; 
 #line 443 "/usr/include/stdio.h"
-extern int fscanf( FILE *__restrict __stream, const char *__restrict __format, ...) __asm__ ("""__isoc99_fscanf"); 
+extern int fscanf( FILE *__restrict __stream, const char *__restrict __format, ...) __asm__ ("""__isoc99_fscanf") __attribute__  (( __warn_unused_result__ )) ; 
 #line 446 "/usr/include/stdio.h"
-extern int scanf(const char *__restrict __format, ...) __asm__ ("""__isoc99_scanf"); 
+extern int scanf(const char *__restrict __format, ...) __asm__ ("""__isoc99_scanf") __attribute__  (( __warn_unused_result__ )) ; 
 #line 448 "/usr/include/stdio.h"
 extern int sscanf(const char *__restrict __s, const char *__restrict __format, ...) __asm__ ("""__isoc99_sscanf") __attribute__  (( __nothrow__ )) ; 
 # 443 "/usr/include/stdio.h" 3 4
 # 473 "/usr/include/stdio.h" 3 4
-extern int vfscanf( FILE *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __attribute__  (( __format__ ( __scanf__, 2, 0 )  )) ; 
+extern int vfscanf( FILE *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __attribute__  (( __format__ ( __scanf__, 2, 0 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 480 "/usr/include/stdio.h"
-extern int vscanf(const char *__restrict __format,  __gnuc_va_list __arg) __attribute__  (( __format__ ( __scanf__, 1, 0 )  )) ; 
+extern int vscanf(const char *__restrict __format,  __gnuc_va_list __arg) __attribute__  (( __format__ ( __scanf__, 1, 0 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 485 "/usr/include/stdio.h"
 extern int vsscanf(const char *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __attribute__  (( __nothrow__ ))  __attribute__  (( __format__ ( __scanf__, 2, 0 )  )) ; 
 #line 498 "/usr/include/stdio.h"
-extern int vfscanf( FILE *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __asm__ ("""__isoc99_vfscanf") __attribute__  (( __format__ ( __scanf__, 2, 0 )  )) ; 
+extern int vfscanf( FILE *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __asm__ ("""__isoc99_vfscanf") __attribute__  (( __format__ ( __scanf__, 2, 0 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 501 "/usr/include/stdio.h"
-extern int vscanf(const char *__restrict __format,  __gnuc_va_list __arg) __asm__ ("""__isoc99_vscanf") __attribute__  (( __format__ ( __scanf__, 1, 0 )  )) ; 
+extern int vscanf(const char *__restrict __format,  __gnuc_va_list __arg) __asm__ ("""__isoc99_vscanf") __attribute__  (( __format__ ( __scanf__, 1, 0 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 506 "/usr/include/stdio.h"
 extern int vsscanf(const char *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __asm__ ("""__isoc99_vsscanf") __attribute__  (( __nothrow__ ))  __attribute__  (( __format__ ( __scanf__, 2, 0 )  )) ; 
 # 494 "/usr/include/stdio.h" 3 4
@@ -407,16 +406,16 @@ extern int getw( FILE *__stream);
 #line 613 "/usr/include/stdio.h"
 extern int putw(int __w,  FILE *__stream); 
 #line 623 "/usr/include/stdio.h"
-extern char *fgets(char *__restrict __s, int __n,  FILE *__restrict __stream); 
+extern char *fgets(char *__restrict __s, int __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 # 594 "/usr/include/stdio.h" 3 4
 # 638 "/usr/include/stdio.h" 3 4
-extern char *gets(char *__s) __attribute__  (( __deprecated__ )) ; 
+extern char *gets(char *__s) __attribute__  (( __warn_unused_result__ ))  __attribute__  (( __deprecated__ )) ; 
 #line 667 "/usr/include/stdio.h"
-extern  __ssize_t __getdelim(char **__restrict __lineptr,  size_t *__restrict __n, int __delimiter,  FILE *__restrict __stream); 
+extern  __ssize_t __getdelim(char **__restrict __lineptr,  size_t *__restrict __n, int __delimiter,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 #line 670 "/usr/include/stdio.h"
-extern  __ssize_t getdelim(char **__restrict __lineptr,  size_t *__restrict __n, int __delimiter,  FILE *__restrict __stream); 
+extern  __ssize_t getdelim(char **__restrict __lineptr,  size_t *__restrict __n, int __delimiter,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 #line 680 "/usr/include/stdio.h"
-extern  __ssize_t getline(char **__restrict __lineptr,  size_t *__restrict __n,  FILE *__restrict __stream); 
+extern  __ssize_t getline(char **__restrict __lineptr,  size_t *__restrict __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 #line 689 "/usr/include/stdio.h"
 extern int fputs(const char *__restrict __s,  FILE *__restrict __stream); 
 #line 695 "/usr/include/stdio.h"
@@ -424,24 +423,24 @@ extern int puts(const char *__s);
 #line 702 "/usr/include/stdio.h"
 extern int ungetc(int __c,  FILE *__stream); 
 #line 710 "/usr/include/stdio.h"
-extern  size_t fread(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream); 
+extern  size_t fread(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 #line 716 "/usr/include/stdio.h"
 extern  size_t fwrite(const void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __s); 
 # 665 "/usr/include/stdio.h" 3 4
 # 738 "/usr/include/stdio.h" 3 4
-extern  size_t fread_unlocked(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream); 
+extern  size_t fread_unlocked(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
 #line 740 "/usr/include/stdio.h"
 extern  size_t fwrite_unlocked(const void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream); 
 #line 749 "/usr/include/stdio.h"
 extern int fseek( FILE *__stream, long int __off, int __whence); 
 #line 754 "/usr/include/stdio.h"
-extern long int ftell( FILE *__stream); 
+extern long int ftell( FILE *__stream) __attribute__  (( __warn_unused_result__ )) ; 
 #line 759 "/usr/include/stdio.h"
 extern void rewind( FILE *__stream); 
 #line 773 "/usr/include/stdio.h"
 extern int fseeko( FILE *__stream,  __off_t __off, int __whence); 
 #line 778 "/usr/include/stdio.h"
-extern  __off_t ftello( FILE *__stream); 
+extern  __off_t ftello( FILE *__stream) __attribute__  (( __warn_unused_result__ )) ; 
 # 773 "/usr/include/stdio.h" 3 4
 # 798 "/usr/include/stdio.h" 3 4
 extern int fgetpos( FILE *__restrict __stream,  fpos_t *__restrict __pos); 
@@ -451,15 +450,15 @@ extern int fsetpos( FILE *__stream, const  fpos_t *__pos);
 # 826 "/usr/include/stdio.h" 3 4
 extern void clearerr( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
 #line 828 "/usr/include/stdio.h"
-extern int feof( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int feof( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 830 "/usr/include/stdio.h"
-extern int ferror( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int ferror( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 835 "/usr/include/stdio.h"
 extern void clearerr_unlocked( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
 #line 836 "/usr/include/stdio.h"
-extern int feof_unlocked( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int feof_unlocked( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 837 "/usr/include/stdio.h"
-extern int ferror_unlocked( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int ferror_unlocked( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 846 "/usr/include/stdio.h"
 extern void perror(const char *__s); 
 # 1 "/usr/include/x86_64-linux-gnu/bits/sys_errlist.h" 1 3 4
@@ -468,12 +467,12 @@ extern int sys_nerr;
 #line 27 "/usr/include/x86_64-linux-gnu/bits/sys_errlist.h"
 extern const char *const sys_errlist[]; 
 #line 858 "/usr/include/stdio.h"
-extern int fileno( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int fileno( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 863 "/usr/include/stdio.h"
-extern int fileno_unlocked( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int fileno_unlocked( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 # 854 "/usr/include/stdio.h" 2 3 4
 # 873 "/usr/include/stdio.h" 3 4
-extern  FILE *popen(const char *__command, const char *__modes); 
+extern  FILE *popen(const char *__command, const char *__modes) __attribute__  (( __warn_unused_result__ )) ; 
 #line 879 "/usr/include/stdio.h"
 extern int pclose( FILE *__stream); 
 #line 885 "/usr/include/stdio.h"
@@ -481,11 +480,905 @@ extern char *ctermid(char *__s) __attribute__  (( __nothrow__ )) ;
 #line 913 "/usr/include/stdio.h"
 extern void flockfile( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
 #line 917 "/usr/include/stdio.h"
-extern int ftrylockfile( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
+extern int ftrylockfile( FILE *__stream) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 920 "/usr/include/stdio.h"
 extern void funlockfile( FILE *__stream) __attribute__  (( __nothrow__ )) ; 
 # 913 "/usr/include/stdio.h" 3 4
-# 943 "/usr/include/stdio.h" 3 4
+# 934 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdio.h" 1 3 4
+# 45 "/usr/include/x86_64-linux-gnu/bits/stdio.h" 3 4
+extern __inline  __attribute__  (( __gnu_inline__ )) int getchar(void )  
+# 492 "dijkstra.c"
+{
+# 494 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 500 "dijkstra.c"
+{
+
+#line 46 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+
+# 505 "dijkstra.c"
+retValue_acc = _IO_getc(stdin);
+# 507 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 510 "dijkstra.c"
+
+}
+
+# 514 "dijkstra.c"
+return (int )retValue_acc;
+
+# 517 "dijkstra.c"
+
+}
+ 
+#line 54 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int fgetc_unlocked( FILE *__fp)  
+# 523 "dijkstra.c"
+{
+# 525 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 531 "dijkstra.c"
+{
+
+#line 55 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+
+# 536 "dijkstra.c"
+retValue_acc = ((__builtin_expect((((__fp)->_IO_read_ptr) >= ((__fp)->_IO_read_end)), 0)?__uflow(__fp):(*((unsigned char *)((__fp)->_IO_read_ptr)++))));
+# 538 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 541 "dijkstra.c"
+
+}
+
+# 545 "dijkstra.c"
+return (int )retValue_acc;
+
+# 548 "dijkstra.c"
+
+}
+ 
+#line 64 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int getc_unlocked( FILE *__fp)  
+# 554 "dijkstra.c"
+{
+# 556 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 562 "dijkstra.c"
+{
+
+#line 65 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+
+# 567 "dijkstra.c"
+retValue_acc = ((__builtin_expect((((__fp)->_IO_read_ptr) >= ((__fp)->_IO_read_end)), 0)?__uflow(__fp):(*((unsigned char *)((__fp)->_IO_read_ptr)++))));
+# 569 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 572 "dijkstra.c"
+
+}
+
+# 576 "dijkstra.c"
+return (int )retValue_acc;
+
+# 579 "dijkstra.c"
+
+}
+ 
+#line 71 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int getchar_unlocked(void )  
+# 585 "dijkstra.c"
+{
+# 587 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 593 "dijkstra.c"
+{
+
+#line 72 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+
+# 598 "dijkstra.c"
+retValue_acc = ((__builtin_expect((((stdin)->_IO_read_ptr) >= ((stdin)->_IO_read_end)), 0)?__uflow(stdin):(*((unsigned char *)((stdin)->_IO_read_ptr)++))));
+# 600 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 603 "dijkstra.c"
+
+}
+
+# 607 "dijkstra.c"
+return (int )retValue_acc;
+
+# 610 "dijkstra.c"
+
+}
+ 
+#line 80 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int putchar(int __c)  
+# 616 "dijkstra.c"
+{
+# 618 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 624 "dijkstra.c"
+{
+
+#line 81 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+
+# 629 "dijkstra.c"
+retValue_acc = _IO_putc(__c, stdout);
+# 631 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 634 "dijkstra.c"
+
+}
+
+# 638 "dijkstra.c"
+return (int )retValue_acc;
+
+# 641 "dijkstra.c"
+
+}
+ 
+#line 89 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int fputc_unlocked(int __c,  FILE *__stream)  
+# 647 "dijkstra.c"
+{
+# 649 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 655 "dijkstra.c"
+{
+
+#line 90 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+
+# 660 "dijkstra.c"
+retValue_acc = ((__builtin_expect((((__stream)->_IO_write_ptr) >= ((__stream)->_IO_write_end)), 0)?__overflow(__stream, ((unsigned char )(__c))):((unsigned char )((*((__stream)->_IO_write_ptr)++) = (__c)))));
+# 662 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 665 "dijkstra.c"
+
+}
+
+# 669 "dijkstra.c"
+return (int )retValue_acc;
+
+# 672 "dijkstra.c"
+
+}
+ 
+#line 99 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int putc_unlocked(int __c,  FILE *__stream)  
+# 678 "dijkstra.c"
+{
+# 680 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 686 "dijkstra.c"
+{
+
+#line 100 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+
+# 691 "dijkstra.c"
+retValue_acc = ((__builtin_expect((((__stream)->_IO_write_ptr) >= ((__stream)->_IO_write_end)), 0)?__overflow(__stream, ((unsigned char )(__c))):((unsigned char )((*((__stream)->_IO_write_ptr)++) = (__c)))));
+# 693 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 696 "dijkstra.c"
+
+}
+
+# 700 "dijkstra.c"
+return (int )retValue_acc;
+
+# 703 "dijkstra.c"
+
+}
+ 
+#line 106 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int putchar_unlocked(int __c)  
+# 709 "dijkstra.c"
+{
+# 711 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 717 "dijkstra.c"
+{
+
+#line 107 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+
+# 722 "dijkstra.c"
+retValue_acc = ((__builtin_expect((((stdout)->_IO_write_ptr) >= ((stdout)->_IO_write_end)), 0)?__overflow(stdout, ((unsigned char )(__c))):((unsigned char )((*((stdout)->_IO_write_ptr)++) = (__c)))));
+# 724 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 727 "dijkstra.c"
+
+}
+
+# 731 "dijkstra.c"
+return (int )retValue_acc;
+
+# 734 "dijkstra.c"
+
+}
+ 
+#line 126 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int  __attribute__  (( __nothrow__ )) feof_unlocked( FILE *__stream)  
+# 740 "dijkstra.c"
+{
+# 742 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 748 "dijkstra.c"
+{
+
+#line 127 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+
+# 753 "dijkstra.c"
+retValue_acc = ((((__stream)->_flags) & 0x10) != 0);
+# 755 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 758 "dijkstra.c"
+
+}
+
+# 762 "dijkstra.c"
+return (int )retValue_acc;
+
+# 765 "dijkstra.c"
+
+}
+ 
+#line 133 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int  __attribute__  (( __nothrow__ )) ferror_unlocked( FILE *__stream)  
+# 771 "dijkstra.c"
+{
+# 773 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 779 "dijkstra.c"
+{
+
+#line 134 "/usr/include/x86_64-linux-gnu/bits/stdio.h"
+
+# 784 "dijkstra.c"
+retValue_acc = ((((__stream)->_flags) & 0x20) != 0);
+# 786 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 789 "dijkstra.c"
+
+}
+
+# 793 "dijkstra.c"
+return (int )retValue_acc;
+
+# 796 "dijkstra.c"
+
+}
+ 
+# 124 "/usr/include/x86_64-linux-gnu/bits/stdio.h" 3 4
+# 935 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdio2.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/stdio2.h" 3 4
+extern int __sprintf_chk(char *__restrict __s, int __flag,  size_t __slen, const char *__restrict __format, ...) __attribute__  (( __nothrow__ )) ; 
+#line 27 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __vsprintf_chk(char *__restrict __s, int __flag,  size_t __slen, const char *__restrict __format,  __gnuc_va_list __ap) __attribute__  (( __nothrow__ )) ; 
+#line 32 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int  __attribute__  (( __nothrow__ )) sprintf(char *__restrict __s, const char *__restrict __fmt, ...)  
+# 809 "dijkstra.c"
+{
+# 811 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 817 "dijkstra.c"
+{
+
+#line 34 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 822 "dijkstra.c"
+retValue_acc = __builtin___sprintf_chk(__s, 2 - 1, __builtin_object_size(__s, 2 > 1), __fmt, __builtin_va_arg_pack());
+# 824 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 827 "dijkstra.c"
+
+}
+
+# 831 "dijkstra.c"
+return (int )retValue_acc;
+
+# 834 "dijkstra.c"
+
+}
+ 
+#line 45 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int  __attribute__  (( __nothrow__ )) vsprintf(char *__restrict __s, const char *__restrict __fmt,  __gnuc_va_list __ap)  
+# 840 "dijkstra.c"
+{
+# 842 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 848 "dijkstra.c"
+{
+
+#line 47 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 853 "dijkstra.c"
+retValue_acc = __builtin___vsprintf_chk(__s, 2 - 1, __builtin_object_size(__s, 2 > 1), __fmt, __ap);
+# 855 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 858 "dijkstra.c"
+
+}
+
+# 862 "dijkstra.c"
+return (int )retValue_acc;
+
+# 865 "dijkstra.c"
+
+}
+ 
+#line 54 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __snprintf_chk(char *__restrict __s,  size_t __n, int __flag,  size_t __slen, const char *__restrict __format, ...) __attribute__  (( __nothrow__ )) ; 
+#line 57 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __vsnprintf_chk(char *__restrict __s,  size_t __n, int __flag,  size_t __slen, const char *__restrict __format,  __gnuc_va_list __ap) __attribute__  (( __nothrow__ )) ; 
+#line 63 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int  __attribute__  (( __nothrow__ )) snprintf(char *__restrict __s,  size_t __n, const char *__restrict __fmt, ...)  
+# 875 "dijkstra.c"
+{
+# 877 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 883 "dijkstra.c"
+{
+
+#line 65 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 888 "dijkstra.c"
+retValue_acc = __builtin___snprintf_chk(__s, __n, 2 - 1, __builtin_object_size(__s, 2 > 1), __fmt, __builtin_va_arg_pack());
+# 890 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 893 "dijkstra.c"
+
+}
+
+# 897 "dijkstra.c"
+return (int )retValue_acc;
+
+# 900 "dijkstra.c"
+
+}
+ 
+#line 76 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int  __attribute__  (( __nothrow__ )) vsnprintf(char *__restrict __s,  size_t __n, const char *__restrict __fmt,  __gnuc_va_list __ap)  
+# 906 "dijkstra.c"
+{
+# 908 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 914 "dijkstra.c"
+{
+
+#line 78 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 919 "dijkstra.c"
+retValue_acc = __builtin___vsnprintf_chk(__s, __n, 2 - 1, __builtin_object_size(__s, 2 > 1), __fmt, __ap);
+# 921 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 924 "dijkstra.c"
+
+}
+
+# 928 "dijkstra.c"
+return (int )retValue_acc;
+
+# 931 "dijkstra.c"
+
+}
+ 
+#line 86 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __fprintf_chk( FILE *__restrict __stream, int __flag, const char *__restrict __format, ...); 
+#line 87 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __printf_chk(int __flag, const char *__restrict __format, ...); 
+#line 89 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __vfprintf_chk( FILE *__restrict __stream, int __flag, const char *__restrict __format,  __gnuc_va_list __ap); 
+#line 91 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __vprintf_chk(int __flag, const char *__restrict __format,  __gnuc_va_list __ap); 
+#line 96 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int fprintf( FILE *__restrict __stream, const char *__restrict __fmt, ...)  
+# 945 "dijkstra.c"
+{
+# 947 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 953 "dijkstra.c"
+{
+
+#line 98 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 958 "dijkstra.c"
+retValue_acc = __fprintf_chk(__stream, 2 - 1, __fmt, __builtin_va_arg_pack());
+# 960 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 963 "dijkstra.c"
+
+}
+
+# 967 "dijkstra.c"
+return (int )retValue_acc;
+
+# 970 "dijkstra.c"
+
+}
+ 
+#line 103 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int printf(const char *__restrict __fmt, ...)  
+# 976 "dijkstra.c"
+{
+# 978 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 984 "dijkstra.c"
+{
+
+#line 104 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 989 "dijkstra.c"
+retValue_acc = __printf_chk(2 - 1, __fmt, __builtin_va_arg_pack());
+# 991 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 994 "dijkstra.c"
+
+}
+
+# 998 "dijkstra.c"
+return (int )retValue_acc;
+
+# 1001 "dijkstra.c"
+
+}
+ 
+#line 115 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int vprintf(const char *__restrict __fmt,  __gnuc_va_list __ap)  
+# 1007 "dijkstra.c"
+{
+# 1009 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 1015 "dijkstra.c"
+{
+
+#line 117 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 1020 "dijkstra.c"
+retValue_acc = __vfprintf_chk(stdout, 2 - 1, __fmt, __ap);
+# 1022 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 1025 "dijkstra.c"
+
+}
+
+# 1029 "dijkstra.c"
+return (int )retValue_acc;
+
+# 1032 "dijkstra.c"
+
+}
+ 
+#line 126 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int vfprintf( FILE *__restrict __stream, const char *__restrict __fmt,  __gnuc_va_list __ap)  
+# 1038 "dijkstra.c"
+{
+# 1040 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 1046 "dijkstra.c"
+{
+
+#line 127 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 1051 "dijkstra.c"
+retValue_acc = __vfprintf_chk(__stream, 2 - 1, __fmt, __ap);
+# 1053 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 1056 "dijkstra.c"
+
+}
+
+# 1060 "dijkstra.c"
+return (int )retValue_acc;
+
+# 1063 "dijkstra.c"
+
+}
+ 
+#line 132 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __dprintf_chk(int __fd, int __flag, const char *__restrict __fmt, ...) __attribute__  (( __format__ ( __printf__, 3, 4 )  )) ; 
+#line 135 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern int __vdprintf_chk(int __fd, int __flag, const char *__restrict __fmt,  __gnuc_va_list __arg) __attribute__  (( __format__ ( __printf__, 3, 0 )  )) ; 
+#line 140 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int dprintf(int __fd, const char *__restrict __fmt, ...)  
+# 1073 "dijkstra.c"
+{
+# 1075 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 1081 "dijkstra.c"
+{
+
+#line 142 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 1086 "dijkstra.c"
+retValue_acc = __dprintf_chk(__fd, 2 - 1, __fmt, __builtin_va_arg_pack());
+# 1088 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 1091 "dijkstra.c"
+
+}
+
+# 1095 "dijkstra.c"
+return (int )retValue_acc;
+
+# 1098 "dijkstra.c"
+
+}
+ 
+#line 151 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int vdprintf(int __fd, const char *__restrict __fmt,  __gnuc_va_list __ap)  
+# 1104 "dijkstra.c"
+{
+# 1106 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 1112 "dijkstra.c"
+{
+
+#line 152 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 1117 "dijkstra.c"
+retValue_acc = __vdprintf_chk(__fd, 2 - 1, __fmt, __ap);
+# 1119 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 1122 "dijkstra.c"
+
+}
+
+# 1126 "dijkstra.c"
+return (int )retValue_acc;
+
+# 1129 "dijkstra.c"
+
+}
+ 
+#line 227 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern char *__gets_chk(char *__str,  size_t ) __attribute__  (( __warn_unused_result__ )) ; 
+#line 229 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern char *__gets_warn(char *__str) __asm__ ("""gets") __attribute__  (( __warn_unused_result__ ))  __attribute__  (( __warning__ ( "please use fgets or getline instead, gets can't ""specify buffer size" )  )) ; 
+#line 234 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  __attribute__  (( __warn_unused_result__ )) char *gets(char *__str)  
+# 1139 "dijkstra.c"
+{
+# 1141 "dijkstra.c"
+char* retValue_acc;
+
+
+
+
+# 1147 "dijkstra.c"
+{
+
+#line 237 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__builtin_object_size(__str, 2 > 1) != (( size_t )(-1))){
+
+# 1153 "dijkstra.c"
+retValue_acc = __gets_chk(__str, __builtin_object_size(__str, 2 > 1));
+# 1155 "dijkstra.c"
+return (char* )retValue_acc;
+ }
+#line 237 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 1160 "dijkstra.c"
+retValue_acc = __gets_warn(__str);
+# 1162 "dijkstra.c"
+return (char* )retValue_acc;
+ 
+# 1165 "dijkstra.c"
+
+}
+
+# 1169 "dijkstra.c"
+return (char* )retValue_acc;
+
+# 1172 "dijkstra.c"
+
+}
+ 
+#line 242 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern char *__fgets_chk(char *__restrict __s,  size_t __size, int __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
+#line 243 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern char *__fgets_alias(char *__restrict __s, int __n,  FILE *__restrict __stream) __asm__ ("""fgets") __attribute__  (( __warn_unused_result__ )) ; 
+#line 249 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern char *__fgets_chk_warn(char *__restrict __s,  size_t __size, int __n,  FILE *__restrict __stream) __asm__ ("""__fgets_chk") __attribute__  (( __warn_unused_result__ ))  __attribute__  (( __warning__ ( "fgets called with bigger size than length ""of destination buffer" )  )) ; 
+#line 254 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  __attribute__  (( __warn_unused_result__ )) char *fgets(char *__restrict __s, int __n,  FILE *__restrict __stream)  
+# 1184 "dijkstra.c"
+{
+# 1186 "dijkstra.c"
+char* retValue_acc;
+
+
+
+
+# 1192 "dijkstra.c"
+{
+
+#line 263 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__builtin_object_size(__s, 2 > 1) != (( size_t )(-1))){
+{ 
+#line 260 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if ((!__builtin_constant_p(__n)) || __n <= 0){
+
+# 1201 "dijkstra.c"
+retValue_acc = __fgets_chk(__s, __builtin_object_size(__s, 2 > 1), __n, __stream);
+# 1203 "dijkstra.c"
+return (char* )retValue_acc;
+ }
+#line 260 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if ((( size_t )__n) > __builtin_object_size(__s, 2 > 1)){
+
+# 1209 "dijkstra.c"
+retValue_acc = __fgets_chk_warn(__s, __builtin_object_size(__s, 2 > 1), __n, __stream);
+# 1211 "dijkstra.c"
+return (char* )retValue_acc;
+ }} }
+#line 263 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 1216 "dijkstra.c"
+retValue_acc = __fgets_alias(__s, __n, __stream);
+# 1218 "dijkstra.c"
+return (char* )retValue_acc;
+ 
+# 1221 "dijkstra.c"
+
+}
+
+# 1225 "dijkstra.c"
+return (char* )retValue_acc;
+
+# 1228 "dijkstra.c"
+
+}
+ 
+#line 268 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern  size_t __fread_chk(void *__restrict __ptr,  size_t __ptrlen,  size_t __size,  size_t __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
+#line 269 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern  size_t __fread_alias(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream) __asm__ ("""fread") __attribute__  (( __warn_unused_result__ )) ; 
+#line 278 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern  size_t __fread_chk_warn(void *__restrict __ptr,  size_t __ptrlen,  size_t __size,  size_t __n,  FILE *__restrict __stream) __asm__ ("""__fread_chk") __attribute__  (( __warn_unused_result__ ))  __attribute__  (( __warning__ ( "fread called with bigger size * nmemb than length ""of destination buffer" )  )) ; 
+#line 283 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  __attribute__  (( __warn_unused_result__ ))  size_t fread(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream)  
+# 1240 "dijkstra.c"
+{
+# 1242 "dijkstra.c"
+size_t retValue_acc;
+
+
+
+
+# 1248 "dijkstra.c"
+{
+
+#line 294 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__builtin_object_size(__ptr, 0) != (( size_t )(-1))){
+{ 
+#line 291 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if ((!__builtin_constant_p(__size)) || (!__builtin_constant_p(__n)) || (__size | __n) >= (((( size_t )1)) << (8 * sizeof ( size_t ) / 2))){
+
+# 1257 "dijkstra.c"
+retValue_acc = __fread_chk(__ptr, __builtin_object_size(__ptr, 0), __size, __n, __stream);
+# 1259 "dijkstra.c"
+return (size_t )retValue_acc;
+ }
+#line 291 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__size * __n > __builtin_object_size(__ptr, 0)){
+
+# 1265 "dijkstra.c"
+retValue_acc = __fread_chk_warn(__ptr, __builtin_object_size(__ptr, 0), __size, __n, __stream);
+# 1267 "dijkstra.c"
+return (size_t )retValue_acc;
+ }} }
+#line 294 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 1272 "dijkstra.c"
+retValue_acc = __fread_alias(__ptr, __size, __n, __stream);
+# 1274 "dijkstra.c"
+return (size_t )retValue_acc;
+ 
+# 1277 "dijkstra.c"
+
+}
+
+# 1281 "dijkstra.c"
+return (size_t )retValue_acc;
+
+# 1284 "dijkstra.c"
+
+}
+ 
+# 227 "/usr/include/x86_64-linux-gnu/bits/stdio2.h" 3 4
+# 329 "/usr/include/x86_64-linux-gnu/bits/stdio2.h" 3 4
+extern  size_t __fread_unlocked_chk(void *__restrict __ptr,  size_t __ptrlen,  size_t __size,  size_t __n,  FILE *__restrict __stream) __attribute__  (( __warn_unused_result__ )) ; 
+#line 330 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern  size_t __fread_unlocked_alias(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream) __asm__ ("""fread_unlocked") __attribute__  (( __warn_unused_result__ )) ; 
+#line 339 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern  size_t __fread_unlocked_chk_warn(void *__restrict __ptr,  size_t __ptrlen,  size_t __size,  size_t __n,  FILE *__restrict __stream) __asm__ ("""__fread_unlocked_chk") __attribute__  (( __warn_unused_result__ ))  __attribute__  (( __warning__ ( "fread_unlocked called with bigger size * nmemb than ""length of destination buffer" )  )) ; 
+#line 344 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  __attribute__  (( __warn_unused_result__ ))  size_t fread_unlocked(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream)  
+# 1297 "dijkstra.c"
+{
+# 1299 "dijkstra.c"
+size_t retValue_acc;
+
+
+
+
+# 1305 "dijkstra.c"
+{
+
+#line 359 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__builtin_object_size(__ptr, 0) != (( size_t )(-1))){
+{ 
+#line 353 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if ((!__builtin_constant_p(__size)) || (!__builtin_constant_p(__n)) || (__size | __n) >= (((( size_t )1)) << (8 * sizeof ( size_t ) / 2))){
+
+# 1314 "dijkstra.c"
+retValue_acc = __fread_unlocked_chk(__ptr, __builtin_object_size(__ptr, 0), __size, __n, __stream);
+# 1316 "dijkstra.c"
+return (size_t )retValue_acc;
+ }
+#line 353 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__size * __n > __builtin_object_size(__ptr, 0)){
+
+# 1322 "dijkstra.c"
+retValue_acc = __fread_unlocked_chk_warn(__ptr, __builtin_object_size(__ptr, 0), __size, __n, __stream);
+# 1324 "dijkstra.c"
+return (size_t )retValue_acc;
+ }} }
+#line 359 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__builtin_constant_p(__size) && __builtin_constant_p(__n) && (__size | __n) < (((( size_t )1)) << (8 * sizeof ( size_t ) / 2)) && __size * __n <= 8){
+{ 
+#line 364 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+#line 364 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+ size_t __cnt = __size * __n;
+#line 365 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+#line 365 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+char *__cptr = ((char *)__ptr);
+#line 366 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__cnt == 0){
+
+# 1341 "dijkstra.c"
+retValue_acc = 0;
+# 1343 "dijkstra.c"
+return (size_t )retValue_acc;
+ }
+#line 369 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+for(;__cnt > 0;(--__cnt)) { { 
+#line 371 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+#line 371 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+int __c = ((__builtin_expect((((__stream)->_IO_read_ptr) >= ((__stream)->_IO_read_end)), 0)?__uflow(__stream):(*((unsigned char *)((__stream)->_IO_read_ptr)++))));
+#line 372 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+if (__c == ((-1))){
+break; }
+#line 374 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+(*__cptr++) = __c; } } 
+#line 376 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 1359 "dijkstra.c"
+retValue_acc = (__cptr - ((char *)__ptr)) / __size;
+# 1361 "dijkstra.c"
+return (size_t )retValue_acc;
+ } }
+#line 379 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+
+# 1366 "dijkstra.c"
+retValue_acc = __fread_unlocked_alias(__ptr, __size, __n, __stream);
+# 1368 "dijkstra.c"
+return (size_t )retValue_acc;
+ 
+# 1371 "dijkstra.c"
+
+}
+
+# 1375 "dijkstra.c"
+return (size_t )retValue_acc;
+
+# 1378 "dijkstra.c"
+
+}
+ 
+# 938 "/usr/include/stdio.h" 2 3 4
 # 2 "dijkstra.c" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 32 "/usr/include/stdlib.h" 3 4
@@ -512,63 +1405,63 @@ typedef enum {P_ALL,P_PID,P_PGID}idtype_t;
 # 36 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 2 3 4
 # 46 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 3 4
 static __inline unsigned int __bswap_32(unsigned int __bsx)  
-# 516 "dijkstra.c"
+# 1409 "dijkstra.c"
 {
-# 518 "dijkstra.c"
+# 1411 "dijkstra.c"
 unsigned int retValue_acc;
 
 
 
 
-# 524 "dijkstra.c"
+# 1417 "dijkstra.c"
 {
 
 #line 47 "/usr/include/x86_64-linux-gnu/bits/byteswap.h"
 
-# 529 "dijkstra.c"
+# 1422 "dijkstra.c"
 retValue_acc = __builtin_bswap32(__bsx);
-# 531 "dijkstra.c"
+# 1424 "dijkstra.c"
 return (unsigned int )retValue_acc;
  
-# 534 "dijkstra.c"
+# 1427 "dijkstra.c"
 
 }
 
-# 538 "dijkstra.c"
+# 1431 "dijkstra.c"
 return (unsigned int )retValue_acc;
 
-# 541 "dijkstra.c"
+# 1434 "dijkstra.c"
 
 }
  
 #line 109 "/usr/include/x86_64-linux-gnu/bits/byteswap.h"
 static __inline  __uint64_t __bswap_64( __uint64_t __bsx)  
-# 547 "dijkstra.c"
+# 1440 "dijkstra.c"
 {
-# 549 "dijkstra.c"
+# 1442 "dijkstra.c"
 __uint64_t retValue_acc;
 
 
 
 
-# 555 "dijkstra.c"
+# 1448 "dijkstra.c"
 {
 
 #line 110 "/usr/include/x86_64-linux-gnu/bits/byteswap.h"
 
-# 560 "dijkstra.c"
+# 1453 "dijkstra.c"
 retValue_acc = __builtin_bswap64(__bsx);
-# 562 "dijkstra.c"
+# 1455 "dijkstra.c"
 return (__uint64_t )retValue_acc;
  
-# 565 "dijkstra.c"
+# 1458 "dijkstra.c"
 
 }
 
-# 569 "dijkstra.c"
+# 1462 "dijkstra.c"
 return (__uint64_t )retValue_acc;
 
-# 572 "dijkstra.c"
+# 1465 "dijkstra.c"
 
 }
  
@@ -594,15 +1487,15 @@ typedef struct {long int quot; long int rem;
 }lldiv_t; 
 # 95 "/usr/include/stdlib.h" 3 4
 # 139 "/usr/include/stdlib.h" 3 4
-extern  size_t __ctype_get_mb_cur_max(void ) __attribute__  (( __nothrow__ )) ; 
+extern  size_t __ctype_get_mb_cur_max(void ) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 145 "/usr/include/stdlib.h"
-extern double atof(const char *__nptr) __attribute__  (( __nothrow__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+extern double atof(const char *__nptr) __attribute__  (( __nothrow__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 148 "/usr/include/stdlib.h"
-extern int atoi(const char *__nptr) __attribute__  (( __nothrow__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+extern int atoi(const char *__nptr) __attribute__  (( __nothrow__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 151 "/usr/include/stdlib.h"
-extern long int atol(const char *__nptr) __attribute__  (( __nothrow__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+extern long int atol(const char *__nptr) __attribute__  (( __nothrow__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 158 "/usr/include/stdlib.h"
- __extension__ extern long long int atoll(const char *__nptr) __attribute__  (( __nothrow__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+ __extension__ extern long long int atoll(const char *__nptr) __attribute__  (( __nothrow__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 166 "/usr/include/stdlib.h"
 extern double strtod(const char *__restrict __nptr, char **__restrict __endptr) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
 #line 173 "/usr/include/stdlib.h"
@@ -621,11 +1514,104 @@ extern unsigned long int strtoul(const char *__restrict __nptr, char **__restric
  __extension__ extern long long int strtoll(const char *__restrict __nptr, char **__restrict __endptr, int __base) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
 #line 216 "/usr/include/stdlib.h"
  __extension__ extern unsigned long long int strtoull(const char *__restrict __nptr, char **__restrict __endptr, int __base) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 305 "/usr/include/stdlib.h"
-extern char *l64a(long int __n) __attribute__  (( __nothrow__ )) ; 
-#line 309 "/usr/include/stdlib.h"
-extern long int a64l(const char *__s) __attribute__  (( __nothrow__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+#line 279 "/usr/include/stdlib.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) int  __attribute__  (( __nothrow__ )) atoi(const char *__nptr)  
+# 1520 "dijkstra.c"
+{
+# 1522 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 1528 "dijkstra.c"
+{
+
+#line 280 "/usr/include/stdlib.h"
+
+# 1533 "dijkstra.c"
+retValue_acc = ((int )strtol(__nptr, ((char **)(((void *)0))), 10));
+# 1535 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 1538 "dijkstra.c"
+
+}
+
+# 1542 "dijkstra.c"
+return (int )retValue_acc;
+
+# 1545 "dijkstra.c"
+
+}
+ 
+#line 284 "/usr/include/stdlib.h"
+extern __inline  __attribute__  (( __gnu_inline__ )) long int  __attribute__  (( __nothrow__ )) atol(const char *__nptr)  
+# 1551 "dijkstra.c"
+{
+# 1553 "dijkstra.c"
+long int retValue_acc;
+
+
+
+
+# 1559 "dijkstra.c"
+{
+
+#line 285 "/usr/include/stdlib.h"
+
+# 1564 "dijkstra.c"
+retValue_acc = strtol(__nptr, ((char **)(((void *)0))), 10);
+# 1566 "dijkstra.c"
+return (long int )retValue_acc;
+ 
+# 1569 "dijkstra.c"
+
+}
+
+# 1573 "dijkstra.c"
+return (long int )retValue_acc;
+
+# 1576 "dijkstra.c"
+
+}
+ 
+#line 293 "/usr/include/stdlib.h"
+ __extension__ extern __inline  __attribute__  (( __gnu_inline__ )) long long int  __attribute__  (( __nothrow__ )) atoll(const char *__nptr)  
+# 1582 "dijkstra.c"
+{
+# 1584 "dijkstra.c"
+long long int retValue_acc;
+
+
+
+
+# 1590 "dijkstra.c"
+{
+
+#line 294 "/usr/include/stdlib.h"
+
+# 1595 "dijkstra.c"
+retValue_acc = strtoll(__nptr, ((char **)(((void *)0))), 10);
+# 1597 "dijkstra.c"
+return (long long int )retValue_acc;
+ 
+# 1600 "dijkstra.c"
+
+}
+
+# 1604 "dijkstra.c"
+return (long long int )retValue_acc;
+
+# 1607 "dijkstra.c"
+
+}
+ 
+# 276 "/usr/include/stdlib.h" 3 4
 # 305 "/usr/include/stdlib.h" 3 4
+extern char *l64a(long int __n) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
+#line 309 "/usr/include/stdlib.h"
+extern long int a64l(const char *__s) __attribute__  (( __nothrow__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 # 1 "/usr/include/x86_64-linux-gnu/sys/types.h" 1 3 4
 # 33 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
 typedef  __u_char u_char; 
@@ -749,7 +1735,12 @@ extern int select(int __nfds,  fd_set *__restrict __readfds,  fd_set *__restrict
 #line 122 "/usr/include/x86_64-linux-gnu/sys/select.h"
 extern int pselect(int __nfds,  fd_set *__restrict __readfds,  fd_set *__restrict __writefds,  fd_set *__restrict __exceptfds, const struct timespec *__restrict __timeout, const  __sigset_t *__restrict __sigmask); 
 # 118 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
-# 131 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/select2.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/select2.h" 3 4
+extern long int __fdelt_chk(long int __d); 
+#line 26 "/usr/include/x86_64-linux-gnu/bits/select2.h"
+extern long int __fdelt_warn(long int __d) __attribute__  (( __warning__ ( "bit outside of fd_set selected" )  )) ; 
+# 129 "/usr/include/x86_64-linux-gnu/sys/select.h" 2 3 4
 # 220 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
 # 1 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 1 3 4
 # 28 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 3 4
@@ -758,8 +1749,100 @@ extern int pselect(int __nfds,  fd_set *__restrict __readfds,  fd_set *__restric
  __extension__ extern unsigned int gnu_dev_minor(unsigned long long int __dev) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ )) ; 
 #line 35 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h"
  __extension__ extern unsigned long long int gnu_dev_makedev(unsigned int __major, unsigned int __minor) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ )) ; 
-# 58 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 3 4
-# 228 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+#line 40 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h"
+ __extension__ extern __inline  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __const__ )) unsigned int  __attribute__  (( __nothrow__ )) gnu_dev_major(unsigned long long int __dev)  
+# 1755 "dijkstra.c"
+{
+# 1757 "dijkstra.c"
+unsigned int retValue_acc;
+
+
+
+
+# 1763 "dijkstra.c"
+{
+
+#line 41 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h"
+
+# 1768 "dijkstra.c"
+retValue_acc = ((__dev >> 8) & 0xfff) | (((unsigned int )(__dev >> 32)) & (~0xfff));
+# 1770 "dijkstra.c"
+return (unsigned int )retValue_acc;
+ 
+# 1773 "dijkstra.c"
+
+}
+
+# 1777 "dijkstra.c"
+return (unsigned int )retValue_acc;
+
+# 1780 "dijkstra.c"
+
+}
+ 
+#line 46 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h"
+ __extension__ extern __inline  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __const__ )) unsigned int  __attribute__  (( __nothrow__ )) gnu_dev_minor(unsigned long long int __dev)  
+# 1786 "dijkstra.c"
+{
+# 1788 "dijkstra.c"
+unsigned int retValue_acc;
+
+
+
+
+# 1794 "dijkstra.c"
+{
+
+#line 47 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h"
+
+# 1799 "dijkstra.c"
+retValue_acc = (__dev & 0xff) | (((unsigned int )(__dev >> 12)) & (~0xff));
+# 1801 "dijkstra.c"
+return (unsigned int )retValue_acc;
+ 
+# 1804 "dijkstra.c"
+
+}
+
+# 1808 "dijkstra.c"
+return (unsigned int )retValue_acc;
+
+# 1811 "dijkstra.c"
+
+}
+ 
+#line 52 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h"
+ __extension__ extern __inline  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __const__ )) unsigned long long int  __attribute__  (( __nothrow__ )) gnu_dev_makedev(unsigned int __major, unsigned int __minor)  
+# 1817 "dijkstra.c"
+{
+# 1819 "dijkstra.c"
+unsigned long long int retValue_acc;
+
+
+
+
+# 1825 "dijkstra.c"
+{
+
+#line 55 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h"
+
+# 1830 "dijkstra.c"
+retValue_acc = ((__minor & 0xff) | ((__major & 0xfff) << 8) | ((((unsigned long long int )(__minor & (~0xff)))) << 12) | ((((unsigned long long int )(__major & (~0xfff)))) << 32));
+# 1832 "dijkstra.c"
+return (unsigned long long int )retValue_acc;
+ 
+# 1835 "dijkstra.c"
+
+}
+
+# 1839 "dijkstra.c"
+return (unsigned long long int )retValue_acc;
+
+# 1842 "dijkstra.c"
+
+}
+ 
+#line 228 "/usr/include/x86_64-linux-gnu/sys/types.h"
 typedef  __blksize_t blksize_t; 
 #line 235 "/usr/include/x86_64-linux-gnu/sys/types.h"
 typedef  __blkcnt_t blkcnt_t; 
@@ -767,6 +1850,7 @@ typedef  __blkcnt_t blkcnt_t;
 typedef  __fsblkcnt_t fsblkcnt_t; 
 #line 243 "/usr/include/x86_64-linux-gnu/sys/types.h"
 typedef  __fsfilcnt_t fsfilcnt_t; 
+# 223 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
 # 270 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 1 3 4
 # 21 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 3 4
@@ -883,9 +1967,9 @@ extern int seed48_r(unsigned short int __seed16v[3], struct drand48_data *__buff
 #line 456 "/usr/include/stdlib.h"
 extern int lcong48_r(unsigned short int __param[7], struct drand48_data *__buffer) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
 #line 466 "/usr/include/stdlib.h"
-extern void *malloc( size_t __size) __attribute__  (( __nothrow__ ))  __attribute__  (( __malloc__ )) ; 
+extern void *malloc( size_t __size) __attribute__  (( __nothrow__ ))  __attribute__  (( __malloc__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 469 "/usr/include/stdlib.h"
-extern void *calloc( size_t __nmemb,  size_t __size) __attribute__  (( __nothrow__ ))  __attribute__  (( __malloc__ )) ; 
+extern void *calloc( size_t __nmemb,  size_t __size) __attribute__  (( __nothrow__ ))  __attribute__  (( __malloc__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 481 "/usr/include/stdlib.h"
 extern void *realloc(void *__ptr,  size_t __size) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 483 "/usr/include/stdlib.h"
@@ -898,9 +1982,9 @@ extern void cfree(void *__ptr) __attribute__  (( __nothrow__ )) ;
 # 32 "/usr/include/alloca.h" 2 3 4
 extern void *alloca( size_t __size) __attribute__  (( __nothrow__ )) ; 
 #line 498 "/usr/include/stdlib.h"
-extern void *valloc( size_t __size) __attribute__  (( __nothrow__ ))  __attribute__  (( __malloc__ )) ; 
+extern void *valloc( size_t __size) __attribute__  (( __nothrow__ ))  __attribute__  (( __malloc__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 504 "/usr/include/stdlib.h"
-extern int posix_memalign(void **__memptr,  size_t __alignment,  size_t __size) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+extern int posix_memalign(void **__memptr,  size_t __alignment,  size_t __size) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 # 493 "/usr/include/stdlib.h" 2 3 4
 # 515 "/usr/include/stdlib.h" 3 4
 extern void abort(void ) __attribute__  (( __nothrow__ ))  __attribute__  (( __noreturn__ )) ; 
@@ -913,7 +1997,7 @@ extern void exit(int __status) __attribute__  (( __nothrow__ ))  __attribute__  
 #line 557 "/usr/include/stdlib.h"
 extern void _Exit(int __status) __attribute__  (( __nothrow__ ))  __attribute__  (( __noreturn__ )) ; 
 #line 564 "/usr/include/stdlib.h"
-extern char *getenv(const char *__name) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+extern char *getenv(const char *__name) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 # 530 "/usr/include/stdlib.h" 3 4
 # 578 "/usr/include/stdlib.h" 3 4
 extern int putenv(char *__string) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
@@ -927,48 +2011,116 @@ extern int clearenv(void ) __attribute__  (( __nothrow__ )) ;
 extern char *mktemp(char *__template) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
 # 606 "/usr/include/stdlib.h" 3 4
 # 620 "/usr/include/stdlib.h" 3 4
-extern int mkstemp(char *__template) __attribute__  (( __nonnull__ ( 1 )  )) ; 
+extern int mkstemp(char *__template) __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 642 "/usr/include/stdlib.h"
-extern int mkstemps(char *__template, int __suffixlen) __attribute__  (( __nonnull__ ( 1 )  )) ; 
+extern int mkstemps(char *__template, int __suffixlen) __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 # 642 "/usr/include/stdlib.h" 3 4
 # 663 "/usr/include/stdlib.h" 3 4
-extern char *mkdtemp(char *__template) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+extern char *mkdtemp(char *__template) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 717 "/usr/include/stdlib.h"
-extern int system(const char *__command); 
+extern int system(const char *__command) __attribute__  (( __warn_unused_result__ )) ; 
 # 712 "/usr/include/stdlib.h" 3 4
 # 735 "/usr/include/stdlib.h" 3 4
-extern char *realpath(const char *__restrict __name, char *__restrict __resolved) __attribute__  (( __nothrow__ )) ; 
+extern char *realpath(const char *__restrict __name, char *__restrict __resolved) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 742 "/usr/include/stdlib.h"
 typedef int (*__compar_fn_t)(const void *, const void *); 
 #line 757 "/usr/include/stdlib.h"
-extern void *bsearch(const void *__key, const void *__base,  size_t __nmemb,  size_t __size,  __compar_fn_t __compar) __attribute__  (( __nonnull__ ( 1, 2, 5 )  )) ; 
+extern void *bsearch(const void *__key, const void *__base,  size_t __nmemb,  size_t __size,  __compar_fn_t __compar) __attribute__  (( __nonnull__ ( 1, 2, 5 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
+# 752 "/usr/include/stdlib.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h" 1 3 4
+# 22 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h" 3 4
+extern __inline  __attribute__  (( __gnu_inline__ )) void *bsearch(const void *__key, const void *__base,  size_t __nmemb,  size_t __size,  __compar_fn_t __compar)  
+# 2034 "dijkstra.c"
+{
+# 2036 "dijkstra.c"
+void* retValue_acc;
+
+
+
+
+# 2042 "dijkstra.c"
+{
+
+#line 23 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+
+#line 23 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+ size_t __l,__u,__idx;
+#line 24 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+
+#line 24 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+const void *__p;
+#line 25 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+
+#line 25 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+int __comparison;
+#line 27 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+__l = 0; 
+#line 28 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+__u = __nmemb; 
+#line 29 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+while(__l < __u) { { 
+#line 31 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+__idx = (__l + __u) / 2; 
+#line 32 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+__p = ((void *)((((const char *)__base)) + (__idx * __size))); 
+#line 33 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+__comparison = ((*__compar))(__key, __p); 
+#line 34 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+if (__comparison < 0){
+__u = __idx; }else{
+if (__comparison > 0){
+__l = __idx + 1; }else{
+
+# 2075 "dijkstra.c"
+retValue_acc = ((void *)__p);
+# 2077 "dijkstra.c"
+return (void* )retValue_acc;
+ }}} } 
+#line 42 "/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h"
+
+# 2082 "dijkstra.c"
+retValue_acc = (((void *)0));
+# 2084 "dijkstra.c"
+return (void* )retValue_acc;
+ 
+# 2087 "dijkstra.c"
+
+}
+
+# 2091 "dijkstra.c"
+return (void* )retValue_acc;
+
+# 2094 "dijkstra.c"
+
+}
+ 
 #line 766 "/usr/include/stdlib.h"
 extern void qsort(void *__base,  size_t __nmemb,  size_t __size,  __compar_fn_t __compar) __attribute__  (( __nonnull__ ( 1, 4 )  )) ; 
-# 752 "/usr/include/stdlib.h" 3 4
+# 761 "/usr/include/stdlib.h" 2 3 4
 # 775 "/usr/include/stdlib.h" 3 4
-extern int abs(int __x) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ )) ; 
+extern int abs(int __x) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 776 "/usr/include/stdlib.h"
-extern long int labs(long int __x) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ )) ; 
+extern long int labs(long int __x) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 781 "/usr/include/stdlib.h"
- __extension__ extern long long int llabs(long long int __x) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ )) ; 
+ __extension__ extern long long int llabs(long long int __x) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 790 "/usr/include/stdlib.h"
-extern  div_t div(int __numer, int __denom) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ )) ; 
+extern  div_t div(int __numer, int __denom) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 792 "/usr/include/stdlib.h"
-extern  ldiv_t ldiv(long int __numer, long int __denom) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ )) ; 
+extern  ldiv_t ldiv(long int __numer, long int __denom) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 799 "/usr/include/stdlib.h"
- __extension__ extern  lldiv_t lldiv(long long int __numer, long long int __denom) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ )) ; 
+ __extension__ extern  lldiv_t lldiv(long long int __numer, long long int __denom) __attribute__  (( __nothrow__ ))  __attribute__  (( __const__ ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 813 "/usr/include/stdlib.h"
-extern char *ecvt(double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3, 4 )  )) ; 
+extern char *ecvt(double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3, 4 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 819 "/usr/include/stdlib.h"
-extern char *fcvt(double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3, 4 )  )) ; 
+extern char *fcvt(double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3, 4 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 825 "/usr/include/stdlib.h"
-extern char *gcvt(double __value, int __ndigit, char *__buf) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3 )  )) ; 
+extern char *gcvt(double __value, int __ndigit, char *__buf) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 832 "/usr/include/stdlib.h"
-extern char *qecvt(long double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3, 4 )  )) ; 
+extern char *qecvt(long double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3, 4 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 835 "/usr/include/stdlib.h"
-extern char *qfcvt(long double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3, 4 )  )) ; 
+extern char *qfcvt(long double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3, 4 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 837 "/usr/include/stdlib.h"
-extern char *qgcvt(long double __value, int __ndigit, char *__buf) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3 )  )) ; 
+extern char *qgcvt(long double __value, int __ndigit, char *__buf) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 844 "/usr/include/stdlib.h"
 extern int ecvt_r(double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign, char *__restrict __buf,  size_t __len) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 3, 4, 5 )  )) ; 
 #line 847 "/usr/include/stdlib.h"
@@ -988,15 +2140,306 @@ extern  size_t mbstowcs( wchar_t *__restrict __pwcs, const char *__restrict __s,
 #line 879 "/usr/include/stdlib.h"
 extern  size_t wcstombs(char *__restrict __s, const  wchar_t *__restrict __pwcs,  size_t __n) __attribute__  (( __nothrow__ )) ; 
 #line 888 "/usr/include/stdlib.h"
-extern int rpmatch(const char *__response) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+extern int rpmatch(const char *__response) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 # 812 "/usr/include/stdlib.h" 3 4
 # 902 "/usr/include/stdlib.h" 3 4
-extern int getsubopt(char **__restrict __optionp, char *const *__restrict __tokens, char **__restrict __valuep) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1, 2, 3 )  )) ; 
+extern int getsubopt(char **__restrict __optionp, char *const *__restrict __tokens, char **__restrict __valuep) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1, 2, 3 )  ))  __attribute__  (( __warn_unused_result__ )) ; 
 #line 952 "/usr/include/stdlib.h"
 extern int getloadavg(double __loadavg[], int __nelem) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
 # 951 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/stdlib-float.h" 1 3 4
+# 27 "/usr/include/x86_64-linux-gnu/bits/stdlib-float.h" 3 4
+extern __inline  __attribute__  (( __gnu_inline__ )) double  __attribute__  (( __nothrow__ )) atof(const char *__nptr)  
+# 2154 "dijkstra.c"
+{
+# 2156 "dijkstra.c"
+double retValue_acc;
+
+
+
+
+# 2162 "dijkstra.c"
+{
+
+#line 28 "/usr/include/x86_64-linux-gnu/bits/stdlib-float.h"
+
+# 2167 "dijkstra.c"
+retValue_acc = strtod(__nptr, ((char **)(((void *)0))));
+# 2169 "dijkstra.c"
+return (double )retValue_acc;
+ 
+# 2172 "dijkstra.c"
+
+}
+
+# 2176 "dijkstra.c"
+return (double )retValue_acc;
+
+# 2179 "dijkstra.c"
+
+}
+ 
 # 956 "/usr/include/stdlib.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdlib.h" 1 3 4
+# 25 "/usr/include/x86_64-linux-gnu/bits/stdlib.h" 3 4
+extern char *__realpath_chk(const char *__restrict __name, char *__restrict __resolved,  size_t __resolvedlen) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
+#line 26 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern char *__realpath_alias(const char *__restrict __name, char *__restrict __resolved) __asm__ ("""realpath") __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
+#line 33 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern char *__realpath_chk_warn(const char *__restrict __name, char *__restrict __resolved,  size_t __resolvedlen) __asm__ ("""__realpath_chk") __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ ))  __attribute__  (( __warning__ ( "second argument of realpath must be either NULL or at ""least PATH_MAX bytes long buffer" )  )) ; 
+#line 38 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  __attribute__  (( __warn_unused_result__ )) char * __attribute__  (( __nothrow__ )) realpath(const char *__restrict __name, char *__restrict __resolved)  
+# 2193 "dijkstra.c"
+{
+# 2195 "dijkstra.c"
+char* retValue_acc;
+
+
+
+
+# 2201 "dijkstra.c"
+{
+
+#line 48 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if (__builtin_object_size(__resolved, 2 > 1) != (( size_t )(-1))){
+{ 
+#line 45 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+
+# 2209 "dijkstra.c"
+retValue_acc = __realpath_chk(__name, __resolved, __builtin_object_size(__resolved, 2 > 1));
+# 2211 "dijkstra.c"
+return (char* )retValue_acc;
+ } }
+#line 48 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+
+# 2216 "dijkstra.c"
+retValue_acc = __realpath_alias(__name, __resolved);
+# 2218 "dijkstra.c"
+return (char* )retValue_acc;
+ 
+# 2221 "dijkstra.c"
+
+}
+
+# 2225 "dijkstra.c"
+return (char* )retValue_acc;
+
+# 2228 "dijkstra.c"
+
+}
+ 
+#line 53 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern int __ptsname_r_chk(int __fd, char *__buf,  size_t __buflen,  size_t __nreal) __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 2 )  )) ; 
+#line 56 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern int __ptsname_r_alias(int __fd, char *__buf,  size_t __buflen) __asm__ ("""ptsname_r") __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 2 )  )) ; 
+#line 60 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern int __ptsname_r_chk_warn(int __fd, char *__buf,  size_t __buflen,  size_t __nreal) __asm__ ("""__ptsname_r_chk") __attribute__  (( __nothrow__ ))  __attribute__  (( __nonnull__ ( 2 )  ))  __attribute__  (( __warning__ ( "ptsname_r called with buflen bigger than ""size of buf" )  )) ; 
+#line 65 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ )) int  __attribute__  (( __nothrow__ )) ptsname_r(int __fd, char *__buf,  size_t __buflen)  
+# 2240 "dijkstra.c"
+{
+# 2242 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 2248 "dijkstra.c"
+{
+
+#line 73 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if (__builtin_object_size(__buf, 2 > 1) != (( size_t )(-1))){
+{ 
+#line 70 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if ((!__builtin_constant_p(__buflen))){
+
+# 2257 "dijkstra.c"
+retValue_acc = __ptsname_r_chk(__fd, __buf, __buflen, __builtin_object_size(__buf, 2 > 1));
+# 2259 "dijkstra.c"
+return (int )retValue_acc;
+ }
+#line 70 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if (__buflen > __builtin_object_size(__buf, 2 > 1)){
+
+# 2265 "dijkstra.c"
+retValue_acc = __ptsname_r_chk_warn(__fd, __buf, __buflen, __builtin_object_size(__buf, 2 > 1));
+# 2267 "dijkstra.c"
+return (int )retValue_acc;
+ }} }
+#line 73 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+
+# 2272 "dijkstra.c"
+retValue_acc = __ptsname_r_alias(__fd, __buf, __buflen);
+# 2274 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 2277 "dijkstra.c"
+
+}
+
+# 2281 "dijkstra.c"
+return (int )retValue_acc;
+
+# 2284 "dijkstra.c"
+
+}
+ 
+#line 78 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern int __wctomb_chk(char *__s,  wchar_t __wchar,  size_t __buflen) __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
+#line 79 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern int __wctomb_alias(char *__s,  wchar_t __wchar) __asm__ ("""wctomb") __attribute__  (( __nothrow__ ))  __attribute__  (( __warn_unused_result__ )) ; 
+#line 84 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  __attribute__  (( __warn_unused_result__ )) int  __attribute__  (( __nothrow__ )) wctomb(char *__s,  wchar_t __wchar)  
+# 2294 "dijkstra.c"
+{
+# 2296 "dijkstra.c"
+int retValue_acc;
+
+
+
+
+# 2302 "dijkstra.c"
+{
+
+#line 94 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if (__builtin_object_size(__s, 2 > 1) != (( size_t )(-1)) && 16 > __builtin_object_size(__s, 2 > 1)){
+
+# 2308 "dijkstra.c"
+retValue_acc = __wctomb_chk(__s, __wchar, __builtin_object_size(__s, 2 > 1));
+# 2310 "dijkstra.c"
+return (int )retValue_acc;
+ }
+#line 94 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+
+# 2315 "dijkstra.c"
+retValue_acc = __wctomb_alias(__s, __wchar);
+# 2317 "dijkstra.c"
+return (int )retValue_acc;
+ 
+# 2320 "dijkstra.c"
+
+}
+
+# 2324 "dijkstra.c"
+return (int )retValue_acc;
+
+# 2327 "dijkstra.c"
+
+}
+ 
+#line 100 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern  size_t __mbstowcs_chk( wchar_t *__restrict __dst, const char *__restrict __src,  size_t __len,  size_t __dstlen) __attribute__  (( __nothrow__ )) ; 
+#line 101 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern  size_t __mbstowcs_alias( wchar_t *__restrict __dst, const char *__restrict __src,  size_t __len) __asm__ ("""mbstowcs") __attribute__  (( __nothrow__ )) ; 
+#line 109 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern  size_t __mbstowcs_chk_warn( wchar_t *__restrict __dst, const char *__restrict __src,  size_t __len,  size_t __dstlen) __asm__ ("""__mbstowcs_chk") __attribute__  (( __nothrow__ ))  __attribute__  (( __warning__ ( "mbstowcs called with dst buffer smaller than len ""* sizeof (wchar_t)" )  )) ; 
+#line 114 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  size_t  __attribute__  (( __nothrow__ )) mbstowcs( wchar_t *__restrict __dst, const char *__restrict __src,  size_t __len)  
+# 2339 "dijkstra.c"
+{
+# 2341 "dijkstra.c"
+size_t retValue_acc;
+
+
+
+
+# 2347 "dijkstra.c"
+{
+
+#line 125 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if (__builtin_object_size(__dst, 2 > 1) != (( size_t )(-1))){
+{ 
+#line 121 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if ((!__builtin_constant_p(__len))){
+
+# 2356 "dijkstra.c"
+retValue_acc = __mbstowcs_chk(__dst, __src, __len, __builtin_object_size(__dst, 2 > 1) / sizeof ( wchar_t ));
+# 2358 "dijkstra.c"
+return (size_t )retValue_acc;
+ }
+#line 121 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if (__len > __builtin_object_size(__dst, 2 > 1) / sizeof ( wchar_t )){
+
+# 2364 "dijkstra.c"
+retValue_acc = __mbstowcs_chk_warn(__dst, __src, __len, __builtin_object_size(__dst, 2 > 1) / sizeof ( wchar_t ));
+# 2366 "dijkstra.c"
+return (size_t )retValue_acc;
+ }} }
+#line 125 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+
+# 2371 "dijkstra.c"
+retValue_acc = __mbstowcs_alias(__dst, __src, __len);
+# 2373 "dijkstra.c"
+return (size_t )retValue_acc;
+ 
+# 2376 "dijkstra.c"
+
+}
+
+# 2380 "dijkstra.c"
+return (size_t )retValue_acc;
+
+# 2383 "dijkstra.c"
+
+}
+ 
+#line 131 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern  size_t __wcstombs_chk(char *__restrict __dst, const  wchar_t *__restrict __src,  size_t __len,  size_t __dstlen) __attribute__  (( __nothrow__ )) ; 
+#line 132 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern  size_t __wcstombs_alias(char *__restrict __dst, const  wchar_t *__restrict __src,  size_t __len) __asm__ ("""wcstombs") __attribute__  (( __nothrow__ )) ; 
+#line 140 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern  size_t __wcstombs_chk_warn(char *__restrict __dst, const  wchar_t *__restrict __src,  size_t __len,  size_t __dstlen) __asm__ ("""__wcstombs_chk") __attribute__  (( __nothrow__ ))  __attribute__  (( __warning__ ( "wcstombs called with dst buffer smaller than len" )  )) ; 
+#line 144 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+extern __inline  __attribute__  (( __always_inline__ ))  __attribute__  (( __gnu_inline__ ))  __attribute__  (( __artificial__ ))  size_t  __attribute__  (( __nothrow__ )) wcstombs(char *__restrict __dst, const  wchar_t *__restrict __src,  size_t __len)  
+# 2395 "dijkstra.c"
+{
+# 2397 "dijkstra.c"
+size_t retValue_acc;
+
+
+
+
+# 2403 "dijkstra.c"
+{
+
+#line 152 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if (__builtin_object_size(__dst, 2 > 1) != (( size_t )(-1))){
+{ 
+#line 149 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if ((!__builtin_constant_p(__len))){
+
+# 2412 "dijkstra.c"
+retValue_acc = __wcstombs_chk(__dst, __src, __len, __builtin_object_size(__dst, 2 > 1));
+# 2414 "dijkstra.c"
+return (size_t )retValue_acc;
+ }
+#line 149 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+if (__len > __builtin_object_size(__dst, 2 > 1)){
+
+# 2420 "dijkstra.c"
+retValue_acc = __wcstombs_chk_warn(__dst, __src, __len, __builtin_object_size(__dst, 2 > 1));
+# 2422 "dijkstra.c"
+return (size_t )retValue_acc;
+ }} }
+#line 152 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+
+# 2427 "dijkstra.c"
+retValue_acc = __wcstombs_alias(__dst, __src, __len);
+# 2429 "dijkstra.c"
+return (size_t )retValue_acc;
+ 
+# 2432 "dijkstra.c"
+
+}
+
+# 2436 "dijkstra.c"
+return (size_t )retValue_acc;
+
+# 2439 "dijkstra.c"
+
+}
+ 
+# 960 "/usr/include/stdlib.h" 2 3 4
 # 968 "/usr/include/stdlib.h" 3 4
 # 11 "dijkstra.c" 2
 struct _NODE {int iDist; int iPrev; 
@@ -1030,7 +2473,7 @@ int i,iCost,iDist;
 
 #line 34 "dijkstra.c"
 void print_path( NODE *rgnNodes, int chNode)  
-# 1034 "dijkstra.c"
+# 2477 "dijkstra.c"
 {
 
 
@@ -1046,7 +2489,7 @@ __utac_acc__dijkstra_aspect__1(&this );
  } 
  } 
 
-# 1050 "dijkstra.c"
+# 2493 "dijkstra.c"
 {
 
 #line 39 "dijkstra.c"
@@ -1058,7 +2501,7 @@ print_path(rgnNodes, rgnNodes[chNode].iPrev); } }
 printf(" %d", chNode); 
 #line 40 "dijkstra.c"
 fflush(stdout); 
-# 1062 "dijkstra.c"
+# 2505 "dijkstra.c"
 
 }
  { 
@@ -1073,7 +2516,7 @@ __utac_acc__dijkstra_aspect__2(&this );
  } 
  } 
 
-# 1077 "dijkstra.c"
+# 2520 "dijkstra.c"
 
 }
  
@@ -1085,7 +2528,7 @@ __utac_acc__dijkstra_aspect__2(&this );
 
 #line 44 "dijkstra.c"
 void enqueue(int iNode, int iDist, int iPrev)  
-# 1089 "dijkstra.c"
+# 2532 "dijkstra.c"
 {
 
 
@@ -1101,7 +2544,7 @@ __utac_acc__dijkstra_aspect__1(&this );
  } 
  } 
 
-# 1105 "dijkstra.c"
+# 2548 "dijkstra.c"
 {
 
 #line 45 "dijkstra.c"
@@ -1139,7 +2582,7 @@ while((qLast->qNext)) { qLast = (qLast->qNext); }
 (qLast->qNext) = qNew; } }
 #line 68 "dijkstra.c"
 g_qCount++; 
-# 1143 "dijkstra.c"
+# 2586 "dijkstra.c"
 
 }
  { 
@@ -1154,7 +2597,7 @@ __utac_acc__dijkstra_aspect__2(&this );
  } 
  } 
 
-# 1158 "dijkstra.c"
+# 2601 "dijkstra.c"
 
 }
  
@@ -1166,7 +2609,7 @@ __utac_acc__dijkstra_aspect__2(&this );
 
 #line 72 "dijkstra.c"
 void dequeue(int *piNode, int *piDist, int *piPrev)  
-# 1170 "dijkstra.c"
+# 2613 "dijkstra.c"
 {
 
 
@@ -1182,7 +2625,7 @@ __utac_acc__dijkstra_aspect__1(&this );
  } 
  } 
 
-# 1186 "dijkstra.c"
+# 2629 "dijkstra.c"
 {
 
 #line 73 "dijkstra.c"
@@ -1204,7 +2647,7 @@ qHead = (qHead->qNext);
 free(qKill); 
 #line 82 "dijkstra.c"
 g_qCount--; } }
-# 1208 "dijkstra.c"
+# 2651 "dijkstra.c"
 
 }
  { 
@@ -1219,7 +2662,7 @@ __utac_acc__dijkstra_aspect__2(&this );
  } 
  } 
 
-# 1223 "dijkstra.c"
+# 2666 "dijkstra.c"
 
 }
  
@@ -1234,9 +2677,9 @@ __utac_acc__dijkstra_aspect__2(&this );
 
 #line 87 "dijkstra.c"
 int qcount(void )  
-# 1238 "dijkstra.c"
+# 2681 "dijkstra.c"
 {
-# 1240 "dijkstra.c"
+# 2683 "dijkstra.c"
 int retValue_acc;
 
 
@@ -1253,12 +2696,12 @@ __utac_acc__dijkstra_aspect__1(&this );
  } 
  } 
 
-# 1257 "dijkstra.c"
+# 2700 "dijkstra.c"
 {
 
 #line 88 "dijkstra.c"
 
-# 1262 "dijkstra.c"
+# 2705 "dijkstra.c"
 retValue_acc = (g_qCount); { 
  struct JoinPoint this; 
 this.funcName = "qcount"; 
@@ -1271,10 +2714,10 @@ __utac_acc__dijkstra_aspect__2(&this );
  } 
  } 
 
-# 1275 "dijkstra.c"
+# 2718 "dijkstra.c"
 return (int )retValue_acc;
  
-# 1278 "dijkstra.c"
+# 2721 "dijkstra.c"
 
 }
  { 
@@ -1289,10 +2732,10 @@ __utac_acc__dijkstra_aspect__2(&this );
  } 
  } 
 
-# 1293 "dijkstra.c"
+# 2736 "dijkstra.c"
 return (int )retValue_acc;
 
-# 1296 "dijkstra.c"
+# 2739 "dijkstra.c"
 
 }
  
@@ -1304,7 +2747,7 @@ return (int )retValue_acc;
 
 #line 92 "dijkstra.c"
 void neighbor()  
-# 1308 "dijkstra.c"
+# 2751 "dijkstra.c"
 {
 
 
@@ -1320,7 +2763,7 @@ __utac_acc__dijkstra_aspect__1(&this );
  } 
  } 
 
-# 1324 "dijkstra.c"
+# 2767 "dijkstra.c"
 {
 
 #line 109 "dijkstra.c"
@@ -1341,7 +2784,7 @@ rgnNodes[i].iDist = iDist + iCost;
 rgnNodes[i].iPrev = iNode; 
 #line 105 "dijkstra.c"
 enqueue(i, iDist + iCost, iNode); } }} }} } } } 
-# 1345 "dijkstra.c"
+# 2788 "dijkstra.c"
 
 }
  { 
@@ -1356,7 +2799,7 @@ __utac_acc__dijkstra_aspect__2(&this );
  } 
  } 
 
-# 1360 "dijkstra.c"
+# 2803 "dijkstra.c"
 
 }
  
@@ -1368,7 +2811,7 @@ __utac_acc__dijkstra_aspect__2(&this );
 
 #line 113 "dijkstra.c"
 void init_nodes()  
-# 1372 "dijkstra.c"
+# 2815 "dijkstra.c"
 {
 
 
@@ -1384,7 +2827,7 @@ __utac_acc__dijkstra_aspect__1(&this );
  } 
  } 
 
-# 1388 "dijkstra.c"
+# 2831 "dijkstra.c"
 {
 
 #line 118 "dijkstra.c"
@@ -1393,7 +2836,7 @@ for(ch = 0;ch < 100;ch++) { {
 rgnNodes[ch].iDist = 9999; 
 #line 117 "dijkstra.c"
 rgnNodes[ch].iPrev = 9999; } } 
-# 1397 "dijkstra.c"
+# 2840 "dijkstra.c"
 
 }
  { 
@@ -1408,7 +2851,7 @@ __utac_acc__dijkstra_aspect__2(&this );
  } 
  } 
 
-# 1412 "dijkstra.c"
+# 2855 "dijkstra.c"
 
 }
  
@@ -1420,7 +2863,7 @@ __utac_acc__dijkstra_aspect__2(&this );
 
 #line 122 "dijkstra.c"
 void dijkstra(int chStart, int chEnd)  
-# 1424 "dijkstra.c"
+# 2867 "dijkstra.c"
 {
 
 
@@ -1436,7 +2879,7 @@ __utac_acc__dijkstra_aspect__1(&this );
  } 
  } 
 
-# 1440 "dijkstra.c"
+# 2883 "dijkstra.c"
 {
 
 #line 124 "dijkstra.c"
@@ -1463,7 +2906,7 @@ printf("Path is: ");
 print_path(rgnNodes, chEnd); 
 #line 142 "dijkstra.c"
 printf("\n"); } }
-# 1467 "dijkstra.c"
+# 2910 "dijkstra.c"
 
 }
  { 
@@ -1478,7 +2921,7 @@ __utac_acc__dijkstra_aspect__2(&this );
  } 
  } 
 
-# 1482 "dijkstra.c"
+# 2925 "dijkstra.c"
 
 }
  
@@ -1493,9 +2936,9 @@ __utac_acc__dijkstra_aspect__2(&this );
 
 #line 147 "dijkstra.c"
 int main(int argc, char *argv[])  
-# 1497 "dijkstra.c"
+# 2940 "dijkstra.c"
 {
-# 1499 "dijkstra.c"
+# 2942 "dijkstra.c"
 int retValue_acc;
 
 
@@ -1512,7 +2955,7 @@ __utac_acc__dijkstra_aspect__1(&this );
  } 
  } 
 
-# 1516 "dijkstra.c"
+# 2959 "dijkstra.c"
 {
 
 #line 148 "dijkstra.c"
@@ -1550,7 +2993,7 @@ dijkstra(i, j); } }
 fclose(fp); 
 #line 181 "dijkstra.c"
 
-# 1554 "dijkstra.c"
+# 2997 "dijkstra.c"
 retValue_acc = 0; { 
  struct JoinPoint this; 
 this.funcName = "main"; 
@@ -1563,10 +3006,10 @@ __utac_acc__dijkstra_aspect__2(&this );
  } 
  } 
 
-# 1567 "dijkstra.c"
+# 3010 "dijkstra.c"
 return (int )retValue_acc;
  
-# 1570 "dijkstra.c"
+# 3013 "dijkstra.c"
 
 }
  { 
@@ -1581,10 +3024,10 @@ __utac_acc__dijkstra_aspect__2(&this );
  } 
  } 
 
-# 1585 "dijkstra.c"
+# 3028 "dijkstra.c"
 return (int )retValue_acc;
 
-# 1588 "dijkstra.c"
+# 3031 "dijkstra.c"
 
 }
  
