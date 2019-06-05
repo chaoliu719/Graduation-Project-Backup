@@ -28,10 +28,10 @@ dijkstra()
                             |-print_path()
 
 -----------Profiling-----------
-  dijkstra: call     2 times,    144.378ms total
-init_nodes: call     2 times,      0.005ms total
-  neighbor: call     2 times,    143.240ms total
-   enqueue: call  1634 times,      4.313ms total
-   dequeue: call  1634 times,      1.588ms total
-    qcount: call  1636 times,      1.538ms total
-print_path: call    20 times,      5.745ms total
+  dijkstra: call     2 times,    126.945ms total
+init_nodes: call     2 times,      0.003ms total
+  neighbor: call     2 times,    125.723ms total
+   enqueue: call  1634 times,      3.539ms total
+   dequeue: call  1634 times,      1.622ms total
+    qcount: call  1636 times,      1.488ms total
+print_path: call    20 times,      6.874ms total

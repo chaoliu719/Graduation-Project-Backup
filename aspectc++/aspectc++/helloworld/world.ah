@@ -2,14 +2,15 @@
 #define __WORLD_AH__
 
 #include <iostream>
+#include <stdlib.h>
+using namespace std;
 
-aspect World {
-
-  advice execution("void hello()") : after() {
-    //print "World" after execution of the 'hello()' function
-    std::cout << "World" << std::endl;
+aspect ProblemReporter {
+  advice builtin("% operator *(%)") : before(){
+      if (*tjp->arg<0>() == 0){
+          cerr << tjp->filename() << " (Line " << tjp->line() << "): dereferencing of null-pointer!" << endl;
+          exit(1);
+      }
   }
-
 };
-
 #endif

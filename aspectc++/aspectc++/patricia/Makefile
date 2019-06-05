@@ -13,6 +13,8 @@ INCLUDE_LIST := $(patsubst %.ah,-include %.ah,$(ASPECTS))
 LDFLAGS := -lm
 CXXFLAGS := -static -O3 
 
+all: patricia
+
 patricia: $(OBJECTS)
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 

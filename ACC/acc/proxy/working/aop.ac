@@ -1812,14 +1812,11 @@ void Free_pointer(void *connfd_p);
 # 6 "aop.c" 2
 
 before(): execution($ main(...)) {
-  printf("before main\n");
   Get_main_thread();
 }
 
 void around(void *connfd_p): execution($ doit(...)) && args(connfd_p) {
-  printf("before doit");
   Create_thread(connfd_p);
   proceed();
   Free_pointer(connfd_p);
-  printf("after doit");
 }

@@ -90,8 +90,6 @@ static struct print_queue *layer_traversing(struct ptree *phead)
             enqueue(queue, malloc_node(iter->depth + 1, NULL));
             enqueue(queue, malloc_node(iter->depth + 1, NULL));
         }
-        
-        
         iter = iter->next;
     }
     

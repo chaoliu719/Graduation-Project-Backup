@@ -44,7 +44,7 @@ struct ptree {
 	unsigned long p_key;		/* Node key		*/
 	struct ptree_mask *p_m;		/* Node masks		*/
 	unsigned char p_mlen;		/* Number of masks	*/
-	char p_b;			/* Bit to check		*/
+	char p_b;					/* Bit to check		*/
 	struct ptree *p_left;		/* Left pointer		*/
 	struct ptree *p_right;		/* Right pointer	*/
 };

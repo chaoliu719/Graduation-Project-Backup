@@ -1,6 +1,7 @@
 #include "hello.h"
 
 int main(){
-  hello(); //print "Hello"
+  int *e = NULL;
+  int x = *e;
   return 0;
 }

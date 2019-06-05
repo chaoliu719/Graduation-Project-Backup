@@ -14,23 +14,20 @@ aspect malloc_aspect {
         clear_ranges_r();
     };
 
-    advice execution("% mm_malloc(...)") : around() {
+    advice execution("% mm_malloc(...)") : after() {
         size_t size = *(size_t *)(tjp->arg(0));
-        tjp->proceed();
         char * newp = *(char **)(tjp->result());
         malloc_r(newp, size);
     };
 
-    advice execution("% mm_free(...)") : around() {
+    advice execution("% mm_free(...)") : after() {
         char * oldp = *(char **)(tjp->arg(0));
-        tjp->proceed();
         free_r(oldp);
     };
         
-    advice execution("% mm_realloc(...)") : around() {
+    advice execution("% mm_realloc(...)") : after() {
         char * oldp = *(char **)(tjp->arg(0));
         size_t size = *(size_t *)(tjp->arg(1));
-        tjp->proceed();
         char * newp = *(char **)(tjp->result());
         realloc_r(oldp, size, newp);
     };

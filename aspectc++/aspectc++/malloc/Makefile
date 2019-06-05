@@ -8,6 +8,8 @@ LDFLAGS :=
 CXXFLAGS := -static -O3
 TARGET=mdriver
 
+all: $(TARGET)
+
 $(TARGET): $(OBJECTS)
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 

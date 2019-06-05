@@ -1712,34 +1712,34 @@ compare_cnt++; }
 lines = nitems; }
 
  
-#line 19 "qsort_aspect.c"
+#line 17 "qsort_aspect.c"
  inline void __utac_acc__qsort_aspect__3(void) { 
 
 
 
-#line 20 "qsort_aspect.c"
+#line 18 "qsort_aspect.c"
 
-#line 20 "qsort_aspect.c"
+#line 18 "qsort_aspect.c"
 double x = ((double )compare_cnt);
-#line 21 "qsort_aspect.c"
+#line 19 "qsort_aspect.c"
 
-#line 21 "qsort_aspect.c"
+#line 19 "qsort_aspect.c"
 double n = ((double )lines);
-#line 23 "qsort_aspect.c"
+#line 21 "qsort_aspect.c"
 if (n == 0){
 { 
-#line 25 "qsort_aspect.c"
+#line 23 "qsort_aspect.c"
 return ; } }
-#line 28 "qsort_aspect.c"
+#line 26 "qsort_aspect.c"
 
-#line 28 "qsort_aspect.c"
+#line 26 "qsort_aspect.c"
 double lgn = log2(n);
-#line 29 "qsort_aspect.c"
+#line 27 "qsort_aspect.c"
 
-#line 29 "qsort_aspect.c"
+#line 27 "qsort_aspect.c"
 double r = 100.0 - (x - n * lgn) * 100 / (n * (n - lgn));
-#line 32 "qsort_aspect.c"
-fprintf(stderr, "效率[%.3f], n[%ld], nlgn[%ld], n^2[%ld]\n", r, compare_cnt, (( size_t )(n * lgn)), lines * lines); }
+#line 30 "qsort_aspect.c"
+fprintf(stderr, "效率[%.3f], compare[%ld], nlgn[%ld], n^2[%ld]\n", r, compare_cnt, (( size_t )(n * lgn)), lines * lines); }
 
  
 

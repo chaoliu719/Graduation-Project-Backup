@@ -13,7 +13,7 @@ INCLUDE_LIST := $(patsubst %.ah,-include %.ah,$(ASPECTS))
 LDFLAGS := -lm
 CXXFLAGS := -static -O2 
 
-all: qsort_small qsort_large
+all: qsort_small
 
 qsort_small: $(filter %qsort_small.o,$(OBJECTS))
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)

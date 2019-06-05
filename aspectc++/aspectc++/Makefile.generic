@@ -1,5 +1,5 @@
 CXX ?= g++
-ACXX ?= ag++
+ACXX ?= ag++ --builtin_operators
 
 PROG:=$(shell basename $$PWD)
 

@@ -6,6 +6,8 @@ CC=gcc
 LDFLAGS := -lm
 CXXFLAGS := -static -O2 
 
+all: qsort_small
+
 qsort_small:
 	rm -rf working 
 	mkdir working

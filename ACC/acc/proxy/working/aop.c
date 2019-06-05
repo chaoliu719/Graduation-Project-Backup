@@ -1237,28 +1237,22 @@ void Free_pointer(void *connfd_p);
 
 
 #line 8 "aop.c"
-printf("before main\n"); 
-#line 9 "aop.c"
 Get_main_thread(); }
 
  
 
 
-#line 12 "aop.c"
+#line 11 "aop.c"
  inline void __utac_acc__aop__2(void *connfd_p , struct JoinPoint *  this  )  {
  
 
 
-#line 13 "aop.c"
-printf("before doit"); 
-#line 14 "aop.c"
+#line 12 "aop.c"
 Create_thread(connfd_p); 
-#line 15 "aop.c"
+#line 13 "aop.c"
 (this->fp(this)); 
-#line 16 "aop.c"
-Free_pointer(connfd_p); 
-#line 17 "aop.c"
-printf("after doit"); }
+#line 14 "aop.c"
+Free_pointer(connfd_p); }
 
  
 
